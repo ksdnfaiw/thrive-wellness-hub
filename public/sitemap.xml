@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BASE_URL = "" — TODO: prefix each <loc> with the live domain once set. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc></url>
+  <url><loc>/about</loc></url>
+  <url><loc>/services</loc></url>
+  <url><loc>/services/interventional-procedures</loc></url>
+  <url><loc>/services/diagnostics-and-imaging</loc></url>
+  <url><loc>/services/physiotherapy-and-rehabilitation</loc></url>
+  <url><loc>/services/psychology-and-mental-wellness</loc></url>
+  <url><loc>/services/nutrition</loc></url>
+  <url><loc>/services/wellness-therapies</loc></url>
+  <url><loc>/services/in-house-pharmacy</loc></url>
+  <url><loc>/doctors</loc></url>
+  <url><loc>/gallery</loc></url>
+  <url><loc>/insurance</loc></url>
+  <url><loc>/book</loc></url>
+  <url><loc>/contact</loc></url>
+  <url><loc>/blog</loc></url>
+</urlset>
