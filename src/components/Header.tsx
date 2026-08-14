@@ -126,7 +126,7 @@ export function Header() {
       {open ? (
         <nav aria-label="Mobile" className="border-t border-border bg-card lg:hidden">
           <div className="container-x flex flex-col py-3">
-            {[nav[0], nav[1]].map((item) => (
+            {nav.slice(0, 2).map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
