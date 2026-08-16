@@ -321,3 +321,105 @@ export const stats = [
   { value: "12+", label: "empanelled insurers & TPAs" },
   { value: "4.9", label: "average patient rating" },
 ];
+
+export const ratings = [
+  { score: "4.9", source: "Google reviews", count: "310+ patients" },
+  { score: "4.8", source: "Practo profile", count: "180+ patients" },
+];
+
+export const pillars = [
+  {
+    title: "Our mission",
+    detail: "Treat the source of pain, not just the symptom, with imaging-led diagnosis and honest advice.",
+  },
+  {
+    title: "Our vision",
+    detail: "A Hyderabad where chronic pain is managed by one team, in one place, without endless referrals.",
+  },
+  {
+    title: "Story & goals",
+    detail: "Founded by pain physicians who were tired of watching patients bounce between departments.",
+  },
+];
+
+export const recoveryBars = [
+  { label: "Back pain relief", value: 92 },
+  { label: "Knee mobility", value: 88 },
+  { label: "Post-op recovery", value: 95 },
+  { label: "Sleep quality", value: 84 },
+  { label: "Return to work", value: 90 },
+];
+
+export const funFacts = [
+  { value: "4,000", label: "sq. ft. of clinical and recovery space" },
+  { value: "7", label: "departments under one roof" },
+  { value: "9,500+", label: "procedures and therapy sessions delivered" },
+  { value: "48 hrs", label: "average cashless approval turnaround" },
+];
+
+export const socials = [
+  { label: "Instagram", href: "https://instagram.com" },
+  { label: "Facebook", href: "https://facebook.com" },
+  { label: "YouTube", href: "https://youtube.com" },
+  { label: "LinkedIn", href: "https://linkedin.com" },
+];
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  date: string;
+  displayDate: string;
+  readTime: string;
+  image: string;
+  body: string[];
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "when-back-pain-needs-a-pain-physician",
+    title: "When back pain needs a pain physician, not another painkiller",
+    excerpt: "Six signs your lower back pain has moved past rest and tablets, and what an imaging-led review changes.",
+    author: "Dr. A. Ramesh Kumar",
+    date: "2026-05-18",
+    displayDate: "18 May 2026",
+    readTime: "6 min read",
+    image: procedureSuite,
+    body: [
+      "Most lower back pain settles within six weeks with movement, sleep and simple analgesia. The problem is the pain that does not settle, because the longer it runs, the more the nervous system learns it.",
+      "If your pain wakes you at night, travels below the knee, worsens on standing rather than bending, or has already outlasted two courses of medication, the useful next step is not a stronger tablet. It is finding the exact structure generating the signal.",
+      "That is what an interventional review does. A diagnostic block or an image-guided assessment tells us whether the facet joint, the disc or the nerve root is responsible, and the treatment plan follows from the answer rather than from guesswork.",
+    ],
+  },
+  {
+    slug: "what-happens-in-a-radiofrequency-ablation",
+    title: "What actually happens during a radiofrequency ablation",
+    excerpt: "A step-by-step account of a day-care RFA procedure, from consent to walking out of the building.",
+    author: "Dr. Faisal Ahmed",
+    date: "2026-04-27",
+    displayDate: "27 April 2026",
+    readTime: "5 min read",
+    image: diagnosticsImg,
+    body: [
+      "Radiofrequency ablation sounds far more dramatic than it is. You arrive, change, and lie face down on a fluoroscopy table. The skin is numbed with local anaesthetic before anything else happens.",
+      "Under live imaging, a fine needle is guided to the medial branch nerve carrying the pain signal. We test the position with a small current so we can confirm we are on the right nerve and nowhere near a motor nerve.",
+      "The lesion itself takes about 90 seconds per level. Most patients are up within the hour, home the same day, and back to desk work in two to three days with a written physiotherapy handover.",
+    ],
+  },
+  {
+    slug: "sleep-and-chronic-pain",
+    title: "Why fixing your sleep changes your pain score",
+    excerpt: "Chronic pain and broken sleep feed each other. Here is the order our team tackles them in.",
+    author: "Ms. Anjali Menon",
+    date: "2026-03-30",
+    displayDate: "30 March 2026",
+    readTime: "4 min read",
+    image: psychologyImg,
+    body: [
+      "Pain fragments sleep, and fragmented sleep lowers your pain threshold the next day. Patients often describe this loop long before anyone offers to treat it.",
+      "We start with sleep timing and light exposure rather than sedatives, because a stable rhythm does more for pain sensitivity than an extra hour of drugged sleep.",
+      "Alongside that, pain-focused cognitive behavioural therapy reduces the anticipatory tension that keeps muscles guarded overnight. Most patients report a measurable drop in morning stiffness within four weeks.",
+    ],
+  },
+];
