@@ -21,7 +21,7 @@ export function PageHero({
           <span className="eyebrow">{eyebrow}</span>
           <h1 className="display-xl mt-6 max-w-4xl">
             {title}
-            {accent ? <span className="script-accent lowercase"> {accent}</span> : null}
+            {accent ? <span className="text-deep/60"> {accent}</span> : null}
           </h1>
           {description ? <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">{description}</p> : null}
           {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
