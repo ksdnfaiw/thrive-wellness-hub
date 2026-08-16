@@ -1,9 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { clinic, images, insurers, services, stats, testimonials, whatsappLink } from "@/lib/site-data";
+import {
+  blogPosts,
+  clinic,
+  funFacts,
+  images,
+  insurers,
+  pillars,
+  ratings,
+  recoveryBars,
+  services,
+  testimonials,
+  whatsappLink,
+} from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 import { Reveal } from "@/components/Reveal";
-import { LeadForm } from "@/components/LeadForm";
+import { Marquee } from "@/components/Marquee";
+import { ContactSection } from "@/components/ContactSection";
 import { ClosingCta } from "@/components/ClosingCta";
 
 export const Route = createFileRoute("/")({
@@ -27,104 +40,143 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+const carousel = [images.wellness, images.physio, images.psychology, images.nutrition];
+
+function Stars() {
+  return (
+    <span className="flex gap-0.5 text-deep" aria-hidden="true">
+      {Array.from({ length: 5 }).map((_, index) => (
+        <svg key={index} viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-current">
+          <path d="m12 2 3 6.9 7.5.6-5.7 5 1.7 7.3L12 17.9 5.5 21.8l1.7-7.3-5.7-5 7.5-.6Z" />
+        </svg>
+      ))}
+    </span>
+  );
+}
+
 function Home() {
-  const [active, setActive] = useState(0);
-  const testimonial = testimonials[active]!;
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [slide, setSlide] = useState(0);
+  const testimonial = testimonials[activeTestimonial]!;
 
   return (
     <>
-      <section className="bg-secondary/50">
-        <div className="container-x grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-20">
-          <Reveal>
-            <span className="eyebrow">Heal. Restore. Thrive.</span>
-            <h1 className="display-xl mt-6">
-              Pain care that is
-              <span className="script-accent lowercase"> physician-led,</span> not guesswork.
-            </h1>
-            <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-              Hyderabad's only clinic combining interventional pain medicine with an integrated in-house team —
-              physiotherapy, clinical psychology, nutrition and next-gen wellness therapies across 4,000 sq. ft.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link to="/book" className="btn btn-primary">
-                Book an Appointment
-              </Link>
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent("whatsapp_click", { location: "hero" })}
-                className="btn btn-outline"
-              >
-                WhatsApp / Call
-              </a>
-            </div>
-            <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <dt className="font-display text-2xl font-bold text-deep sm:text-3xl">{stat.value}</dt>
-                  <dd className="mt-1 text-xs text-muted-foreground">{stat.label}</dd>
+      {/* Hero */}
+      <section className="container-x grid items-center gap-10 py-10 lg:grid-cols-[1.02fr_1fr] lg:gap-14 lg:py-16">
+        <Reveal>
+          <span className="eyebrow">Heal. Restore. Thrive.</span>
+          <h1 className="display-xl mt-6">Pain care that is physician-led, not guesswork.</h1>
+          <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Interventional pain medicine with an integrated in-house team: physiotherapy, clinical psychology, nutrition
+            and next-generation wellness therapies across 4,000 sq. ft. in Banjara Hills.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link to="/book" className="btn btn-primary">
+              Book an appointment
+            </Link>
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("whatsapp_click", { location: "hero" })}
+              className="btn btn-outline"
+            >
+              WhatsApp us
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-5">
+            {ratings.map((rating) => (
+              <div key={rating.source}>
+                <div className="flex items-center gap-2">
+                  <span className="font-display text-lg font-bold">{rating.score}</span>
+                  <Stars />
                 </div>
-              ))}
-            </dl>
-          </Reveal>
-
-          <Reveal delay={120} className="relative">
-            <img
-              src={images.hero}
-              alt="A pain physician assessing a patient's knee in a calm, sunlit treatment room"
-              width={1280}
-              height={1024}
-              className="aspect-4/3 w-full rounded-[2rem] object-cover shadow-soft"
-            />
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              <div className="card-soft p-4">
-                <p className="text-xs font-semibold tracking-[0.16em] text-primary uppercase">Physician-led</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  MD pain physicians with FIPP-level interventional training — every plan signed off by a doctor.
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {rating.source} · {rating.count}
                 </p>
               </div>
-              <div className="card-soft p-4">
-                <p className="text-xs font-semibold tracking-[0.16em] text-primary uppercase">Cashless desk</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  12+ empanelled insurers and TPAs, with written estimates before any procedure.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="border-y border-border bg-card">
-        <div className="container-x flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-            Empanelled insurers & TPAs
-          </p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-3">
-            {insurers.slice(0, 6).map((insurer) => (
-              <li key={insurer} className="text-sm font-semibold text-deep/80">
-                {insurer}
-              </li>
             ))}
-            <li>
-              <Link to="/insurance" className="text-sm font-semibold text-primary underline">
-                See all 12
-              </Link>
-            </li>
-          </ul>
+          </div>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <img
+            src={images.hero}
+            alt="A pain physician assessing a patient's knee in a calm, sunlit treatment room"
+            width={1280}
+            height={1024}
+            className="aspect-4/3 w-full rounded-2xl object-cover"
+          />
+          <div className="mt-3 grid gap-3 sm:grid-cols-[auto_1fr_auto]">
+            <img
+              src={images.physio}
+              alt="Physiotherapist guiding a patient through a movement drill"
+              loading="lazy"
+              className="hidden h-24 w-24 rounded-xl object-cover sm:block"
+            />
+            <div className="rounded-xl bg-sand p-4">
+              <p className="font-display text-xs font-bold tracking-[0.1em] uppercase">Srinivas R.</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                &ldquo;Six weeks after my procedure I walked my daughter down the aisle.&rdquo;
+              </p>
+            </div>
+            <img
+              src={images.procedureSuite}
+              alt="The image-guided procedure suite at Thrive"
+              loading="lazy"
+              className="hidden h-24 w-24 rounded-xl object-cover sm:block"
+            />
+          </div>
+        </Reveal>
+      </section>
+
+      {/* About */}
+      <section className="container-x py-16 text-center sm:py-24">
+        <Reveal>
+          <span className="eyebrow">About our clinic</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-4xl">
+            Your journey begins with a thorough evaluation by a pain physician who explains exactly what is causing it.
+          </h2>
+        </Reveal>
+
+        <Reveal delay={100} className="mt-12">
+          <img
+            src={images.procedureSuite}
+            alt="Image-guided procedure being performed in the Thrive interventional suite"
+            loading="lazy"
+            width={1280}
+            height={720}
+            className="aspect-16/9 w-full rounded-2xl object-cover"
+          />
+        </Reveal>
+
+        <div className="mt-12 grid gap-8 text-left sm:grid-cols-3">
+          {pillars.map((pillar, index) => (
+            <Reveal key={pillar.title} delay={index * 90}>
+              <h3 className="display-md">{pillar.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pillar.detail}</p>
+            </Reveal>
+          ))}
         </div>
       </section>
 
-      <section className="container-x py-20 sm:py-24">
-        <Reveal className="max-w-3xl">
-          <span className="eyebrow">Our expertise</span>
-          <h2 className="display-lg mt-6">
-            Seven departments, one plan,
-            <span className="script-accent lowercase"> one building.</span>
+      {/* Insurer marquee */}
+      <section className="border-y border-border py-8">
+        <Marquee
+          items={insurers}
+          slow
+          className="font-display text-lg font-bold tracking-tight text-deep/60 uppercase sm:text-xl"
+        />
+      </section>
+
+      {/* Services */}
+      <section className="container-x py-16 sm:py-24">
+        <Reveal className="text-center">
+          <span className="eyebrow">Our services</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-3xl">
+            We believe every patient deserves focused, compassionate care.
           </h2>
-          <p className="mt-5 text-muted-foreground">
-            Diagnosis, intervention and recovery are handled by the same team — so nothing is lost between referrals.
-          </p>
         </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -133,7 +185,7 @@ function Home() {
               <Link
                 to="/services/$slug"
                 params={{ slug: service.slug }}
-                className="card-soft group flex h-full flex-col overflow-hidden"
+                className="group relative block h-full overflow-hidden rounded-2xl"
               >
                 <img
                   src={service.image}
@@ -141,14 +193,267 @@ function Home() {
                   loading="lazy"
                   width={1024}
                   height={768}
+                  className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span className="absolute inset-0 bg-gradient-to-t from-[oklch(0.2_0.03_158)] via-transparent to-transparent opacity-90" />
+                <span className="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-lg bg-deep text-deep-foreground">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                </span>
+                <span className="absolute inset-x-0 bottom-0 p-5 text-deep-foreground">
+                  <span className="display-md block">{service.title}</span>
+                  <span className="mt-2 block text-xs leading-relaxed opacity-85">{service.short}</span>
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="overflow-hidden bg-deep py-6 text-deep-foreground">
+        <Marquee
+          items={services.map((service) => service.title)}
+          className="font-display text-3xl font-bold uppercase sm:text-5xl"
+        />
+      </section>
+
+      {/* Why choose us */}
+      <section className="bg-sand">
+        <div className="container-x py-16 sm:py-24">
+          <Reveal className="text-center">
+            <span className="eyebrow !bg-card">Why choose us</span>
+            <h2 className="display-lg mx-auto mt-6 max-w-3xl">
+              Get back to your life safely with a customised recovery plan.
+            </h2>
+          </Reveal>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
+            <div className="grid gap-5 sm:grid-cols-2">
+              <Reveal className="card-flat p-6">
+                <p className="text-xs text-muted-foreground">Measured outcomes across 12 months</p>
+                <div className="mt-6 flex h-40 items-end gap-3">
+                  {recoveryBars.map((bar, index) => (
+                    <div key={bar.label} className="flex flex-1 flex-col items-center gap-2">
+                      <div
+                        className="w-full rounded-t-md bg-deep transition-[height] duration-1000"
+                        style={{
+                          height: `${bar.value}%`,
+                          background: index % 2 === 0 ? "var(--deep)" : "var(--lime)",
+                        }}
+                      />
+                      <span className="font-display text-xs font-bold">{bar.value}%</span>
+                    </div>
+                  ))}
+                </div>
+                <h3 className="display-md mt-6">Support for spine, joint and nerve pain</h3>
+              </Reveal>
+
+              <Reveal delay={90} className="card-flat flex flex-col justify-between p-6">
+                <h3 className="display-md">
+                  Track your recovery plan, sessions and reports from your phone.
+                </h3>
+                <div className="mt-8 flex items-center gap-4">
+                  <a
+                    href={whatsappLink("Hello Thrive, please send me my recovery plan updates.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackEvent("whatsapp_click", { location: "why_choose_us" })}
+                    className="btn btn-primary"
+                  >
+                    Get updates
+                  </a>
+                  <div className="grid h-16 w-16 shrink-0 grid-cols-4 gap-0.5 rounded-md bg-card p-1" aria-hidden="true">
+                    {Array.from({ length: 16 }).map((_, index) => (
+                      <span
+                        key={index}
+                        className={index % 3 === 0 || index % 7 === 0 ? "bg-deep" : "bg-transparent"}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={140} className="card-flat p-6 sm:col-span-2">
+                <div className="grid gap-4 sm:grid-cols-3">
+                  {[images.diagnostics, images.physio, images.wellness].map((image, index) => (
+                    <img
+                      key={index}
+                      src={image}
+                      alt="Care in progress at Thrive Pain & Wellness Clinic"
+                      loading="lazy"
+                      className="aspect-4/3 w-full rounded-xl object-cover"
+                    />
+                  ))}
+                </div>
+                <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+                  <p className="text-sm text-muted-foreground">
+                    Diagnostics, rehabilitation and recovery therapy, all in one building.
+                  </p>
+                  <Link to="/services" className="btn btn-outline">
+                    Explore services
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+
+            <Reveal delay={200}>
+              <img
+                src={images.wellness}
+                alt="A patient receiving manual therapy in a private treatment room"
+                loading="lazy"
+                className="h-full min-h-[320px] w-full rounded-2xl object-cover"
+              />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="container-x py-16 sm:py-24">
+        <Reveal className="text-center">
+          <span className="eyebrow">Testimonials</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-3xl">What our patients say about working with us.</h2>
+        </Reveal>
+
+        <div className="mt-12 space-y-5">
+          {testimonials.map((item, index) => (
+            <Reveal key={item.name} delay={index * 80}>
+              <button
+                type="button"
+                onClick={() => setActiveTestimonial(index)}
+                className={`card-flat grid w-full gap-6 p-5 text-left transition-colors sm:grid-cols-[160px_1fr_auto] sm:items-center ${
+                  activeTestimonial === index ? "border-deep/40" : ""
+                }`}
+              >
+                <img
+                  src={carousel[index % carousel.length]}
+                  alt=""
+                  loading="lazy"
+                  className="aspect-4/3 w-full rounded-xl object-cover"
+                />
+                <div>
+                  <p className="text-sm leading-relaxed">&ldquo;{item.quote}&rdquo;</p>
+                  <p className="mt-4 font-display text-xs font-bold tracking-[0.1em] uppercase">{item.name}</p>
+                  <p className="text-xs text-muted-foreground">{item.detail}</p>
+                </div>
+                <div className="border-border pl-0 sm:border-l sm:pl-8">
+                  <p className="font-display text-4xl font-bold">99%</p>
+                  <p className="text-xs text-muted-foreground">Would recommend</p>
+                </div>
+              </button>
+            </Reveal>
+          ))}
+        </div>
+
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          Currently reading: <span className="font-semibold text-deep">{testimonial.name}</span>
+        </p>
+      </section>
+
+      {/* Experience + carousel */}
+      <section className="bg-sand">
+        <div className="container-x grid items-center gap-10 py-16 lg:grid-cols-2 sm:py-24">
+          <Reveal>
+            <span className="eyebrow !bg-card">Experience</span>
+            <h2 className="display-lg mt-6">With 15 years of experience treating patients of all ages</h2>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
+              Our physicians hold interventional pain fellowships and perform every procedure themselves. Nothing is
+              delegated, and every plan is signed off by a doctor.
+            </p>
+            <Link to="/book" className="btn btn-primary mt-8">
+              Book your session today
+            </Link>
+          </Reveal>
+
+          <Reveal delay={120} className="relative">
+            <div className="grid grid-cols-2 gap-3">
+              {[carousel[slide % carousel.length]!, carousel[(slide + 1) % carousel.length]!].map((image, index) => (
+                <img
+                  key={`${image}-${index}`}
+                  src={image}
+                  alt="Therapy in progress at Thrive Pain & Wellness Clinic"
+                  loading="lazy"
+                  className="aspect-3/4 w-full rounded-2xl object-cover"
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              aria-label="Previous images"
+              onClick={() => setSlide((value) => (value + carousel.length - 1) % carousel.length)}
+              className="absolute top-1/2 left-2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-card/90 text-deep shadow-soft"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="m14 6-6 6 6 6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              aria-label="Next images"
+              onClick={() => setSlide((value) => (value + 1) % carousel.length)}
+              className="absolute top-1/2 right-2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-card/90 text-deep shadow-soft"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="m10 6 6 6-6 6" />
+              </svg>
+            </button>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Fun facts */}
+      <section className="container-x py-16 text-center sm:py-24">
+        <Reveal>
+          <span className="eyebrow">Fun facts</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-3xl">
+            A safe, professional environment equipped with modern facilities and evidence-based techniques.
+          </h2>
+        </Reveal>
+        <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {funFacts.map((fact, index) => (
+            <Reveal key={fact.label} delay={index * 80}>
+              <dt className="font-display text-4xl font-bold text-deep">{fact.value}</dt>
+              <dd className="mx-auto mt-2 max-w-[15rem] text-xs text-muted-foreground">{fact.label}</dd>
+            </Reveal>
+          ))}
+        </dl>
+      </section>
+
+      <ContactSection />
+
+      {/* Blog */}
+      <section className="container-x py-16 sm:py-24">
+        <Reveal className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <span className="eyebrow">From the journal</span>
+            <h2 className="display-lg mt-6 max-w-2xl">Insight our clinicians actually stand behind.</h2>
+          </div>
+          <Link to="/blog" className="btn btn-outline">
+            All articles
+          </Link>
+        </Reveal>
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.map((post, index) => (
+            <Reveal key={post.slug} delay={index * 80}>
+              <Link
+                to="/blog/$slug"
+                params={{ slug: post.slug }}
+                className="card-soft flex h-full flex-col overflow-hidden"
+              >
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  loading="lazy"
                   className="aspect-16/10 w-full object-cover"
                 />
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-lg font-semibold">{service.title}</h3>
-                  <p className="mt-3 flex-1 text-sm text-muted-foreground">{service.short}</p>
-                  <span className="mt-5 text-xs font-semibold tracking-[0.16em] text-primary uppercase">
-                    Explore →
-                  </span>
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="display-md">{post.title}</h3>
+                  <p className="mt-3 flex-1 text-sm text-muted-foreground">{post.excerpt}</p>
+                  <p className="mt-5 border-t border-border pt-4 text-xs text-muted-foreground">
+                    {post.author} · {post.displayDate}
+                  </p>
                 </div>
               </Link>
             </Reveal>
@@ -156,115 +461,11 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-sand">
-        <div className="container-x grid gap-10 py-20 lg:grid-cols-2 lg:items-center sm:py-24">
-          <Reveal>
-            <img
-              src={images.reception}
-              alt="The Thrive reception and waiting lounge in teal and off-white tones"
-              loading="lazy"
-              width={1280}
-              height={853}
-              className="aspect-3/2 w-full rounded-[2rem] object-cover"
-            />
-          </Reveal>
-          <Reveal delay={100}>
-            <span className="eyebrow">Trust, in the open</span>
-            <h2 className="display-lg mt-6">Credentials first, always.</h2>
-            <ul className="mt-8 space-y-5">
-              {[
-                {
-                  title: "MD pain physicians with interventional fellowships",
-                  detail: "Procedures are performed by fellowship-trained pain physicians — never delegated.",
-                },
-                {
-                  title: "In-house diagnostics with same-visit answers",
-                  detail: "Lab, digital X-ray, ultrasound and C-arm fluoroscopy inside the facility.",
-                },
-                {
-                  title: "Written estimates and named insurers",
-                  detail: "You know your co-pay and your covered amount before you consent.",
-                },
-              ].map((item) => (
-                <li key={item.title} className="flex gap-4">
-                  <span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-deep text-deep-foreground">
-                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="3">
-                      <path d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <span>
-                    <span className="block font-semibold">{item.title}</span>
-                    <span className="mt-1 block text-sm text-muted-foreground">{item.detail}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <Link to="/doctors" className="btn btn-outline mt-8">
-              Meet the team
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="container-x py-20 sm:py-24">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow">Patient outcomes</span>
-          <h2 className="display-lg mt-6">
-            What life after pain
-            <span className="script-accent lowercase"> sounds like.</span>
-          </h2>
-        </Reveal>
-        <Reveal delay={80} className="card-soft mx-auto mt-12 max-w-3xl p-7 sm:p-10">
-          <p className="font-serif text-xl leading-relaxed sm:text-2xl">"{testimonial.quote}"</p>
-          <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <p className="font-semibold">{testimonial.name}</p>
-              <p className="text-sm text-muted-foreground">{testimonial.detail}</p>
-            </div>
-            <div className="flex gap-2">
-              {testimonials.map((item, index) => (
-                <button
-                  key={item.name}
-                  type="button"
-                  aria-label={`Show testimonial from ${item.name}`}
-                  aria-current={index === active}
-                  onClick={() => setActive(index)}
-                  className={`h-11 w-11 rounded-full border text-sm font-semibold transition-colors ${
-                    index === active ? "border-deep bg-deep text-deep-foreground" : "border-border bg-card"
-                  }`}
-                >
-                  {index + 1}
-                </button>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
-      <section className="container-x grid gap-10 pb-20 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-        <Reveal>
-          <span className="eyebrow">Quick enquiry</span>
-          <h2 className="display-lg mt-6">Not sure which department you need?</h2>
-          <p className="mt-5 text-muted-foreground">
-            Describe your pain in a line. A physician-side coordinator reads it and calls you back with the right next
-            step — consultation, diagnostics or therapy.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <a
-              href={clinic.phoneHref}
-              onClick={() => trackEvent("phone_click", { location: "home_inquiry" })}
-              className="btn btn-outline"
-            >
-              Call {clinic.phone}
-            </a>
-          </div>
-        </Reveal>
-        <Reveal delay={100}>
-          <LeadForm mode="inquiry" />
-        </Reveal>
-      </section>
-
       <ClosingCta />
+
+      <p className="sr-only">
+        {clinic.name}, {clinic.address}. {clinic.brandLine}
+      </p>
     </>
   );
 }
