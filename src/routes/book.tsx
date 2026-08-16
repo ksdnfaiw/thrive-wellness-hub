@@ -29,8 +29,7 @@ function Book() {
         <Reveal>
           <span className="eyebrow">Book an appointment</span>
           <h1 className="display-xl mt-6">
-            Four fields.
-            <span className="script-accent lowercase"> one call back.</span>
+            Four fields. <span className="text-deep/60">One call back.</span>
           </h1>
           <p className="mt-6 text-muted-foreground">
             Choose a date and a time window. Our care team confirms your slot by phone or WhatsApp, usually within one
