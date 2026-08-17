@@ -122,7 +122,7 @@ function Contact() {
             <iframe
               title={`Map showing the location of ${clinic.name}`}
               src={mapEmbedUrl}
-              loading="lazy" decoding="async"
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-[320px] w-full border-0"
             />
