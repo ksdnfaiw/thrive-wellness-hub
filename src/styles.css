@@ -344,11 +344,10 @@
   @media (min-width: 1180px) {
     body {
       background: var(--color-deep);
+      padding: 0.85rem;
     }
     .page-shell {
-      margin: 0.75rem auto;
-      max-width: 96rem;
-      border-radius: 2rem;
+      border-radius: 1.75rem;
       box-shadow: 0 40px 90px -50px oklch(0.14 0.03 158 / 0.65);
     }
   }
