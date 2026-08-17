@@ -103,7 +103,7 @@ function Home() {
           </div>
         </Reveal>
 
-        <Reveal delay={120}>
+        <Reveal delay={120} variant="scale">
           <img
             src={images.hero}
             alt="A pain physician assessing a patient's knee in a calm, sunlit treatment room"
@@ -145,7 +145,7 @@ function Home() {
           </h2>
         </Reveal>
 
-        <Reveal delay={100} className="mt-12">
+        <Reveal delay={100} variant="clip" className="mt-12">
           <img
             src={images.procedureSuite}
             alt="Image-guided procedure being performed in the Thrive interventional suite"
@@ -158,7 +158,7 @@ function Home() {
 
         <div className="mt-12 grid gap-8 text-left sm:grid-cols-3">
           {pillars.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 90}>
+            <Reveal key={pillar.title} delay={index * 90} variant="up">
               <h3 className="display-md">{pillar.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pillar.detail}</p>
             </Reveal>
@@ -186,7 +186,7 @@ function Home() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <Reveal key={service.slug} delay={index * 60}>
+            <Reveal key={service.slug} delay={index * 60} variant="clip">
               <Link
                 to="/services/$slug"
                 params={{ slug: service.slug }}
@@ -323,7 +323,7 @@ function Home() {
 
         <div className="mt-12 space-y-5">
           {testimonials.map((item, index) => (
-            <Reveal key={item.name} delay={index * 80}>
+            <Reveal key={item.name} delay={index * 80} variant="scale">
               <button
                 type="button"
                 onClick={() => setActiveTestimonial(index)}
@@ -371,7 +371,7 @@ function Home() {
             </Link>
           </Reveal>
 
-          <Reveal delay={120} className="relative">
+          <Reveal delay={120} variant="clip" className="relative">
             <div className="grid grid-cols-2 gap-3">
               {[carousel[slide % carousel.length]!, carousel[(slide + 1) % carousel.length]!].map((image, index) => (
                 <img
@@ -417,7 +417,7 @@ function Home() {
         </Reveal>
         <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {funFacts.map((fact, index) => (
-            <Reveal key={fact.label} delay={index * 80}>
+            <Reveal key={fact.label} delay={index * 80} variant="up">
               <dt className="font-display text-4xl font-bold text-deep">{fact.value}</dt>
               <dd className="mx-auto mt-2 max-w-[15rem] text-xs text-muted-foreground">{fact.label}</dd>
             </Reveal>
@@ -441,7 +441,7 @@ function Home() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
-            <Reveal key={post.slug} delay={index * 80}>
+            <Reveal key={post.slug} delay={index * 80} variant="clip">
               <Link
                 to="/blog/$slug"
                 params={{ slug: post.slug }}

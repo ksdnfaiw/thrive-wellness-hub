@@ -338,7 +338,7 @@
   /* Rounded content sheet floating over the deep-green frame, as in the reference. */
   .page-shell {
     background: var(--color-background);
-    overflow: clip;
+    overflow-x: clip;
   }
 
   @media (min-width: 1180px) {
