@@ -239,18 +239,21 @@ function Home() {
                 <p className="text-xs text-muted-foreground">Measured outcomes across 12 months</p>
                 <div className="mt-6 flex h-40 items-end gap-3">
                   {recoveryBars.map((bar, index) => (
-                    <div key={bar.label} className="flex flex-1 flex-col items-center gap-2">
+                    <div key={bar.label} className="flex h-full flex-1 flex-col justify-end gap-2">
                       <div
-                        className="w-full rounded-t-md bg-deep transition-[height] duration-1000"
+                        className="bar-grow w-full rounded-t-md"
                         style={{
                           height: `${bar.value}%`,
                           background: index % 2 === 0 ? "var(--deep)" : "var(--lime)",
+                          transitionDelay: `${index * 110}ms`,
                         }}
+                        title={bar.label}
                       />
-                      <span className="font-display text-xs font-bold">{bar.value}%</span>
+                      <span className="text-center font-display text-xs font-bold">{bar.value}%</span>
                     </div>
                   ))}
                 </div>
+
                 <h3 className="display-md mt-6">Support for spine, joint and nerve pain</h3>
               </Reveal>
 
