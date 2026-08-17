@@ -17,6 +17,22 @@ export function Reveal({
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+
+    // No animation for reduced-motion users, and no observer cost either.
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !("IntersectionObserver" in window)) {
+      setShown(true);
+      return;
+    }
+
+    // Anything already in the first viewport reveals immediately: avoids a
+    // one-frame flash and keeps the LCP element paint-stable.
+    const rect = node.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.9) {
+      setShown(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -26,7 +42,7 @@ export function Reveal({
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
@@ -35,7 +51,7 @@ export function Reveal({
   return (
     <Tag
       ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={shown ? undefined : { transitionDelay: `${delay}ms` }}
       className={`reveal ${shown ? "reveal-in" : ""} ${className}`}
     >
       {children}

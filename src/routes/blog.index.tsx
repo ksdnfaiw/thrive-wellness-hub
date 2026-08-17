@@ -41,7 +41,7 @@ function BlogIndex() {
                 params={{ slug: post.slug }}
                 className="card-soft flex h-full flex-col overflow-hidden"
               >
-                <img src={post.image} alt={post.title} loading="lazy" className="aspect-16/10 w-full object-cover" />
+                <img src={post.image} alt={post.title} loading="lazy" decoding="async" className="aspect-16/10 w-full object-cover" />
                 <div className="flex flex-1 flex-col p-5">
                   <h2 className="display-md">{post.title}</h2>
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">{post.excerpt}</p>

@@ -32,7 +32,7 @@
   --color-ring: var(--ring);
   --color-sand: var(--sand);
   --font-display: "Archivo Narrow", "Archivo", sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Instrument Sans", "Inter", system-ui, sans-serif;
   --shadow-soft: 0 30px 70px -40px color-mix(in oklab, var(--deep) 45%, transparent);
   --shadow-lift: 0 18px 40px -28px color-mix(in oklab, var(--deep) 55%, transparent);
 }
@@ -73,6 +73,9 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    font-size: 16.5px;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
   }
   h1,
   h2,

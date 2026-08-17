@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { clinic, services } from "@/lib/site-data";
+import { Logo } from "@/components/Logo";
+
 
 const primaryNav = [
   { label: "Home", to: "/" },
@@ -48,11 +50,8 @@ export function Header() {
           }`}
         >
           <Link to="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-deep text-deep-foreground">
-              <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
-                <path d="M12 2 4 12l8 10 8-10Zm0 5.4 4 4.6-4 5.4-4-5.4Z" />
-              </svg>
-            </span>
+            <Logo className="h-8 w-8" />
+
             <span className="min-w-0">
               <span className="block truncate font-display text-base font-bold tracking-tight uppercase">Thrive</span>
               <span className="block text-[9px] tracking-[0.2em] text-muted-foreground uppercase">Pain & Wellness</span>

@@ -35,7 +35,10 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preload", as: "image", href: images.hero, fetchPriority: "high" },
+    ],
   }),
   component: Home,
 });
@@ -104,6 +107,8 @@ function Home() {
           <img
             src={images.hero}
             alt="A pain physician assessing a patient's knee in a calm, sunlit treatment room"
+            fetchPriority="high"
+            decoding="async"
             width={1280}
             height={1024}
             className="aspect-4/3 w-full rounded-2xl object-cover"
@@ -112,7 +117,7 @@ function Home() {
             <img
               src={images.physio}
               alt="Physiotherapist guiding a patient through a movement drill"
-              loading="lazy"
+              loading="lazy" decoding="async"
               className="hidden h-24 w-24 rounded-xl object-cover sm:block"
             />
             <div className="rounded-xl bg-sand p-4">
@@ -124,7 +129,7 @@ function Home() {
             <img
               src={images.procedureSuite}
               alt="The image-guided procedure suite at Thrive"
-              loading="lazy"
+              loading="lazy" decoding="async"
               className="hidden h-24 w-24 rounded-xl object-cover sm:block"
             />
           </div>
@@ -144,7 +149,7 @@ function Home() {
           <img
             src={images.procedureSuite}
             alt="Image-guided procedure being performed in the Thrive interventional suite"
-            loading="lazy"
+            loading="lazy" decoding="async"
             width={1280}
             height={720}
             className="aspect-16/9 w-full rounded-2xl object-cover"
@@ -190,7 +195,7 @@ function Home() {
                 <img
                   src={service.image}
                   alt={service.title}
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   width={1024}
                   height={768}
                   className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -281,7 +286,7 @@ function Home() {
                       key={index}
                       src={image}
                       alt="Care in progress at Thrive Pain & Wellness Clinic"
-                      loading="lazy"
+                      loading="lazy" decoding="async"
                       className="aspect-4/3 w-full rounded-xl object-cover"
                     />
                   ))}
@@ -301,7 +306,7 @@ function Home() {
               <img
                 src={images.wellness}
                 alt="A patient receiving manual therapy in a private treatment room"
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full min-h-[320px] w-full rounded-2xl object-cover"
               />
             </Reveal>
@@ -329,7 +334,7 @@ function Home() {
                 <img
                   src={carousel[index % carousel.length]}
                   alt=""
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="aspect-4/3 w-full rounded-xl object-cover"
                 />
                 <div>
@@ -373,7 +378,7 @@ function Home() {
                   key={`${image}-${index}`}
                   src={image}
                   alt="Therapy in progress at Thrive Pain & Wellness Clinic"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="aspect-3/4 w-full rounded-2xl object-cover"
                 />
               ))}
@@ -445,7 +450,7 @@ function Home() {
                 <img
                   src={post.image}
                   alt={post.title}
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="aspect-16/10 w-full object-cover"
                 />
                 <div className="flex flex-1 flex-col p-5">

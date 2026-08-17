@@ -65,7 +65,7 @@ function About() {
           <img
             src={images.wellness}
             alt="A quiet wellness therapy room with soft linens and teal walls"
-            loading="lazy"
+            loading="lazy" decoding="async"
             width={1024}
             height={1280}
             className="aspect-4/5 w-full rounded-[2rem] object-cover"
@@ -117,7 +117,7 @@ function About() {
               <img
                 src={item.src}
                 alt={item.alt}
-                loading="lazy"
+                loading="lazy" decoding="async"
                 width={1024}
                 height={768}
                 className="aspect-4/3 w-full rounded-3xl object-cover"
