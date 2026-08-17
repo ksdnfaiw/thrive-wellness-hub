@@ -45,7 +45,7 @@ function ServicesHub() {
                 <img
                   src={service.image}
                   alt={service.title}
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   width={1024}
                   height={768}
                   className="aspect-16/10 w-full object-cover"

@@ -50,7 +50,7 @@ function Gallery() {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   width={item.w}
                   height={item.h}
                   className="aspect-4/3 w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
