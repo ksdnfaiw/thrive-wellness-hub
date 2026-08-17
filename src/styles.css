@@ -321,6 +321,17 @@
     transition-delay: 0.5s;
   }
 
+  /* Chart bars grow up once their card reveals. */
+  .bar-grow {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.reveal-in .bar-grow {
+    transform: scaleY(1);
+  }
+
   .marquee-track {
     display: flex;
     width: max-content;
@@ -379,7 +390,8 @@
   }
   .reveal,
   .reveal > *,
-  .reveal-stagger > * {
+  .reveal-stagger > *,
+  .bar-grow {
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;
