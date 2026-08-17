@@ -17,7 +17,7 @@ export function PageHero({
   return (
     <section className="bg-secondary/60">
       <div className="container-x py-16 sm:py-20 lg:py-24">
-        <Reveal>
+        <Reveal variant="stagger">
           <span className="eyebrow">{eyebrow}</span>
           <h1 className="display-xl mt-6 max-w-4xl">
             {title}
