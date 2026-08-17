@@ -378,4 +378,11 @@
   .marquee-track {
     animation: none;
   }
+  .reveal,
+  .reveal > *,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
 }
