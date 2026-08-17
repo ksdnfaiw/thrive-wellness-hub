@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { clinic } from "@/lib/site-data";
 
 function NotFoundComponent() {
@@ -171,12 +172,15 @@ function RootComponent() {
       >
         Skip to content
       </a>
-      <Header />
-      <main id="main">
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </main>
-      <Footer />
+      <SmoothScroll />
+      <div className="page-shell">
+        <Header />
+        <main id="main">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
       <WhatsAppFloat />
     </QueryClientProvider>
   );
