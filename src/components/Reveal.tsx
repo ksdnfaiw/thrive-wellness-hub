@@ -1,14 +1,18 @@
 import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
 
+export type RevealVariant = "up" | "clip" | "scale" | "fade" | "stagger";
+
 export function Reveal({
   children,
   as: Tag = "div",
   delay = 0,
+  variant = "up",
   className = "",
 }: {
   children: ReactNode;
   as?: ElementType;
   delay?: number;
+  variant?: RevealVariant;
   className?: string;
 }) {
   const ref = useRef<HTMLElement | null>(null);
@@ -42,7 +46,7 @@ export function Reveal({
           }
         }
       },
-      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -8% 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
@@ -52,7 +56,7 @@ export function Reveal({
     <Tag
       ref={ref}
       style={shown ? undefined : { transitionDelay: `${delay}ms` }}
-      className={`reveal ${shown ? "reveal-in" : ""} ${className}`}
+      className={`reveal reveal-${variant} ${shown ? "reveal-in" : ""} ${className}`}
     >
       {children}
     </Tag>
