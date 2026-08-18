@@ -11,19 +11,20 @@ export const clinic = {
   name: "Thrive Pain & Wellness Clinic",
   brandLine: "Heal. Restore. Thrive.",
   tagline: "Your pain ends here. Your life begins.",
-  phone: "+91 90000 00000",
-  phoneHref: "tel:+919000000000",
-  whatsapp: "919000000000",
-  email: "care@thrivepainwellness.in",
-  address: "Road No. 12, Banjara Hills, Hyderabad, Telangana 500034",
-  mapsQuery: "Banjara Hills, Hyderabad, Telangana 500034",
+  phone: "+91 934 716 4263",
+  phoneHref: "tel:+919347164263",
+  whatsapp: "919347164263",
+  email: "dheerajpaincarecentre@gmail.com",
+  address: "Habsiguda, Hyderabad, Telangana",
+  mapsQuery: "Habsiguda, Hyderabad, Telangana",
+  hoursNote: "Clinic timings to be confirmed and displayed here.",
   hours: [
-    { days: "Monday – Saturday", time: "9:00 AM – 8:00 PM" },
-    { days: "Sunday", time: "10:00 AM – 2:00 PM (by appointment)" },
+    { days: "Monday to Saturday", time: "Timings to be confirmed" },
+    { days: "Sunday", time: "By appointment" },
   ],
 };
 
-export const whatsappLink = (message = "Hello Thrive, I'd like to book an appointment.") =>
+export const whatsappLink = (message = "Hello Thrive, I would like to book an appointment.") =>
   `https://wa.me/${clinic.whatsapp}?text=${encodeURIComponent(message)}`;
 
 export const images = {
@@ -50,318 +51,375 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "interventional-procedures",
-    title: "Interventional Procedures",
-    short: "Physician-led, image-guided procedures that target pain at its source.",
+    title: "Interventional Pain Procedures",
+    short: "Advanced, minimally invasive treatments that target specific sources of chronic pain with precision.",
     intro:
-      "Our interventional suite covers neuromodulation, epiduroplasty, regenerative therapies, radiofrequency ablation (RFA), cryotherapy and ultrasound-guided injections — all performed by pain physicians under image guidance in a dedicated procedure room.",
+      "When pain continues despite conventional treatment, interventional pain management can offer targeted, minimally invasive options. Every procedure begins with appropriate assessment and diagnosis, followed by a treatment plan tailored to the individual.",
     image: procedureSuite,
     highlights: [
-      "Neuromodulation & spinal cord stimulation",
-      "Epiduroplasty for spinal adhesions",
-      "Regenerative therapies (PRP, prolotherapy)",
-      "Radiofrequency ablation (RFA)",
-      "Cryotherapy for nerve pain",
-      "Ultrasound-guided injections",
+      "Neuromodulation: techniques that work on pain signalling pathways for selected chronic pain conditions",
+      "Epiduroplasty: a minimally invasive option for selected spinal conditions",
+      "Regenerative therapies: approaches that support the body's natural healing where clinically appropriate",
+      "Radiofrequency Ablation (RFA): controlled radiofrequency energy to reduce pain signals from specific nerves",
+      "Cryotherapy: controlled cold-based techniques for selected pain-management applications",
+      "Ultrasound-guided injections: image guidance for precise delivery of treatment",
     ],
     journey: [
       {
         stage: "Diagnosis",
         detail:
-          "A detailed pain history, clinical examination and in-house imaging pinpoint the exact pain generator before anything is planned.",
+          "We begin by understanding the condition, your history and how it affects daily life, then identify the most appropriate treatment approach.",
       },
       {
-        stage: "Procedure",
+        stage: "Treatment",
         detail:
-          "The targeted intervention is performed under fluoroscopy or ultrasound guidance — most are day-care, needing only local anaesthesia.",
+          "Where an intervention is recommended, the procedure is planned with precision and explained clearly before treatment.",
       },
       {
         stage: "Recovery",
         detail:
-          "You go home the same day with a written recovery plan, physiotherapy handover and scheduled review calls from our care team.",
+          "Recovery and rehabilitation are considered part of the wider care journey, with support from physiotherapy and our wider team.",
       },
     ],
   },
   {
     slug: "diagnostics-and-imaging",
     title: "Diagnostics & Imaging",
-    short: "In-house lab, digital X-ray, ultrasound and fluoroscopy — answers the same day.",
+    short: "In-house diagnostic and imaging capabilities that support accurate assessment and treatment planning.",
     intro:
-      "Diagnosis should not mean three visits to three centres. Our in-house lab, digital X-ray, ultrasound and C-arm fluoroscopy let your physician confirm the source of pain during the same visit.",
+      "Accurate diagnosis is the foundation of effective pain management. Thrive provides in-house diagnostic and imaging support to help our clinical team assess conditions and plan appropriate treatment.",
     image: diagnosticsImg,
     highlights: [
-      "In-house pathology lab",
-      "Digital X-ray (low dose)",
-      "Diagnostic & interventional ultrasound",
-      "Fluoroscopy (C-arm) guided assessment",
+      "In-house laboratory for convenient access to diagnostic services",
+      "Digital X-ray for evaluating bones, joints and other relevant structures",
+      "Ultrasound for real-time assessment and selected image-guided procedures",
+      "Fluoroscopy and C-arm imaging support for precise interventional procedures",
     ],
     journey: [
-      { stage: "Diagnosis", detail: "Tests are ordered and run within the facility, usually within the hour." },
-      { stage: "Procedure", detail: "Imaging is reviewed with you on screen so you understand what is causing the pain." },
-      { stage: "Recovery", detail: "Reports stay on your file and guide every follow-up across our departments." },
+      { stage: "Assessment", detail: "Your physician identifies which investigations are relevant to your condition." },
+      { stage: "Imaging", detail: "Tests are carried out within the facility and reviewed with you." },
+      { stage: "Decisions", detail: "Findings inform the treatment plan and stay on your record for follow-up." },
     ],
   },
   {
     slug: "physiotherapy-and-rehabilitation",
     title: "Physiotherapy & Rehabilitation",
-    short: "One-to-one rehab that protects the result of your procedure.",
+    short: "Personalised programs designed to restore movement, strength, function and confidence.",
     intro:
-      "Interventional relief lasts when movement is rebuilt. Our physiotherapists work in the same building as your pain physician, so your rehab plan is written around your procedure — not guessed at.",
+      "Pain relief is only one part of recovery. Our personalised physiotherapy and rehabilitation programs help restore movement, improve strength, rebuild function and support your return to everyday activities. Your program is adapted to your condition, physical capacity and recovery goals.",
     image: physioImg,
     highlights: [
-      "Post-procedure rehabilitation",
-      "Manual therapy & dry needling",
-      "Posture and gait correction",
-      "Sports and workplace injury recovery",
-      "Home programme with progress reviews",
+      "Restoring mobility",
+      "Improving strength",
+      "Building functional movement",
+      "Supporting recovery after treatment",
+      "Improving confidence in movement",
+      "Reducing the impact of recurring pain",
     ],
     journey: [
-      { stage: "Assessment", detail: "Movement screening and strength testing establish your baseline." },
-      { stage: "Programme", detail: "Supervised one-to-one sessions with measurable weekly goals." },
-      { stage: "Maintenance", detail: "A home programme and periodic reviews keep gains long-term." },
+      { stage: "Assessment", detail: "Movement and strength are assessed to establish your starting point." },
+      { stage: "Program", detail: "Guided sessions with clear, progressive goals suited to your capacity." },
+      { stage: "Maintenance", detail: "A home program and reviews help protect your progress over time." },
     ],
   },
   {
     slug: "psychology-and-mental-wellness",
     title: "Psychology & Mental Wellness",
-    short: "Clinical psychology support for the emotional weight of chronic pain.",
+    short: "Professional support recognising the connection between chronic pain, emotional wellbeing and quality of life.",
     intro:
-      "Chronic pain changes sleep, mood and confidence. Our clinical psychologists offer structured, evidence-based support alongside your medical treatment — quietly, and without judgement.",
+      "Living with persistent pain can affect mood, sleep, confidence, relationships and everyday life. With professional support, patients can develop healthier ways to understand and manage the psychological impact of chronic pain while building greater confidence in their recovery journey.",
     image: psychologyImg,
     highlights: [
-      "Pain-focused CBT",
-      "Sleep and anxiety management",
-      "Stress and burnout counselling",
-      "Family and caregiver sessions",
+      "Support for the emotional impact of persistent pain",
+      "Strategies for sleep, stress and low mood",
+      "Confidence building through recovery",
+      "Support for families and caregivers",
     ],
     journey: [
       { stage: "Consultation", detail: "A confidential first session to understand your history and goals." },
-      { stage: "Therapy", detail: "A defined number of structured sessions, in person or online." },
-      { stage: "Review", detail: "Progress is reviewed with your pain physician as part of one plan." },
+      { stage: "Support", detail: "Structured sessions delivered alongside your medical treatment." },
+      { stage: "Review", detail: "Progress is reviewed as part of one coordinated care plan." },
     ],
   },
   {
     slug: "nutrition",
     title: "Nutrition",
-    short: "Anti-inflammatory nutrition plans built for Indian kitchens.",
+    short: "Personalised nutritional guidance to support recovery, energy, metabolic health and overall wellbeing.",
     intro:
-      "Weight, inflammation and metabolic health all influence pain. Our clinical nutritionists build practical plans around what you actually eat at home.",
+      "Nutrition plays an important role in overall health, energy, recovery and long-term wellbeing. Our nutrition support focuses on personalised guidance based on your individual needs rather than generic diet plans, making healthier choices practical and sustainable.",
     image: nutritionImg,
     highlights: [
-      "Anti-inflammatory meal planning",
-      "Weight management for joint load",
-      "Diabetes and metabolic support",
-      "Pre- and post-procedure nutrition",
+      "Guidance built around your routine and preferences",
+      "Support for recovery and energy levels",
+      "Weight and metabolic health support",
+      "Practical, sustainable everyday changes",
     ],
     journey: [
-      { stage: "Assessment", detail: "Body composition, labs and a full dietary recall." },
-      { stage: "Plan", detail: "A realistic weekly plan with substitutions for your household." },
-      { stage: "Follow-up", detail: "Fortnightly check-ins to adjust as your body responds." },
+      { stage: "Assessment", detail: "A review of your health, routine and current eating patterns." },
+      { stage: "Plan", detail: "A realistic plan that fits your household and lifestyle." },
+      { stage: "Follow-up", detail: "Regular check-ins to adjust as your needs change." },
     ],
   },
   {
     slug: "wellness-therapies",
     title: "Wellness Therapies",
-    short: "Next-generation recovery therapies in a retreat-calm setting.",
+    short: "Evidence-informed therapies designed to complement clinical care and support recovery and wellbeing.",
     intro:
-      "Recovery therapies that complement medical care — delivered in quiet, private therapy rooms designed to feel nothing like a hospital.",
+      "Our wellness therapies are designed to complement clinical care and support overall wellbeing. They are selected according to individual needs and are intended to complement, not replace, appropriate medical care.",
     image: wellnessImg,
     highlights: [
-      "Therapeutic massage & myofascial release",
-      "Recovery and circulation therapies",
-      "Guided breathwork and relaxation",
-      "Wellness memberships for long-term care",
+      "Ozonation: controlled, medically guided ozone-based approaches where appropriate",
+      "Hydration: therapies that support the body's hydration and recovery needs",
+      "Blood circulation: support for healthy circulation and overall physiological wellbeing",
     ],
     journey: [
-      { stage: "Consultation", detail: "We confirm which therapies are safe and useful for your condition." },
-      { stage: "Session", detail: "45–60 minute sessions in a private, calm therapy suite." },
-      { stage: "Rhythm", detail: "A recommended cadence that fits your treatment stage." },
+      { stage: "Consultation", detail: "We confirm which therapies are safe and suitable for your condition." },
+      { stage: "Session", detail: "Therapies are delivered in a calm, private setting within the clinic." },
+      { stage: "Rhythm", detail: "A recommended cadence that fits your stage of treatment." },
     ],
   },
   {
     slug: "in-house-pharmacy",
     title: "In-House Pharmacy",
-    short: "Prescriptions dispensed before you leave the building.",
+    short: "Convenient access to prescribed medications and healthcare essentials as part of connected care.",
     intro:
-      "Our pharmacy stocks the pain, rehabilitation and wellness medication our clinicians prescribe — so treatment starts the day it is advised.",
+      "Your treatment journey should be simple from consultation to recovery. Our in-house pharmacy provides convenient access to prescribed medications and healthcare essentials, helping keep important parts of your care connected under one roof.",
     image: receptionImg,
     highlights: [
-      "Prescription dispensing on site",
-      "Pharmacist counselling on dosage",
-      "Refill reminders for long-term plans",
-      "Medical supplies and support braces",
+      "Prescribed medication available on site",
+      "Guidance on how and when to take your medication",
+      "Support for ongoing and repeat prescriptions",
+      "Healthcare essentials and supports",
     ],
     journey: [
-      { stage: "Prescription", detail: "Your physician sends the prescription directly to our counter." },
-      { stage: "Dispensing", detail: "A pharmacist explains dosage, timing and interactions." },
-      { stage: "Refills", detail: "Reminders and stock checks for ongoing medication." },
+      { stage: "Prescription", detail: "Your clinician's prescription is shared directly with our pharmacy." },
+      { stage: "Dispensing", detail: "Medication is dispensed with clear instructions before you leave." },
+      { stage: "Continuity", detail: "Ongoing prescriptions are supported as your plan progresses." },
     ],
   },
+];
+
+export const approach = [
+  {
+    step: "01",
+    title: "Understand",
+    detail:
+      "Every journey begins with understanding your pain, your medical history, your lifestyle and how your condition affects your everyday life.",
+  },
+  {
+    step: "02",
+    title: "Treat",
+    detail:
+      "When appropriate, advanced minimally invasive and image-guided interventions are used to target the source of pain with precision.",
+  },
+  {
+    step: "03",
+    title: "Restore",
+    detail:
+      "Pain relief is only part of the journey. Physiotherapy, rehabilitation, psychology and nutrition can help you regain movement, confidence and function.",
+  },
+  {
+    step: "04",
+    title: "Thrive",
+    detail:
+      "The goal is not simply to feel better today. It is to help you build a healthier, more active life beyond pain.",
+  },
+];
+
+export const whyThrive = [
+  {
+    title: "Physician-Led",
+    detail: "Your care is guided by medical expertise, clinical assessment and evidence-informed treatment decisions.",
+  },
+  {
+    title: "Personalised",
+    detail:
+      "There is no one-size-fits-all approach to pain. Your treatment is shaped around your condition, history, needs and goals.",
+  },
+  {
+    title: "Multidisciplinary",
+    detail:
+      "Our integrated approach brings together pain management, physiotherapy, psychology, nutrition and wellness.",
+  },
+  {
+    title: "Advanced",
+    detail:
+      "We combine modern diagnostic capabilities with minimally invasive procedures and contemporary wellness therapies.",
+  },
+  {
+    title: "One Roof",
+    detail:
+      "From diagnosis and treatment to rehabilitation and supportive care, multiple aspects of your healing journey can happen in one place.",
+  },
+  {
+    title: "Designed Around You",
+    detail: "Our goal is not just to reduce pain. It is to help you restore movement, confidence and quality of life.",
+  },
+];
+
+export const philosophy = [
+  {
+    title: "Heal",
+    detail: "Understand the source of your pain and address it with the right clinical approach.",
+  },
+  {
+    title: "Restore",
+    detail:
+      "Rebuild movement, strength, confidence and everyday function through personalised rehabilitation and supportive care.",
+  },
+  {
+    title: "Thrive",
+    detail: "Move beyond simply managing symptoms and work towards a healthier, more active life.",
+  },
+];
+
+export const careModel = [
+  { title: "Pain Management", detail: "Advanced medical assessment and interventional treatments." },
+  { title: "Physiotherapy & Rehabilitation", detail: "Support for movement, strength and recovery." },
+  { title: "Psychology & Mental Wellness", detail: "Care for the emotional and psychological impact of pain." },
+  { title: "Nutrition", detail: "Personalised guidance to support overall health and recovery." },
+  { title: "Wellness Therapies", detail: "Complementary therapies designed to support wellbeing." },
 ];
 
 export const doctors = [
   {
-    name: "Dr. A. Ramesh Kumar",
-    qualifications: "MBBS, MD (Anaesthesiology), Fellowship in Interventional Pain Practice (FIPP)",
-    specialty: "Interventional Pain Physician & Founder",
-    bio: "Fifteen years of image-guided spine and joint intervention, with a focus on neuromodulation and complex failed-back pain.",
-  },
-  {
-    name: "Dr. Sneha Reddy",
-    qualifications: "MBBS, MD (Physical Medicine & Rehabilitation)",
-    specialty: "Rehabilitation Medicine",
-    bio: "Leads post-procedure rehabilitation pathways and functional recovery planning for spine and joint patients.",
-  },
-  {
-    name: "Dr. Faisal Ahmed",
-    qualifications: "MBBS, DA, Fellowship in Regional Anaesthesia & Pain",
-    specialty: "Regenerative & Ultrasound-Guided Therapies",
-    bio: "Focuses on PRP, prolotherapy and ultrasound-guided peripheral nerve interventions.",
-  },
-  {
-    name: "Ms. Anjali Menon",
-    qualifications: "M.Phil (Clinical Psychology), RCI Registered",
-    specialty: "Clinical Psychologist",
-    bio: "Delivers pain-focused CBT, sleep restoration and caregiver counselling for chronic pain families.",
-  },
-  {
-    name: "Mr. Karthik Rao",
-    qualifications: "MPT (Musculoskeletal), Certified Dry Needling Practitioner",
-    specialty: "Senior Physiotherapist",
-    bio: "Ten years in musculoskeletal and sports rehabilitation, with a manual-therapy-first approach.",
-  },
-  {
-    name: "Ms. Divya Shankar",
-    qualifications: "M.Sc (Clinical Nutrition & Dietetics), RD",
-    specialty: "Clinical Nutritionist",
-    bio: "Builds anti-inflammatory and metabolic nutrition plans grounded in regional Indian diets.",
+    name: "Dr. Dheeraj",
+    qualifications: "Qualifications to be displayed as verified by the clinic.",
+    specialty: "Pain Management & Regenerative Medicine",
+    bio: "Dr. Dheeraj leads Thrive's approach to advanced pain management and regenerative care, with a focus on personalised treatment and minimally invasive interventions. His approach combines clinical assessment with modern pain-management techniques to help patients move towards meaningful, sustainable improvement.",
+    experience: "Experience to be displayed as verified by the clinic.",
   },
 ];
 
-export const insurers = [
-  "Star Health & Allied Insurance",
-  "HDFC ERGO General Insurance",
-  "ICICI Lombard",
-  "Niva Bupa Health Insurance",
-  "Care Health Insurance",
-  "Aditya Birla Health Insurance",
-  "TATA AIG General Insurance",
-  "Bajaj Allianz General Insurance",
-  "New India Assurance",
-  "MediAssist TPA",
-  "Paramount Health Services TPA",
-  "Vidal Health TPA",
+export const teamDisciplines = [
+  {
+    title: "Physiotherapy & Rehabilitation",
+    detail: "Professionals focused on restoring movement, strength and function.",
+  },
+  {
+    title: "Psychology & Mental Wellness",
+    detail: "Clinical support for the emotional and psychological dimensions of pain and recovery.",
+  },
+  {
+    title: "Nutrition",
+    detail: "Personalised nutritional guidance supporting recovery and long-term wellbeing.",
+  },
+  {
+    title: "Wellness Team",
+    detail: "Professionals delivering selected wellness therapies as part of an integrated care approach.",
+  },
+];
+
+export const galleryCategories = [
+  { title: "The Clinic", detail: "Explore our 4,000 sq. ft. facility.", image: heroClinic },
+  {
+    title: "Treatment & Procedure Spaces",
+    detail: "A closer look at our clinical environment and procedure setup.",
+    image: procedureSuite,
+  },
+  {
+    title: "Diagnostics & Equipment",
+    detail: "Modern equipment supporting accurate diagnosis and treatment.",
+    image: diagnosticsImg,
+  },
+  {
+    title: "Rehabilitation & Wellness",
+    detail: "Spaces designed to support recovery and wellbeing.",
+    image: physioImg,
+  },
+  { title: "Our Team", detail: "Meet the people behind the Thrive experience.", image: receptionImg },
+];
+
+export const insuranceTrustPoints = [
+  "Empanelled insurers and TPAs",
+  "Cashless support where eligible",
+  "Pre-authorisation assistance",
+  "Clear, upfront billing",
 ];
 
 export const cashlessSteps = [
   {
-    step: "Share your policy",
-    detail: "Send your health card and ID to our insurance desk on WhatsApp or bring them to reception.",
+    step: "Check your coverage",
+    detail: "Share your insurance details with our team so eligibility can be checked.",
   },
   {
-    step: "We raise pre-authorisation",
-    detail: "Our desk files the pre-authorisation request with your insurer or TPA, usually the same working day.",
+    step: "Submit required documents",
+    detail: "Provide the documents required for pre-authorisation and processing.",
   },
   {
-    step: "Approval confirmed",
-    detail: "We share the approved amount, any co-pay, and exactly what you will need to pay before your procedure.",
+    step: "Pre-authorisation",
+    detail: "Our team coordinates with the relevant insurer or TPA for approval where applicable.",
   },
   {
-    step: "Treatment, then settlement",
-    detail: "You are treated cashless where approved; we handle the final bill submission and follow-up with the insurer.",
+    step: "Treatment",
+    detail: "Once the required approval is in place, your treatment can proceed according to the clinical plan.",
+  },
+  {
+    step: "Billing & settlement",
+    detail: "The insurer or TPA settles eligible covered expenses according to the terms of your policy.",
   },
 ];
 
 export const insuranceFaqs = [
   {
-    q: "Are day-care pain procedures covered by insurance?",
-    a: "Most interventional pain procedures are day-care procedures and are covered by many policies. Coverage depends on your policy wording, waiting periods and the specific procedure — our desk confirms this in writing before you proceed.",
+    q: "Do you provide cashless treatment?",
+    a: "Cashless treatment is available for eligible patients under empanelled insurers and TPAs, subject to policy terms and approval.",
   },
   {
-    q: "How long does cashless pre-authorisation take?",
-    a: "Planned procedures are usually pre-authorised within 24–48 working hours of receiving complete documents.",
+    q: "Will my treatment be covered by insurance?",
+    a: "Coverage depends on your individual policy, diagnosis, treatment and insurer or TPA approval.",
   },
   {
-    q: "What if my insurer is not on your empanelled list?",
-    a: "You can be treated on a reimbursement basis. We provide the full documentation set — discharge summary, itemised bill, reports and prescriptions — so your claim is not delayed.",
+    q: "What documents should I bring?",
+    a: "Please carry your insurance or TPA details and the identification and medical documents requested by the clinic.",
   },
   {
-    q: "Are consultations, physiotherapy and nutrition covered?",
-    a: "Outpatient consultations and therapy sessions are typically covered only under OPD add-on policies. We tell you upfront what is payable so there are no surprises.",
+    q: "Can you check my insurance eligibility before my appointment?",
+    a: "Our team can help you understand the verification and pre-authorisation process before treatment.",
   },
   {
-    q: "Will you tell me the cost before treatment?",
-    a: "Yes. You receive a written estimate covering procedure, consumables, diagnostics and expected co-pay before you consent to any procedure.",
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "Eleven years of lower back pain and three opinions later, Thrive was the first place that showed me the scan and explained exactly which nerve was involved. Six weeks after the RFA I walked my daughter down the aisle.",
-    name: "Srinivas R.",
-    detail: "RFA for lumbar facet pain",
-  },
-  {
-    quote:
-      "What surprised me was the follow-through — the physiotherapist already knew what my doctor had done, and the psychologist helped me sleep again. It felt like one team, not four departments.",
-    name: "Ayesha K.",
-    detail: "Post-procedure rehabilitation",
-  },
-  {
-    quote:
-      "The insurance desk handled my pre-authorisation entirely. I knew my exact co-pay before I signed anything, which after my previous hospital experience meant everything.",
-    name: "Mahesh G.",
-    detail: "Cashless day-care procedure",
+    q: "Does insurance cover every pain-management procedure?",
+    a: "Not necessarily. Coverage varies by policy and procedure. Please confirm with the clinic and your insurer or TPA before treatment.",
   },
 ];
 
 export const stats = [
-  { value: "4,000", label: "sq. ft. multidisciplinary facility" },
-  { value: "7", label: "in-house care departments" },
-  { value: "12+", label: "empanelled insurers & TPAs" },
-  { value: "4.9", label: "average patient rating" },
-];
-
-export const ratings = [
-  { score: "4.9", source: "Google reviews", count: "310+ patients" },
-  { score: "4.8", source: "Practo profile", count: "180+ patients" },
+  { value: "4,000", label: "sq. ft. integrated care facility" },
+  { value: "7", label: "areas of care under one roof" },
+  { value: "1", label: "coordinated care team" },
+  { value: "In-house", label: "diagnostics, pharmacy and therapy" },
 ];
 
 export const pillars = [
   {
-    title: "Our mission",
-    detail: "Treat the source of pain, not just the symptom, with imaging-led diagnosis and honest advice.",
+    title: "Physician-led",
+    detail: "Care is guided by medical expertise, clinical assessment and evidence-informed decisions.",
   },
   {
-    title: "Our vision",
-    detail: "A Hyderabad where chronic pain is managed by one team, in one place, without endless referrals.",
+    title: "Personalised",
+    detail: "Your treatment is shaped around your condition, history, needs and goals.",
   },
   {
-    title: "Story & goals",
-    detail: "Founded by pain physicians who were tired of watching patients bounce between departments.",
+    title: "Multidisciplinary",
+    detail: "Pain management, physiotherapy, psychology, nutrition and wellness working as one team.",
   },
-];
-
-export const recoveryBars = [
-  { label: "Back pain relief", value: 92 },
-  { label: "Knee mobility", value: 88 },
-  { label: "Post-op recovery", value: 95 },
-  { label: "Sleep quality", value: 84 },
-  { label: "Return to work", value: 90 },
-];
-
-export const funFacts = [
-  { value: "4,000", label: "sq. ft. of clinical and recovery space" },
-  { value: "7", label: "departments under one roof" },
-  { value: "9,500+", label: "procedures and therapy sessions delivered" },
-  { value: "48 hrs", label: "average cashless approval turnaround" },
 ];
 
 export const socials = [
-  { label: "Instagram", href: "https://instagram.com" },
   { label: "Facebook", href: "https://facebook.com" },
+  { label: "Instagram", href: "https://instagram.com" },
   { label: "YouTube", href: "https://youtube.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+];
+
+export const blogTopics = [
+  "Chronic pain",
+  "Back and spine health",
+  "Joint health",
+  "Physiotherapy and rehabilitation",
+  "Pain psychology",
+  "Nutrition and recovery",
+  "Wellness",
+  "Preventive health",
 ];
 
 export type BlogPost = {
@@ -378,48 +436,52 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "when-back-pain-needs-a-pain-physician",
-    title: "When back pain needs a pain physician, not another painkiller",
-    excerpt: "Six signs your lower back pain has moved past rest and tablets, and what an imaging-led review changes.",
-    author: "Dr. A. Ramesh Kumar",
+    slug: "understanding-persistent-back-pain",
+    title: "Understanding persistent back pain",
+    excerpt:
+      "Why some back pain settles on its own, and when a clinical assessment becomes the more useful next step.",
+    author: "Thrive Clinical Team",
     date: "2026-05-18",
     displayDate: "18 May 2026",
-    readTime: "6 min read",
+    readTime: "5 min read",
     image: procedureSuite,
     body: [
-      "Most lower back pain settles within six weeks with movement, sleep and simple analgesia. The problem is the pain that does not settle, because the longer it runs, the more the nervous system learns it.",
-      "If your pain wakes you at night, travels below the knee, worsens on standing rather than bending, or has already outlasted two courses of medication, the useful next step is not a stronger tablet. It is finding the exact structure generating the signal.",
-      "That is what an interventional review does. A diagnostic block or an image-guided assessment tells us whether the facet joint, the disc or the nerve root is responsible, and the treatment plan follows from the answer rather than from guesswork.",
+      "Most episodes of back pain improve with movement, rest and time. Pain that persists for weeks, changes how you sleep, or limits everyday activity deserves a closer look rather than a stronger tablet.",
+      "A clinical assessment considers your history, your movement and, where relevant, imaging. The purpose is to understand what is generating the pain so that treatment can be directed rather than general.",
+      "Where an interventional option is appropriate, it is discussed and explained clearly. Where it is not, rehabilitation, movement and supportive care can often achieve more.",
+      "This article is general information and is not a substitute for individual medical advice.",
     ],
   },
   {
-    slug: "what-happens-in-a-radiofrequency-ablation",
-    title: "What actually happens during a radiofrequency ablation",
-    excerpt: "A step-by-step account of a day-care RFA procedure, from consent to walking out of the building.",
-    author: "Dr. Faisal Ahmed",
+    slug: "what-to-expect-from-an-image-guided-procedure",
+    title: "What to expect from an image-guided procedure",
+    excerpt: "A calm, step-by-step look at how a minimally invasive pain procedure is planned and carried out.",
+    author: "Thrive Clinical Team",
     date: "2026-04-27",
     displayDate: "27 April 2026",
-    readTime: "5 min read",
+    readTime: "4 min read",
     image: diagnosticsImg,
     body: [
-      "Radiofrequency ablation sounds far more dramatic than it is. You arrive, change, and lie face down on a fluoroscopy table. The skin is numbed with local anaesthetic before anything else happens.",
-      "Under live imaging, a fine needle is guided to the medial branch nerve carrying the pain signal. We test the position with a small current so we can confirm we are on the right nerve and nowhere near a motor nerve.",
-      "The lesion itself takes about 90 seconds per level. Most patients are up within the hour, home the same day, and back to desk work in two to three days with a written physiotherapy handover.",
+      "Image-guided procedures are planned around a clear diagnosis. Before anything is scheduled, the reason for the procedure, the expected benefit and the alternatives are explained to you.",
+      "On the day, imaging is used so that treatment can be delivered precisely to the intended area. Most procedures are minimally invasive and carried out with local anaesthesia where clinically appropriate.",
+      "Afterwards you receive clear aftercare guidance, and rehabilitation is considered part of the plan rather than an afterthought.",
+      "Suitability for any procedure is decided case by case after clinical assessment.",
     ],
   },
   {
-    slug: "sleep-and-chronic-pain",
-    title: "Why fixing your sleep changes your pain score",
-    excerpt: "Chronic pain and broken sleep feed each other. Here is the order our team tackles them in.",
-    author: "Ms. Anjali Menon",
+    slug: "sleep-mood-and-chronic-pain",
+    title: "Sleep, mood and chronic pain",
+    excerpt: "Persistent pain rarely stays physical. Here is why sleep and mood belong in a pain treatment plan.",
+    author: "Thrive Clinical Team",
     date: "2026-03-30",
     displayDate: "30 March 2026",
     readTime: "4 min read",
     image: psychologyImg,
     body: [
-      "Pain fragments sleep, and fragmented sleep lowers your pain threshold the next day. Patients often describe this loop long before anyone offers to treat it.",
-      "We start with sleep timing and light exposure rather than sedatives, because a stable rhythm does more for pain sensitivity than an extra hour of drugged sleep.",
-      "Alongside that, pain-focused cognitive behavioural therapy reduces the anticipatory tension that keeps muscles guarded overnight. Most patients report a measurable drop in morning stiffness within four weeks.",
+      "Pain disturbs sleep, and poor sleep can make pain feel more intense the following day. Many people live inside that loop for a long time before anyone offers to address it.",
+      "Support often starts with practical routines around sleep timing, activity and pacing, alongside psychological support for the worry and tension that persistent pain creates.",
+      "Because psychology sits within the same team as pain management and physiotherapy at Thrive, this support forms part of one plan rather than a separate referral.",
+      "If pain is affecting your mood or sleep, mention it at your consultation so it can be included in your care.",
     ],
   },
 ];
