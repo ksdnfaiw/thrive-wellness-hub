@@ -1,17 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
 import {
+  approach,
   blogPosts,
   clinic,
-  funFacts,
   images,
-  insurers,
-  pillars,
-  ratings,
-  recoveryBars,
+  insuranceTrustPoints,
   services,
-  testimonials,
+  stats,
   whatsappLink,
+  whyThrive,
 } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 import { Reveal } from "@/components/Reveal";
@@ -26,13 +23,15 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Hyderabad's physician-led clinic for interventional pain management with in-house physiotherapy, psychology, nutrition and wellness therapies. Heal. Restore. Thrive.",
+          "Physician-led interventional pain management with in-house diagnostics, physiotherapy, psychology, nutrition and wellness therapies in Habsiguda, Hyderabad.",
       },
       { property: "og:title", content: "Thrive Pain & Wellness Clinic | Hyderabad" },
       {
         property: "og:description",
-        content: "Physician-led interventional pain care and integrative wellness under one 4,000 sq. ft. roof.",
+        content: "Advanced pain care and integrated wellness, brought together under one roof.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [
@@ -43,35 +42,30 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const carousel = [images.wellness, images.physio, images.psychology, images.nutrition];
+const interventionalProcedures = [
+  "Neuromodulation",
+  "Epiduroplasty",
+  "Regenerative therapies",
+  "Radiofrequency Ablation (RFA)",
+  "Cryotherapy",
+  "Ultrasound-guided injections",
+];
 
-function Stars() {
-  return (
-    <span className="flex gap-0.5 text-deep" aria-hidden="true">
-      {Array.from({ length: 5 }).map((_, index) => (
-        <svg key={index} viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-current">
-          <path d="m12 2 3 6.9 7.5.6-5.7 5 1.7 7.3L12 17.9 5.5 21.8l1.7-7.3-5.7-5 7.5-.6Z" />
-        </svg>
-      ))}
-    </span>
-  );
-}
+const diagnosticCapabilities = ["In-house laboratory", "Digital X-ray", "Ultrasound", "Fluoroscopy / C-arm"];
 
 function Home() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [slide, setSlide] = useState(0);
-  const testimonial = testimonials[activeTestimonial]!;
-
   return (
     <>
       {/* Hero */}
       <section className="container-x grid items-center gap-10 py-10 lg:grid-cols-[1.02fr_1fr] lg:gap-14 lg:py-16">
         <Reveal>
           <span className="eyebrow">Heal. Restore. Thrive.</span>
-          <h1 className="display-xl mt-6">Pain care that is physician-led, not guesswork.</h1>
+          <h1 className="display-xl mt-6">Advanced pain care. Integrated wellness. One place to heal.</h1>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Interventional pain medicine with an integrated in-house team: physiotherapy, clinical psychology, nutrition
-            and next-generation wellness therapies across 4,000 sq. ft. in Banjara Hills.
+            At Thrive Pain &amp; Wellness Clinic, we bring physician-led interventional pain management and integrative
+            wellness together under one roof. From diagnosis and minimally invasive procedures to physiotherapy,
+            psychology, nutrition and advanced wellness therapies, every part of your care is designed around one goal:
+            helping you move beyond pain and return to the life you want to live.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link to="/book" className="btn btn-primary">
@@ -84,29 +78,19 @@ function Home() {
               onClick={() => trackEvent("whatsapp_click", { location: "hero" })}
               className="btn btn-outline"
             >
-              WhatsApp us
+              Talk to us on WhatsApp
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-x-10 gap-y-5">
-            {ratings.map((rating) => (
-              <div key={rating.source}>
-                <div className="flex items-center gap-2">
-                  <span className="font-display text-lg font-bold">{rating.score}</span>
-                  <Stars />
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {rating.source} · {rating.count}
-                </p>
-              </div>
-            ))}
-          </div>
+          <p className="mt-8 text-xs tracking-[0.14em] text-muted-foreground uppercase">
+            Physician-led care &middot; Personalised treatment &middot; Multidisciplinary support
+          </p>
         </Reveal>
 
         <Reveal delay={120} variant="scale">
           <img
             src={images.hero}
-            alt="A pain physician assessing a patient's knee in a calm, sunlit treatment room"
+            alt="A pain physician assessing a patient in a calm, sunlit treatment room"
             fetchPriority="high"
             decoding="async"
             width={1280}
@@ -116,72 +100,94 @@ function Home() {
           <div className="mt-3 grid gap-3 sm:grid-cols-[auto_1fr_auto]">
             <img
               src={images.physio}
-              alt="Physiotherapist guiding a patient through a movement drill"
-              loading="lazy" decoding="async"
+              alt="Physiotherapist guiding a patient through a movement exercise"
+              loading="lazy"
+              decoding="async"
               className="hidden h-24 w-24 rounded-xl object-cover sm:block"
             />
             <div className="rounded-xl bg-sand p-4">
-              <p className="font-display text-xs font-bold tracking-[0.1em] uppercase">Srinivas R.</p>
+              <p className="font-display text-xs font-bold tracking-[0.1em] uppercase">One coordinated team</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                &ldquo;Six weeks after my procedure I walked my daughter down the aisle.&rdquo;
+                Diagnosis, treatment, rehabilitation and wellness, planned together rather than separately.
               </p>
             </div>
             <img
               src={images.procedureSuite}
-              alt="The image-guided procedure suite at Thrive"
-              loading="lazy" decoding="async"
+              alt="The image-guided procedure space at Thrive"
+              loading="lazy"
+              decoding="async"
               className="hidden h-24 w-24 rounded-xl object-cover sm:block"
             />
           </div>
         </Reveal>
       </section>
 
-      {/* About */}
+      {/* A better way to manage pain */}
       <section className="container-x py-16 text-center sm:py-24">
         <Reveal>
-          <span className="eyebrow">About our clinic</span>
-          <h2 className="display-lg mx-auto mt-6 max-w-4xl">
-            Your journey begins with a thorough evaluation by a pain physician who explains exactly what is causing it.
-          </h2>
+          <span className="eyebrow">A better way to manage pain</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-4xl">Pain is personal. Your treatment should be too.</h2>
+          <div className="mx-auto mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p>
+              Persistent pain can affect far more than the body. It can change how you work, sleep, move, exercise and
+              experience everyday life.
+            </p>
+            <p>
+              At Thrive, we look beyond simply managing symptoms. We work to understand the underlying cause of your pain
+              and create a personalised path towards relief, recovery and long-term wellbeing.
+            </p>
+            <p>
+              Our approach combines advanced interventional pain care with rehabilitation, mental wellness, nutrition and
+              supportive wellness therapies, creating a more complete experience of healing.
+            </p>
+          </div>
+          <Link to="/services" className="btn btn-primary mt-8">
+            Explore our services
+          </Link>
         </Reveal>
 
         <Reveal delay={100} variant="clip" className="mt-12">
           <img
             src={images.procedureSuite}
-            alt="Image-guided procedure being performed in the Thrive interventional suite"
-            loading="lazy" decoding="async"
+            alt="An image-guided procedure being performed at Thrive"
+            loading="lazy"
+            decoding="async"
             width={1280}
             height={720}
             className="aspect-16/9 w-full rounded-2xl object-cover"
           />
         </Reveal>
-
-        <div className="mt-12 grid gap-8 text-left sm:grid-cols-3">
-          {pillars.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 90} variant="up">
-              <h3 className="display-md">{pillar.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pillar.detail}</p>
-            </Reveal>
-          ))}
-        </div>
       </section>
 
-      {/* Insurer marquee */}
-      <section className="border-y border-border py-8">
-        <Marquee
-          items={insurers}
-          slow
-          className="font-display text-lg font-bold tracking-tight text-deep/60 uppercase sm:text-xl"
-        />
+      {/* Our approach */}
+      <section className="bg-sand">
+        <div className="container-x py-16 sm:py-24">
+          <Reveal className="max-w-3xl">
+            <span className="eyebrow !bg-card">Our approach</span>
+            <h2 className="display-lg mt-6">Diagnose. Treat. Restore.</h2>
+          </Reveal>
+          <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {approach.map((item, index) => (
+              <Reveal key={item.step} delay={index * 80} variant="up">
+                <li className="card-flat h-full p-6">
+                  <span className="font-display text-3xl font-bold text-deep/30">{item.step}</span>
+                  <h3 className="display-md mt-3">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
       </section>
 
       {/* Services */}
       <section className="container-x py-16 sm:py-24">
         <Reveal className="text-center">
           <span className="eyebrow">Our services</span>
-          <h2 className="display-lg mx-auto mt-6 max-w-3xl">
-            We believe every patient deserves focused, compassionate care.
-          </h2>
+          <h2 className="display-lg mx-auto mt-6 max-w-3xl">Complete care. One coordinated team.</h2>
+          <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground">
+            Thrive brings multiple disciplines together so your care does not have to stop at pain relief.
+          </p>
         </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -195,7 +201,8 @@ function Home() {
                 <img
                   src={service.image}
                   alt={service.title}
-                  loading="lazy" decoding="async"
+                  loading="lazy"
+                  decoding="async"
                   width={1024}
                   height={768}
                   className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -223,209 +230,217 @@ function Home() {
         />
       </section>
 
-      {/* Why choose us */}
+      {/* Interventional pain care */}
+      <section className="container-x grid gap-10 py-16 lg:grid-cols-2 lg:items-center sm:py-24">
+        <Reveal>
+          <span className="eyebrow">Interventional pain care</span>
+          <h2 className="display-lg mt-6">Precision treatment. Minimal disruption.</h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            When conventional approaches are not enough, interventional pain management can provide a targeted path
+            towards relief. Every procedure begins with appropriate assessment and diagnosis, followed by a treatment
+            plan tailored to the individual.
+          </p>
+          <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+            {interventionalProcedures.map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm">
+                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-deep" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <Link
+            to="/services/$slug"
+            params={{ slug: "interventional-procedures" }}
+            className="btn btn-primary mt-8"
+          >
+            Explore pain procedures
+          </Link>
+        </Reveal>
+        <Reveal delay={100} variant="clip">
+          <img
+            src={images.procedureSuite}
+            alt="Procedure suite equipped with C-arm fluoroscopy"
+            loading="lazy"
+            decoding="async"
+            width={1024}
+            height={768}
+            className="aspect-4/3 w-full rounded-2xl object-cover"
+          />
+        </Reveal>
+      </section>
+
+      {/* Diagnostics */}
       <section className="bg-sand">
-        <div className="container-x py-16 sm:py-24">
-          <Reveal className="text-center">
-            <span className="eyebrow !bg-card">Why choose us</span>
-            <h2 className="display-lg mx-auto mt-6 max-w-3xl">
-              Get back to your life safely with a customised recovery plan.
-            </h2>
+        <div className="container-x grid gap-10 py-16 lg:grid-cols-2 lg:items-center sm:py-24">
+          <Reveal variant="clip" className="order-2 lg:order-1">
+            <img
+              src={images.diagnostics}
+              alt="In-house diagnostics with digital X-ray and ultrasound"
+              loading="lazy"
+              decoding="async"
+              width={1024}
+              height={768}
+              className="aspect-4/3 w-full rounded-2xl object-cover"
+            />
           </Reveal>
+          <Reveal delay={100} className="order-1 lg:order-2">
+            <span className="eyebrow !bg-card">Diagnosis &amp; imaging</span>
+            <h2 className="display-lg mt-6">Better diagnosis. Better decisions.</h2>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Effective pain management starts with understanding what is causing the pain. Thrive provides access to
+              diagnostic and imaging capabilities that support accurate assessment and help our medical team make
+              informed treatment decisions.
+            </p>
+            <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+              {diagnosticCapabilities.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm">
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-deep" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link to="/services/$slug" params={{ slug: "diagnostics-and-imaging" }} className="btn btn-primary mt-8">
+              Explore diagnostics
+            </Link>
+          </Reveal>
+        </div>
+      </section>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Reveal className="card-flat p-6">
-                <p className="text-xs text-muted-foreground">Measured outcomes across 12 months</p>
-                <div className="mt-6 flex h-40 items-end gap-3">
-                  {recoveryBars.map((bar, index) => (
-                    <div key={bar.label} className="flex h-full flex-1 flex-col justify-end gap-2">
-                      <div
-                        className="bar-grow w-full rounded-t-md"
-                        style={{
-                          height: `${bar.value}%`,
-                          background: index % 2 === 0 ? "var(--deep)" : "var(--lime)",
-                          transitionDelay: `${index * 110}ms`,
-                        }}
-                        title={bar.label}
-                      />
-                      <span className="text-center font-display text-xs font-bold">{bar.value}%</span>
-                    </div>
-                  ))}
-                </div>
+      {/* Why Thrive */}
+      <section className="container-x py-16 sm:py-24">
+        <Reveal className="text-center">
+          <span className="eyebrow">Why Thrive</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-3xl">
+            Medical expertise. Human care. A more complete approach.
+          </h2>
+        </Reveal>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {whyThrive.map((item, index) => (
+            <Reveal key={item.title} delay={index * 70} variant="up">
+              <article className="card-soft h-full p-6">
+                <h3 className="display-md">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
-                <h3 className="display-md mt-6">Support for spine, joint and nerve pain</h3>
-              </Reveal>
+      {/* Physician trust */}
+      <section className="bg-deep text-deep-foreground">
+        <div className="container-x grid gap-10 py-16 lg:grid-cols-2 lg:items-center sm:py-24">
+          <Reveal>
+            <span className="text-xs tracking-[0.18em] uppercase opacity-70">Physician-led</span>
+            <h2 className="display-lg mt-6">Care led by medical expertise</h2>
+            <p className="mt-5 text-sm leading-relaxed opacity-80 sm:text-base">
+              Thrive is built around physician-led pain management and regenerative care, supported by a
+              multidisciplinary team working towards a shared goal: better outcomes and a better quality of life.
+            </p>
+            <Link to="/doctors" className="btn btn-lime mt-8">
+              Meet our doctors &amp; team
+            </Link>
+          </Reveal>
+          <Reveal delay={100} variant="clip">
+            <img
+              src={images.psychology}
+              alt="A consultation room at Thrive Pain and Wellness Clinic"
+              loading="lazy"
+              decoding="async"
+              width={1024}
+              height={768}
+              className="aspect-4/3 w-full rounded-2xl object-cover"
+            />
+          </Reveal>
+        </div>
+      </section>
 
-              <Reveal delay={90} className="card-flat flex flex-col justify-between p-6">
-                <h3 className="display-md">
-                  Track your recovery plan, sessions and reports from your phone.
-                </h3>
-                <div className="mt-8 flex items-center gap-4">
-                  <a
-                    href={whatsappLink("Hello Thrive, please send me my recovery plan updates.")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackEvent("whatsapp_click", { location: "why_choose_us" })}
-                    className="btn btn-primary"
-                  >
-                    Get updates
-                  </a>
-                  <div className="grid h-16 w-16 shrink-0 grid-cols-4 gap-0.5 rounded-md bg-card p-1" aria-hidden="true">
-                    {Array.from({ length: 16 }).map((_, index) => (
-                      <span
-                        key={index}
-                        className={index % 3 === 0 || index % 7 === 0 ? "bg-deep" : "bg-transparent"}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-
-              <Reveal delay={140} className="card-flat p-6 sm:col-span-2">
-                <div className="grid gap-4 sm:grid-cols-3">
-                  {[images.diagnostics, images.physio, images.wellness].map((image, index) => (
-                    <img
-                      key={index}
-                      src={image}
-                      alt="Care in progress at Thrive Pain & Wellness Clinic"
-                      loading="lazy" decoding="async"
-                      className="aspect-4/3 w-full rounded-xl object-cover"
-                    />
-                  ))}
-                </div>
-                <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
-                  <p className="text-sm text-muted-foreground">
-                    Diagnostics, rehabilitation and recovery therapy, all in one building.
-                  </p>
-                  <Link to="/services" className="btn btn-outline">
-                    Explore services
-                  </Link>
-                </div>
-              </Reveal>
-            </div>
-
-            <Reveal delay={200}>
+      {/* Facility */}
+      <section className="container-x py-16 sm:py-24">
+        <Reveal className="max-w-3xl">
+          <span className="eyebrow">The facility</span>
+          <h2 className="display-lg mt-6">A space designed for healing</h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Thrive brings clinical care and a calm, considered environment together across a 4,000 sq. ft. facility.
+            Every element is designed to make the experience of seeking treatment feel more comfortable, focused and
+            reassuring, from consultation and diagnostics to procedures, rehabilitation and wellness.
+          </p>
+          <Link to="/gallery" className="btn btn-outline mt-8">
+            Explore our facility
+          </Link>
+        </Reveal>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { src: images.reception, alt: "Reception and waiting area" },
+            { src: images.physio, alt: "Physiotherapy and rehabilitation space" },
+            { src: images.wellness, alt: "Wellness therapy room" },
+          ].map((item, index) => (
+            <Reveal key={item.alt} delay={index * 70} variant="clip">
               <img
-                src={images.wellness}
-                alt="A patient receiving manual therapy in a private treatment room"
-                loading="lazy" decoding="async"
-                className="h-full min-h-[320px] w-full rounded-2xl object-cover"
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                decoding="async"
+                width={1024}
+                height={768}
+                className="aspect-4/3 w-full rounded-2xl object-cover"
               />
             </Reveal>
-          </div>
+          ))}
         </div>
+        <dl className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
+          {stats.map((stat) => (
+            <div key={stat.label} className="card-soft p-5">
+              <dt className="font-display text-2xl font-bold text-deep">{stat.value}</dt>
+              <dd className="mt-1 text-xs text-muted-foreground">{stat.label}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* Testimonials */}
-      <section className="container-x py-16 sm:py-24">
-        <Reveal className="text-center">
-          <span className="eyebrow">Testimonials</span>
-          <h2 className="display-lg mx-auto mt-6 max-w-3xl">What our patients say about working with us.</h2>
-        </Reveal>
-
-        <div className="mt-12 space-y-5">
-          {testimonials.map((item, index) => (
-            <Reveal key={item.name} delay={index * 80} variant="scale">
-              <button
-                type="button"
-                onClick={() => setActiveTestimonial(index)}
-                className={`card-flat grid w-full gap-6 p-5 text-left transition-colors sm:grid-cols-[160px_1fr_auto] sm:items-center ${
-                  activeTestimonial === index ? "border-deep/40" : ""
-                }`}
-              >
-                <img
-                  src={carousel[index % carousel.length]}
-                  alt=""
-                  loading="lazy" decoding="async"
-                  className="aspect-4/3 w-full rounded-xl object-cover"
-                />
-                <div>
-                  <p className="text-sm leading-relaxed">&ldquo;{item.quote}&rdquo;</p>
-                  <p className="mt-4 font-display text-xs font-bold tracking-[0.1em] uppercase">{item.name}</p>
-                  <p className="text-xs text-muted-foreground">{item.detail}</p>
-                </div>
-                <div className="border-border pl-0 sm:border-l sm:pl-8">
-                  <p className="font-display text-4xl font-bold">99%</p>
-                  <p className="text-xs text-muted-foreground">Would recommend</p>
-                </div>
-              </button>
-            </Reveal>
-          ))}
-        </div>
-
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          Currently reading: <span className="font-semibold text-deep">{testimonial.name}</span>
-        </p>
-      </section>
-
-      {/* Experience + carousel */}
       <section className="bg-sand">
-        <div className="container-x grid items-center gap-10 py-16 lg:grid-cols-2 sm:py-24">
+        <div className="container-x py-16 text-center sm:py-24">
           <Reveal>
-            <span className="eyebrow !bg-card">Experience</span>
-            <h2 className="display-lg mt-6">With 15 years of experience treating patients of all ages</h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Our physicians hold interventional pain fellowships and perform every procedure themselves. Nothing is
-              delegated, and every plan is signed off by a doctor.
+            <span className="eyebrow !bg-card">Testimonials</span>
+            <h2 className="display-lg mx-auto mt-6 max-w-3xl">Hear from people who chose to Thrive</h2>
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              Real experiences from patients who have trusted Thrive with their journey towards better health and
+              wellbeing.
             </p>
-            <Link to="/book" className="btn btn-primary mt-8">
-              Book your session today
+            <Link to="/gallery" className="btn btn-primary mt-8">
+              Read patient stories
             </Link>
-          </Reveal>
-
-          <Reveal delay={120} variant="clip" className="relative">
-            <div className="grid grid-cols-2 gap-3">
-              {[carousel[slide % carousel.length]!, carousel[(slide + 1) % carousel.length]!].map((image, index) => (
-                <img
-                  key={`${image}-${index}`}
-                  src={image}
-                  alt="Therapy in progress at Thrive Pain & Wellness Clinic"
-                  loading="lazy" decoding="async"
-                  className="aspect-3/4 w-full rounded-2xl object-cover"
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              aria-label="Previous images"
-              onClick={() => setSlide((value) => (value + carousel.length - 1) % carousel.length)}
-              className="absolute top-1/2 left-2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-card/90 text-deep shadow-soft"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="m14 6-6 6 6 6" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              aria-label="Next images"
-              onClick={() => setSlide((value) => (value + 1) % carousel.length)}
-              className="absolute top-1/2 right-2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-card/90 text-deep shadow-soft"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="m10 6 6 6-6 6" />
-              </svg>
-            </button>
+            <p className="mx-auto mt-6 max-w-xl text-xs text-muted-foreground">
+              Patient stories are published only after receiving appropriate permission. Verified testimonials will
+              appear here.
+            </p>
           </Reveal>
         </div>
       </section>
 
-      {/* Fun facts */}
-      <section className="container-x py-16 text-center sm:py-24">
-        <Reveal>
-          <span className="eyebrow">Fun facts</span>
-          <h2 className="display-lg mx-auto mt-6 max-w-3xl">
-            A safe, professional environment equipped with modern facilities and evidence-based techniques.
-          </h2>
+      {/* Insurance trust bar */}
+      <section className="container-x py-16 sm:py-20">
+        <Reveal className="card-flat grid gap-8 p-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <div>
+            <span className="eyebrow">Insurance</span>
+            <h2 className="display-lg mt-5 text-2xl">Care with greater clarity</h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              We believe understanding the financial side of treatment should be as straightforward as understanding the
+              treatment itself. Thrive works with empanelled insurers and TPAs to help eligible patients navigate the
+              cashless process.
+            </p>
+            <Link to="/insurance" className="btn btn-primary mt-6">
+              View insurance &amp; billing
+            </Link>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {insuranceTrustPoints.map((point) => (
+              <li key={point} className="rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold">
+                {point}
+              </li>
+            ))}
+          </ul>
         </Reveal>
-        <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {funFacts.map((fact, index) => (
-            <Reveal key={fact.label} delay={index * 80} variant="up">
-              <dt className="font-display text-4xl font-bold text-deep">{fact.value}</dt>
-              <dd className="mx-auto mt-2 max-w-[15rem] text-xs text-muted-foreground">{fact.label}</dd>
-            </Reveal>
-          ))}
-        </dl>
       </section>
 
       <ContactSection />
@@ -434,11 +449,11 @@ function Home() {
       <section className="container-x py-16 sm:py-24">
         <Reveal className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <span className="eyebrow">From the journal</span>
-            <h2 className="display-lg mt-6 max-w-2xl">Insight our clinicians actually stand behind.</h2>
+            <span className="eyebrow">The Thrive Journal</span>
+            <h2 className="display-lg mt-6 max-w-2xl">Insight to help you understand your health.</h2>
           </div>
           <Link to="/blog" className="btn btn-outline">
-            All articles
+            Explore the journal
           </Link>
         </Reveal>
 
@@ -453,14 +468,15 @@ function Home() {
                 <img
                   src={post.image}
                   alt={post.title}
-                  loading="lazy" decoding="async"
+                  loading="lazy"
+                  decoding="async"
                   className="aspect-16/10 w-full object-cover"
                 />
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="display-md">{post.title}</h3>
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">{post.excerpt}</p>
                   <p className="mt-5 border-t border-border pt-4 text-xs text-muted-foreground">
-                    {post.author} · {post.displayDate}
+                    {post.author} &middot; {post.displayDate}
                   </p>
                 </div>
               </Link>
