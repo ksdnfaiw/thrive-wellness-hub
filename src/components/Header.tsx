@@ -50,12 +50,7 @@ export function Header() {
           }`}
         >
           <Link to="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-            <Logo className="h-8 w-8" />
-
-            <span className="min-w-0">
-              <span className="block truncate font-display text-base font-bold tracking-tight uppercase">Thrive</span>
-              <span className="block text-[9px] tracking-[0.2em] text-muted-foreground uppercase">Pain & Wellness</span>
-            </span>
+            <Logo className="h-14 sm:h-16 w-auto" />
           </Link>
 
           <nav aria-label="Primary" className="mx-auto hidden items-center gap-1 lg:flex">
