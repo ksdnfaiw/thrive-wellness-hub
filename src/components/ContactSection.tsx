@@ -40,13 +40,12 @@ export function ContactSection() {
         <Reveal>
           <span className="eyebrow">Contact us</span>
           <h2 className="display-lg mt-6">
-            Support starts
+            Ready to take
             <br />
-            with a simple step.
+            the next step?
           </h2>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Getting the help you need should not be complicated. Take the first step and our care team guides you through
-            the rest, usually within one working hour.
+            Tell us a little about what you are experiencing. Our team will help you understand the next step.
           </p>
 
           <div className="mt-8 space-y-2 text-sm">
@@ -156,11 +155,10 @@ export function ContactSection() {
               </label>
 
               <button type="submit" className="btn btn-primary mt-6 w-full sm:w-auto">
-                Book your session
+                Request an appointment
               </button>
               <p className="mt-3 text-xs text-muted-foreground">
-                We use your details only to contact you about care at {clinic.name}. {services.length} departments, one
-                plan.
+                We use your details only to contact you about care at {clinic.name}. {services.length} areas of care, one plan.
               </p>
             </form>
           )}

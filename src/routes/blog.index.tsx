@@ -11,10 +11,10 @@ export const Route = createFileRoute("/blog/")({
       {
         name: "description",
         content:
-          "Physician-written articles on interventional pain management, rehabilitation, nutrition and mental wellness from Thrive Pain & Wellness Clinic, Hyderabad.",
+          "The Thrive Journal: practical insights on pain, recovery, movement, nutrition, mental wellness and living better.",
       },
       { property: "og:title", content: "Blog | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Physician-written insight on pain, recovery and wellness." },
+      { property: "og:description", content: "Practical insights on pain, recovery and living better." },
       { property: "og:url", content: "/blog" },
     ],
     links: [{ rel: "canonical", href: "/blog" }],
@@ -27,9 +27,9 @@ function BlogIndex() {
     <>
       <PageHero
         eyebrow="Journal"
-        title="Insight from our"
-        accent="clinicians."
-        description="Our physicians, physiotherapists and psychologists write about what actually helps chronic pain. No clickbait, no miracle cures."
+        title="The Thrive"
+        accent="Journal."
+        description="Practical insights on pain, recovery, movement, nutrition, mental wellness and living better, designed to help you make more informed decisions about your wellbeing."
       />
 
       <section className="container-x py-16 sm:py-20">

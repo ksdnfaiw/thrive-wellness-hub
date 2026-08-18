@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { doctors } from "@/lib/site-data";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { doctors, teamDisciplines } from "@/lib/site-data";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { ClosingCta } from "@/components/ClosingCta";
@@ -11,10 +11,15 @@ export const Route = createFileRoute("/doctors")({
       {
         name: "description",
         content:
-          "Meet the pain physicians, physiotherapists, clinical psychologist and nutritionist behind Thrive Pain & Wellness Clinic, Hyderabad.",
+          "Meet Dr. Dheeraj and the multidisciplinary team across pain management, physiotherapy, psychology, nutrition and wellness at Thrive Pain & Wellness Clinic, Hyderabad.",
       },
       { property: "og:title", content: "Our Doctors & Team | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Fellowship-trained pain physicians and an integrated in-house care team." },
+      {
+        property: "og:description",
+        content: "Physician-led pain management supported by an integrated in-house care team.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/doctors" },
     ],
     links: [{ rel: "canonical", href: "/doctors" }],
@@ -38,37 +43,73 @@ function Doctors() {
     <>
       <PageHero
         eyebrow="Doctors & team"
-        title="The people who will"
-        accent="actually treat you."
-        description="Every plan at Thrive is written and signed by a physician, then delivered by the same in-house team you meet on day one."
+        title="Expertise"
+        accent="that listens."
+        description="At Thrive, medical expertise is combined with a multidisciplinary approach to care. Our team brings together professionals across pain management, rehabilitation, psychology, nutrition and wellness, working together to support the individual behind the condition."
       />
 
       <section className="container-x py-16 sm:py-20">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {doctors.map((doctor, index) => (
-            <Reveal key={doctor.name} delay={index * 60}>
-              <article className="card-soft flex h-full flex-col p-6">
+        <Reveal className="max-w-2xl">
+          <span className="eyebrow">Meet our team</span>
+          <h2 className="display-lg mt-5 text-2xl">Physician-led pain and regenerative care</h2>
+        </Reveal>
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-[1.1fr_1fr]">
+          {doctors.map((doctor) => (
+            <Reveal key={doctor.name}>
+              <article className="card-soft h-full p-7">
                 <div
                   aria-hidden="true"
                   className="grid h-16 w-16 place-items-center rounded-full bg-secondary font-display text-xl font-bold text-secondary-foreground"
                 >
-                  {doctor.name
-                    .replace(/^(Dr\.|Mr\.|Ms\.)\s*/, "")
-                    .split(" ")
-                    .map((part) => part[0])
-                    .slice(0, 2)
-                    .join("")}
+                  D
                 </div>
-                <h2 className="mt-5 text-lg font-semibold">{doctor.name}</h2>
-                <p className="mt-1 text-xs font-semibold tracking-[0.14em] text-primary uppercase">{doctor.specialty}</p>
-                <p className="mt-3 text-sm text-muted-foreground">{doctor.qualifications}</p>
-                <p className="mt-4 flex-1 text-sm">{doctor.bio}</p>
+                <h3 className="mt-5 text-xl font-semibold">{doctor.name}</h3>
+                <p className="mt-1 text-xs font-semibold tracking-[0.14em] text-primary uppercase">
+                  {doctor.specialty}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed">{doctor.bio}</p>
+                <dl className="mt-6 space-y-3 text-sm text-muted-foreground">
+                  <div>
+                    <dt className="text-xs font-semibold tracking-[0.16em] text-deep uppercase">Qualifications</dt>
+                    <dd className="mt-1">{doctor.qualifications}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-semibold tracking-[0.16em] text-deep uppercase">Experience</dt>
+                    <dd className="mt-1">{doctor.experience}</dd>
+                  </div>
+                </dl>
               </article>
             </Reveal>
           ))}
+
+          <Reveal delay={90}>
+            <div className="card-flat h-full p-7">
+              <h3 className="display-md">Our multidisciplinary team</h3>
+              <ul className="mt-6 space-y-5">
+                {teamDisciplines.map((item) => (
+                  <li key={item.title}>
+                    <p className="text-sm font-semibold">{item.title}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{item.detail}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
-        <p className="mt-8 text-xs text-muted-foreground">
-          Team photographs are pending client photography and will replace the initial placeholders before launch.
+
+        <Reveal delay={120} className="mt-12 max-w-2xl">
+          <h2 className="display-lg text-2xl">One team. One care journey.</h2>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Different expertise, one shared goal: helping you heal, restore and thrive.
+          </p>
+          <Link to="/book" className="btn btn-primary mt-6">
+            Book a consultation
+          </Link>
+        </Reveal>
+
+        <p className="mt-10 text-xs text-muted-foreground">
+          Team photographs and verified credentials will be added as confirmed by the clinic.
         </p>
       </section>
 

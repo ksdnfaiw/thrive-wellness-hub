@@ -75,7 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Thrive Pain & Wellness Clinic — Hyderabad" },
+      { title: "Thrive Pain & Wellness Clinic | Hyderabad" },
       {
         name: "description",
         content:
@@ -109,13 +109,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           medicalSpecialty: "PainMedicine",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Road No. 12, Banjara Hills",
+            streetAddress: "Habsiguda",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
-            postalCode: "500034",
             addressCountry: "IN",
           },
-          openingHours: ["Mo-Sa 09:00-20:00", "Su 10:00-14:00"],
         }),
       },
     ],

@@ -12,10 +12,10 @@ export const Route = createFileRoute("/services/")({
       {
         name: "description",
         content:
-          "Interventional procedures, diagnostics, physiotherapy, psychology, nutrition, wellness therapies and an in-house pharmacy — seven departments under one roof.",
+          "Interventional pain procedures, diagnostics and imaging, physiotherapy, psychology, nutrition, wellness therapies and an in-house pharmacy, all under one roof.",
       },
       { property: "og:title", content: "Our Services | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Seven in-house departments covering diagnosis, intervention and recovery." },
+      { property: "og:description", content: "Complete care for a better life, coordinated by one team." },
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
@@ -28,9 +28,9 @@ function ServicesHub() {
     <>
       <PageHero
         eyebrow="Our services"
-        title="Diagnosis, intervention,"
-        accent="recovery."
-        description="Every service below is delivered inside our 4,000 sq. ft. facility by our own clinicians — with one shared record so your plan never restarts."
+        title="Complete care for"
+        accent="a better life."
+        description="Pain rarely has a single dimension. Neither should your care. At Thrive, different areas of expertise come together to create a personalised treatment journey."
       />
 
       <section className="container-x py-16 sm:py-20">
@@ -54,7 +54,7 @@ function ServicesHub() {
                   <h2 className="text-lg font-semibold">{service.title}</h2>
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">{service.short}</p>
                   <span className="mt-5 text-xs font-semibold tracking-[0.16em] text-primary uppercase">
-                    View department →
+                    Explore this service
                   </span>
                 </div>
               </Link>
@@ -67,8 +67,8 @@ function ServicesHub() {
         <Reveal className="mx-auto max-w-2xl">
           <LeadForm
             mode="inquiry"
-            title="Which department do I need?"
-            description="Tell us where it hurts. We route your enquiry to the right clinician and call you back."
+            title="Not sure where to start?"
+            description="Tell us what you are experiencing and our team will help you understand the next step."
           />
         </Reveal>
       </section>

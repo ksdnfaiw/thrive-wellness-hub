@@ -107,7 +107,7 @@ export function LeadForm({
         <label className="block sm:col-span-2">
           <span className="text-xs font-semibold tracking-wide text-foreground uppercase">Service needed</span>
           <select name="service" defaultValue={defaultService ?? ""} className="field mt-2">
-            <option value="">Not sure yet — advise me</option>
+            <option value="">Not sure yet, please advise</option>
             {services.map((service) => (
               <option key={service.slug} value={service.title}>
                 {service.title}

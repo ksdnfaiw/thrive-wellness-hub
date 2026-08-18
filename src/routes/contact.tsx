@@ -15,10 +15,10 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Find Thrive Pain & Wellness Clinic in Banjara Hills, Hyderabad. Address, opening hours, click-to-call, WhatsApp and driving directions.",
+          "Contact Thrive Pain & Wellness Clinic in Habsiguda, Hyderabad. Phone, email, WhatsApp and driving directions.",
       },
       { property: "og:title", content: "Contact & Locate Us | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Banjara Hills, Hyderabad. Call, WhatsApp or get directions." },
+      { property: "og:description", content: "Habsiguda, Hyderabad. Call, WhatsApp or get directions." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -33,13 +33,11 @@ export const Route = createFileRoute("/contact")({
           email: clinic.email,
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Road No. 12, Banjara Hills",
+            streetAddress: "Habsiguda",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
-            postalCode: "500034",
             addressCountry: "IN",
           },
-          openingHours: ["Mo-Sa 09:00-20:00", "Su 10:00-14:00"],
         }),
       },
     ],
@@ -52,9 +50,9 @@ function Contact() {
     <>
       <PageHero
         eyebrow="Contact & locate us"
-        title="Banjara Hills,"
-        accent="Hyderabad."
-        description="Free parking on site, step-free access, and a reception team that answers the phone."
+        title="Come find your way"
+        accent="to Thrive."
+        description="Have a question, need help choosing the right service or ready to book your appointment? Our team is here to help."
       >
         <a
           href={clinic.phoneHref}
@@ -93,13 +91,7 @@ function Contact() {
             </div>
             <div>
               <dt className="text-xs font-semibold tracking-[0.16em] text-primary uppercase">Hours</dt>
-              <dd className="mt-2 space-y-1">
-                {clinic.hours.map((entry) => (
-                  <p key={entry.days}>
-                    <span className="font-semibold">{entry.days}:</span> {entry.time}
-                  </p>
-                ))}
-              </dd>
+              <dd className="mt-2">{clinic.hoursNote}</dd>
             </div>
             <div>
               <dt className="text-xs font-semibold tracking-[0.16em] text-primary uppercase">Phone & email</dt>
@@ -133,7 +125,7 @@ function Contact() {
           <LeadForm
             mode="inquiry"
             title="Send us a message"
-            description="Reception replies during clinic hours; urgent queries are faster on WhatsApp."
+            description="Our team replies during clinic hours. For quick questions, WhatsApp is fastest."
           />
         </Reveal>
       </section>
