@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { cashlessSteps, clinic, insuranceFaqs, insurers, whatsappLink } from "@/lib/site-data";
+import { cashlessSteps, clinic, insuranceFaqs, whatsappLink } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
@@ -9,14 +9,19 @@ import { ClosingCta } from "@/components/ClosingCta";
 export const Route = createFileRoute("/insurance")({
   head: () => ({
     meta: [
-      { title: "Insurance & Billing | Empanelled Insurers & Cashless Process" },
+      { title: "Insurance & Billing | Cashless Process at Thrive, Hyderabad" },
       {
         name: "description",
         content:
-          "Named empanelled insurers and TPAs, our four-step cashless pre-authorisation process, and clear answers on what pain procedures are covered.",
+          "How cashless treatment works at Thrive Pain & Wellness Clinic: eligibility checks, documents, pre-authorisation, treatment and settlement with empanelled insurers and TPAs.",
       },
       { property: "og:title", content: "Insurance & Billing | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "12+ named empanelled insurers and TPAs, with written estimates before treatment." },
+      {
+        property: "og:description",
+        content: "Cashless support where eligible, with clear guidance at every step.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/insurance" },
     ],
     links: [{ rel: "canonical", href: "/insurance" }],
@@ -31,41 +36,41 @@ function Insurance() {
     <>
       <PageHero
         eyebrow="Insurance & billing"
-        title="Named insurers. Written estimates."
-        accent="no surprises."
-        description="We publish exactly who we are empanelled with and what the cashless process involves, because “most insurers accepted” tells you nothing."
+        title="Clearer care."
+        accent="Fewer surprises."
+        description="Understanding the financial side of treatment should not add another layer of stress. Thrive works with empanelled insurers and TPAs to help eligible patients access cashless treatment where applicable."
       >
         <a
-          href={whatsappLink("Hello Thrive, I'd like to check my insurance coverage.")}
+          href={whatsappLink("Hello Thrive, I would like to check my insurance eligibility.")}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { location: "insurance_hero" })}
           className="btn btn-primary"
         >
-          Check my coverage
+          Check insurance eligibility
         </a>
         <a
           href={clinic.phoneHref}
           onClick={() => trackEvent("phone_click", { location: "insurance_hero" })}
           className="btn btn-outline"
         >
-          Call the insurance desk
+          Call {clinic.phone}
         </a>
       </PageHero>
 
       <section className="container-x py-16 sm:py-20">
         <Reveal className="max-w-2xl">
-          <h2 className="display-lg text-2xl">Empanelled insurers & TPAs</h2>
+          <h2 className="display-lg text-2xl">Empanelled insurers &amp; TPAs</h2>
           <p className="mt-4 text-muted-foreground">
-            Cashless treatment is available with the following insurers and third-party administrators, subject to your
-            policy terms and pre-authorisation approval.
+            Thrive accepts eligible coverage through its empanelled insurance and TPA partners. Verified insurer and TPA
+            logos and names will be displayed here.
           </p>
         </Reveal>
-        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {insurers.map((insurer, index) => (
-            <Reveal key={insurer} delay={index * 30}>
-              <li className="rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold text-deep">
-                {insurer}
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {Array.from({ length: 8 }).map((_, index) => (
+            <Reveal key={index} delay={index * 30}>
+              <li className="grid h-24 place-items-center rounded-2xl border border-dashed border-border bg-card text-xs tracking-[0.16em] text-muted-foreground uppercase">
+                Insurer logo
               </li>
             </Reveal>
           ))}
@@ -76,9 +81,9 @@ function Insurance() {
         <div className="container-x py-16 sm:py-20">
           <Reveal className="max-w-2xl">
             <span className="eyebrow">Cashless process</span>
-            <h2 className="display-lg mt-5 text-2xl">Four steps, handled by our desk</h2>
+            <h2 className="display-lg mt-5 text-2xl">Five steps, supported by our team</h2>
           </Reveal>
-          <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {cashlessSteps.map((step, index) => (
               <Reveal key={step.step} delay={index * 70}>
                 <li className="card-soft h-full p-6">
@@ -89,6 +94,10 @@ function Insurance() {
               </Reveal>
             ))}
           </ol>
+          <p className="mt-8 max-w-3xl text-xs text-muted-foreground">
+            Important: insurance coverage, cashless eligibility and approval are subject to the terms of your individual
+            policy and insurer or TPA authorisation.
+          </p>
         </div>
       </section>
 
