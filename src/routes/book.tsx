@@ -11,10 +11,10 @@ export const Route = createFileRoute("/book")({
       {
         name: "description",
         content:
-          "Request an appointment with a pain physician in Hyderabad. Pick a date and time slot, or confirm instantly on WhatsApp.",
+          "Request an appointment at Thrive Pain & Wellness Clinic, Hyderabad. Share your preferred date and time, or message us on WhatsApp.",
       },
       { property: "og:title", content: "Book an Appointment | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Same-week appointments across all seven departments." },
+      { property: "og:description", content: "Your first step towards better days." },
       { property: "og:url", content: "/book" },
     ],
     links: [{ rel: "canonical", href: "/book" }],
@@ -29,11 +29,11 @@ function Book() {
         <Reveal>
           <span className="eyebrow">Book an appointment</span>
           <h1 className="display-xl mt-6">
-            Four fields. <span className="text-deep/60">One call back.</span>
+            Your first step towards <span className="text-deep/60">better days.</span>
           </h1>
           <p className="mt-6 text-muted-foreground">
-            Choose a date and a time window. Our care team confirms your slot by phone or WhatsApp, usually within one
-            working hour, and tells you what to bring.
+            Whether you are dealing with persistent pain, recovering from an injury or looking for a more complete approach to
+            your wellbeing, our team is here to help you understand what comes next.
           </p>
 
           <div className="mt-8 space-y-4">
@@ -66,7 +66,7 @@ function Book() {
         </Reveal>
 
         <Reveal delay={100}>
-          <LeadForm mode="booking" title="Request your slot" description="Only the details we need to call you back." />
+          <LeadForm mode="booking" title="Request an appointment" description="Share a few details and our team will help you with the next step." />
         </Reveal>
       </div>
     </section>
