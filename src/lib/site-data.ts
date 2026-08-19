@@ -8,21 +8,26 @@ import diagnosticsImg from "@/assets/diagnostics.jpg";
 import nutritionImg from "@/assets/nutrition.jpg";
 
 export const clinic = {
-  name: "Thrive Pain & Wellness Clinic",
+  name: "Thrive Pain Clinic, Wellness & More",
+  shortName: "Thrive",
   brandLine: "Heal. Restore. Thrive.",
   tagline: "Your pain ends here. Your life begins.",
-  phone: "+91 934 716 4263",
-  phoneHref: "tel:+919347164263",
-  whatsapp: "919347164263",
-  email: "dheerajpaincarecentre@gmail.com",
-  address: "Habsiguda, Hyderabad, Telangana",
-  mapsQuery: "Habsiguda, Hyderabad, Telangana",
-  hoursNote: "Clinic timings to be confirmed and displayed here.",
+  phone: "+91 86395 09446",
+  phoneHref: "tel:+918639509446",
+  whatsapp: "918639509446",
+  email: "adashealthcare@gmail.com",
+  bookingEmail: "adashealthcare@gmail.com",
+  address:
+    "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam, Shaikpet, Hyderabad, Telangana 500081",
+  locality: "Raidurgam, Hyderabad",
+  mapsQuery: "Bharathi Square, Nandi Hills, Raidurgam, Shaikpet, Hyderabad, Telangana 500081",
+  hoursNote: "Monday to Saturday, 9:00 am to 6:00 pm. Sunday by appointment.",
   hours: [
-    { days: "Monday to Saturday", time: "Timings to be confirmed" },
+    { days: "Monday to Saturday", time: "9:00 am to 6:00 pm" },
     { days: "Sunday", time: "By appointment" },
   ],
 };
+
 
 export const whatsappLink = (message = "Hello Thrive, I would like to book an appointment.") =>
   `https://wa.me/${clinic.whatsapp}?text=${encodeURIComponent(message)}`;
