@@ -47,15 +47,28 @@ export function ContactSection() {
             Tell us a little about what you are experiencing. Our team will help you understand the next step.
           </p>
 
-          <div className="mt-8 space-y-2 text-sm">
-            <a href={clinic.phoneHref} className="block font-semibold text-deep">
-              {clinic.phone}
-            </a>
-            <a href={`mailto:${clinic.email}`} className="block text-muted-foreground">
-              {clinic.email}
-            </a>
-            <p className="max-w-xs text-muted-foreground">{clinic.address}</p>
-          </div>
+          <ul className="mt-8 space-y-4 text-sm">
+            <li className="flex items-start gap-3">
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
+              <a href={clinic.phoneHref} className="font-semibold text-deep">
+                {clinic.phone}
+              </a>
+            </li>
+            <li className="flex items-start gap-3">
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
+              <a href={`mailto:${clinic.email}`} className="text-muted-foreground">
+                {clinic.email}
+              </a>
+            </li>
+            <li className="flex items-start gap-3">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
+              <p className="max-w-xs text-muted-foreground">{clinic.address}</p>
+            </li>
+            <li className="flex items-start gap-3">
+              <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
+              <p className="max-w-xs text-muted-foreground">{clinic.hoursNote}</p>
+            </li>
+          </ul>
 
           <div className="mt-8 flex flex-wrap gap-3">
             {socials.map((social) => (
@@ -77,9 +90,10 @@ export function ContactSection() {
             <div className="card-flat p-6 sm:p-8">
               <h3 className="display-md">Request received</h3>
               <p className="mt-4 text-sm text-muted-foreground">
-                Our care team will call you on the number you shared. To confirm faster, send the same details straight to
-                our WhatsApp desk.
+                Your enquiry has been opened in WhatsApp so it reaches our team on {clinic.phone}. If the window did not
+                open, use the button below.
               </p>
+
               <div className="mt-6 flex flex-wrap gap-3">
                 <a href={sent} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                   Confirm on WhatsApp
