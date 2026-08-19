@@ -41,9 +41,13 @@ export function LeadForm({
       .join("\n");
 
     trackEvent(mode === "booking" ? "booking_form_submit" : "inquiry_form_submit", { service });
-    setSentTo(whatsappLink(message));
+    const link = whatsappLink(message);
+    setSentTo(link);
     setDone(true);
+    // Hand the lead straight to the clinic WhatsApp number.
+    window.open(link, "_blank", "noopener,noreferrer");
   };
+
 
   if (done) {
     return (
