@@ -11,14 +11,14 @@ const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(clinic.m
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Locate Us | Thrive Pain & Wellness Clinic, Hyderabad" },
+      { title: "Contact & Locate Us | Thrive Pain Clinic, Hyderabad" },
       {
         name: "description",
         content:
-          "Contact Thrive Pain & Wellness Clinic in Habsiguda, Hyderabad. Phone, email, WhatsApp and driving directions.",
+          "Contact Thrive Pain Clinic, Wellness & More at Raidurgam, Hyderabad. Phone, email, WhatsApp and driving directions.",
       },
       { property: "og:title", content: "Contact & Locate Us | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Habsiguda, Hyderabad. Call, WhatsApp or get directions." },
+      { property: "og:description", content: "Raidurgam, Hyderabad. Call, WhatsApp or get directions." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -33,9 +33,10 @@ export const Route = createFileRoute("/contact")({
           email: clinic.email,
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Habsiguda",
+            streetAddress: "4th Floor, Bharathi Square, Plot No. 58, Nandi Hills, Raidurgam, Shaikpet",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
+            postalCode: "500081",
             addressCountry: "IN",
           },
         }),

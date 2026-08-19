@@ -11,7 +11,9 @@ import {
   whyThrive,
 } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
+import { ArrowUpRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { ServiceIcon } from "@/components/ServiceIcon";
 import { Marquee } from "@/components/Marquee";
 import { ContactSection } from "@/components/ContactSection";
 import { ClosingCta } from "@/components/ClosingCta";
@@ -19,13 +21,13 @@ import { ClosingCta } from "@/components/ClosingCta";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Thrive Pain & Wellness Clinic | Interventional Pain Care, Hyderabad" },
+      { title: "Thrive Pain Clinic, Wellness & More | Raidurgam, Hyderabad" },
       {
         name: "description",
         content:
-          "Physician-led interventional pain management with in-house diagnostics, physiotherapy, psychology, nutrition and wellness therapies in Habsiguda, Hyderabad.",
+          "Physician-led interventional pain management with in-house diagnostics, physiotherapy, psychology, nutrition and wellness therapies at Raidurgam, Hyderabad.",
       },
-      { property: "og:title", content: "Thrive Pain & Wellness Clinic | Hyderabad" },
+      { property: "og:title", content: "Thrive Pain Clinic, Wellness & More | Hyderabad" },
       {
         property: "og:description",
         content: "Advanced pain care and integrated wellness, brought together under one roof.",
@@ -62,7 +64,7 @@ function Home() {
           <span className="eyebrow">Heal. Restore. Thrive.</span>
           <h1 className="display-xl mt-6">Advanced pain care. Integrated wellness. One place to heal.</h1>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-            At Thrive Pain &amp; Wellness Clinic, we bring physician-led interventional pain management and integrative
+            At Thrive, we bring physician-led interventional pain management and integrative
             wellness together under one roof. From diagnosis and minimally invasive procedures to physiotherapy,
             psychology, nutrition and advanced wellness therapies, every part of your care is designed around one goal:
             helping you move beyond pain and return to the life you want to live.
@@ -208,10 +210,11 @@ function Home() {
                   className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-[oklch(0.2_0.03_158)] via-transparent to-transparent opacity-90" />
-                <span className="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-lg bg-deep text-deep-foreground">
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M7 17 17 7M9 7h8v8" />
-                  </svg>
+                <span className="absolute top-4 left-4 grid h-11 w-11 place-items-center rounded-xl bg-card/95 text-deep shadow-sm">
+                  <ServiceIcon slug={service.slug} className="h-5 w-5" />
+                </span>
+                <span className="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-lg bg-deep text-deep-foreground transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                  <ArrowUpRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
                 </span>
                 <span className="absolute inset-x-0 bottom-0 p-5 text-deep-foreground">
                   <span className="display-md block">{service.title}</span>
@@ -243,7 +246,7 @@ function Home() {
           <ul className="mt-6 grid gap-2 sm:grid-cols-2">
             {interventionalProcedures.map((item) => (
               <li key={item} className="flex items-start gap-2 text-sm">
-                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-deep" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -294,7 +297,7 @@ function Home() {
             <ul className="mt-6 grid gap-2 sm:grid-cols-2">
               {diagnosticCapabilities.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm">
-                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-deep" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
                   {item}
                 </li>
               ))}
@@ -435,7 +438,8 @@ function Home() {
           </div>
           <ul className="grid gap-3 sm:grid-cols-2">
             {insuranceTrustPoints.map((point) => (
-              <li key={point} className="rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold">
+              <li key={point} className="flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold">
+                <ShieldCheck className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
                 {point}
               </li>
             ))}
