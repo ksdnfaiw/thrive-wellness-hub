@@ -1,14 +1,10 @@
 import { useState } from "react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { clinic, services, socials, whatsappLink } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 import { Reveal } from "@/components/Reveal";
 
-const supportOptions = [
-  "Interventional Procedures",
-  "Physiotherapy & Rehabilitation",
-  "Psychology & Mental Wellness",
-  "Nutrition",
-];
+const supportOptions = services.map((service) => service.title);
 
 export function ContactSection() {
   const [sent, setSent] = useState<string | null>(null);
@@ -31,8 +27,11 @@ export function ContactSection() {
       .join("\n");
 
     trackEvent("inquiry_form_submit", { location: "contact_section" });
-    setSent(whatsappLink(message));
+    const link = whatsappLink(message);
+    setSent(link);
+    window.open(link, "_blank", "noopener,noreferrer");
   };
+
 
   return (
     <section id="contact" className="border-t border-border bg-background">
