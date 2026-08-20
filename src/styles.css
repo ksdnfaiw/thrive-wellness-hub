@@ -31,35 +31,37 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-sand: var(--sand);
-  --font-display: "Archivo Narrow", "Archivo", sans-serif;
+  --font-display: "Marcellus", "Cormorant Garamond", Georgia, serif;
   --font-sans: "Instrument Sans", "Inter", system-ui, sans-serif;
-  --shadow-soft: 0 30px 70px -40px color-mix(in oklab, var(--deep) 45%, transparent);
-  --shadow-lift: 0 18px 40px -28px color-mix(in oklab, var(--deep) 55%, transparent);
+  --shadow-soft: 0 30px 70px -40px color-mix(in oklab, var(--deep) 40%, transparent);
+  --shadow-lift: 0 18px 40px -28px color-mix(in oklab, var(--deep) 50%, transparent);
 }
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.988 0.004 100);
-  --foreground: oklch(0.22 0.028 168);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.028 168);
-  --primary: oklch(0.44 0.072 178);
-  --primary-foreground: oklch(0.985 0.008 120);
-  --deep: oklch(0.245 0.042 168);
-  --deep-foreground: oklch(0.97 0.01 110);
-  --secondary: oklch(0.945 0.016 95);
-  --secondary-foreground: oklch(0.27 0.04 168);
-  --muted: oklch(0.951 0.012 95);
-  --muted-foreground: oklch(0.455 0.02 168);
-  --accent: oklch(0.915 0.03 150);
-  --accent-foreground: oklch(0.27 0.04 168);
-  --lime: oklch(0.76 0.17 132);
-  --lime-foreground: oklch(0.22 0.045 168);
-  --sand: oklch(0.935 0.022 92);
-  --border: oklch(0.876 0.016 110);
-  --input: oklch(0.868 0.016 110);
-  --ring: oklch(0.44 0.072 178);
+  /* Brand palette: primary olive, warm beige, soft sage, muted terracotta, deep charcoal. */
+  --background: #fbfaf6;
+  --foreground: #34342d;
+  --card: #ffffff;
+  --card-foreground: #34342d;
+  --primary: #68674e;
+  --primary-foreground: #ffffff;
+  --deep: #34342d;
+  --deep-foreground: #f2eee4;
+  --secondary: #e8e2d5;
+  --secondary-foreground: #34342d;
+  --muted: #efebe1;
+  --muted-foreground: #63624f;
+  --accent: #a8ad91;
+  --accent-foreground: #2b2b24;
+  --lime: #b87963;
+  --lime-foreground: #ffffff;
+  --sand: #e8e2d5;
+  --border: #ddd6c6;
+  --input: #cfc8b6;
+  --ring: #68674e;
 }
+
 
 @layer base {
   * {
