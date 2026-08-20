@@ -311,18 +311,55 @@ export const careModel = [
 
 export const doctors = [
   {
-    name: "Dr. Dheeraj",
-    qualifications: "Qualifications to be displayed as verified by the clinic.",
-    specialty: "Pain Management & Regenerative Medicine",
-    bio: "Dr. Dheeraj leads Thrive's approach to advanced pain management and regenerative care, with a focus on personalised treatment and minimally invasive interventions. His approach combines clinical assessment with modern pain-management techniques to help patients move towards meaningful, sustainable improvement.",
-    experience: "Experience to be displayed as verified by the clinic.",
+    name: "Dr. S Dheeraj Kumar",
+    qualifications: "MBBS, MD (Anaesthesia), FIAPM (Fellowship in Interventional Pain Management)",
+    specialty: "Interventional Pain & Palliative Care Specialist",
+    bio: "Dr. Dheeraj Kumar is an interventional pain and palliative care specialist with a strong foundation in anaesthesia and advanced non-surgical pain interventions. He manages chronic spine, joint, neuropathic and cancer-related pain using evidence-based interventional, molecular and regenerative therapies, with a focus on minimally invasive techniques that reduce surgical referrals and long-term opioid dependence. He is a consultant in pain and palliative care at Renova Hospitals, Hyderabad, and a visiting consultant across the Warangal, Bidar, Nirmal and Karimnagar districts.",
+    experience:
+      "Interventional pain management consultant since 2022, following senior residency in anaesthesia at ESI Medical College (2019 to 2022). MD Anaesthesia, Bangalore Medical College & Research Institute.",
+    expertise: [
+      "Chronic low back pain and sciatica",
+      "Cervical and lumbar disc disorders",
+      "Knee osteoarthritis and joint pain",
+      "Neuropathic pain including trigeminal neuralgia, diabetic neuropathy and PHN",
+      "Cancer pain and palliative care",
+      "Non-surgical spine and joint interventions",
+    ],
+    recognition: [
+      "Abdul Kalam Medical Excellence Award, 2024",
+      "ISTA Heal Excellency Award in Pain Management, 2025",
+      "Faculty, ISACON Karnataka 2024",
+      "3 published papers and 4 posters",
+    ],
+  },
+  {
+    name: "Dr. Anahita Reddy",
+    qualifications: "MD (Anesthesiology), FIPM, FIRM",
+    specialty: "Pain, Regenerative & Palliative Medicine Specialist",
+    bio: "Dr. Anahita Reddy is an anaesthesiologist and pain physician with formal training in interventional pain, regenerative medicine and palliative medicine. She is skilled in ultrasound-guided procedures, selective nerve root blocks, sports injury interventions, headache management and symptom control in advanced illness. She consults in English, Telugu and Hindi.",
+    experience:
+      "Fellow in Interventional Pain & Regenerative Medicine at Synapse Pain & Spine Clinic, Chennai, performing ultrasound and fluoroscopy-guided spine and joint interventions. Previously anaesthesiologist at Sparsh Hospice, supporting comfort-focused palliative care. Currently completing a fellowship in palliative medicine.",
+    expertise: [
+      "Selective nerve root blocks, facet and SI joint injections",
+      "Epidural, caudal and transforaminal injections",
+      "PRP, prolotherapy and regenerative joint therapies",
+      "Headache interventions including occipital and SPG blocks",
+      "Regional and general anaesthesia, POCUS",
+      "Symptom management in palliative care",
+    ],
+    recognition: [
+      "ISACON Telangana 2023, poster presentation",
+      "ISACON AP 2023, paper on TAP block study",
+      "ECMO Excellence, 2023",
+      "POCUS Workshop, 2022",
+    ],
   },
 ];
 
 export const teamDisciplines = [
   {
     title: "Physiotherapy & Rehabilitation",
-    detail: "Professionals focused on restoring movement, strength and function.",
+    detail: "Professionals focused on restoring movement, strength and function after treatment.",
   },
   {
     title: "Psychology & Mental Wellness",
@@ -339,24 +376,63 @@ export const teamDisciplines = [
 ];
 
 export const galleryCategories = [
-  { title: "The Clinic", detail: "Explore our 4,000 sq. ft. facility.", image: heroClinic },
+  { title: "Reception & Pharmacy", detail: "Where every visit begins, with our in-house pharmacy on site.", image: heroClinic },
   {
-    title: "Treatment & Procedure Spaces",
-    detail: "A closer look at our clinical environment and procedure setup.",
-    image: procedureSuite,
+    title: "Consultation Rooms",
+    detail: "Private rooms for detailed clinical evaluation and treatment planning.",
+    image: consultationAsset.url,
   },
   {
-    title: "Diagnostics & Equipment",
-    detail: "Modern equipment supporting accurate diagnosis and treatment.",
-    image: diagnosticsImg,
+    title: "Recovery Rooms",
+    detail: "Dedicated monitoring and post-procedure care after interventional treatment.",
+    image: recoveryAsset.url,
   },
   {
-    title: "Rehabilitation & Wellness",
-    detail: "Spaces designed to support recovery and wellbeing.",
+    title: "Physiotherapy & Rehabilitation",
+    detail: "A dedicated space for movement-based recovery and functional rehabilitation.",
     image: physioImg,
   },
-  { title: "Our Team", detail: "Meet the people behind the Thrive experience.", image: receptionImg },
+  {
+    title: "Wellness Rooms",
+    detail: "Calm rooms for selected wellness therapies and IV-based treatments.",
+    image: wellnessImg,
+  },
+  { title: "Patient Lounge", detail: "Comfortable, private spaces designed around the patient.", image: nutritionImg },
 ];
+
+export const facilityHighlights = [
+  {
+    title: "Physiotherapy & rehabilitation space",
+    detail: "Designed for movement-based recovery and functional rehabilitation.",
+  },
+  { title: "Well-equipped operating theatre", detail: "For minimally invasive and interventional pain procedures." },
+  { title: "Dedicated recovery rooms", detail: "For patient monitoring and post-procedure care." },
+  {
+    title: "Wellness treatment rooms",
+    detail: "A calm environment for selected wellness therapies and IV-based treatments.",
+  },
+  {
+    title: "Advanced wellness facilities",
+    detail: "Including Hyperbaric Oxygen Therapy (HBOT), infrared therapy and cryotherapy.",
+  },
+  { title: "In-house pharmacy", detail: "Prescriptions, supplements and wellness essentials in a single visit." },
+];
+
+export const missionVision = [
+  {
+    title: "Our Mission",
+    detail:
+      "To provide comprehensive, personalised and evidence-based care for people living with pain and movement-related conditions. We look beyond the symptom, understand the individual as a whole and bring together medical care, interventional pain management, physiotherapy, rehabilitation, nutrition, psychological support and wellness to create a more complete path to recovery.",
+    quote: "To help people live with less pain, move with greater confidence and experience a better quality of life.",
+  },
+  {
+    title: "Our Vision",
+    detail:
+      "To create a new standard in pain care, one where patients do not have to navigate multiple specialists and facilities to find the care they need. We envision Thrive as a centre where medicine, movement and wellness come together seamlessly, restoring function, improving well-being and supporting long-term health.",
+    quote: "A world where pain does not define how you live your life.",
+  },
+];
+
 
 export const insuranceTrustPoints = [
   "Empanelled insurers and TPAs",
