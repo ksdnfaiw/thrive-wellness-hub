@@ -56,7 +56,15 @@ export const images = {
   reception: receptionImg,
   diagnostics: diagnosticsImg,
   nutrition: nutritionImg,
+  lounge: loungeAsset.url,
+  corridor: corridorAsset.url,
+  consultation: consultationAsset.url,
+  recovery: recoveryTwoAsset.url,
+  rehab: rehabAsset.url,
+  massage: massageAsset.url,
+  therapyRoom: therapyRoomAsset.url,
 };
+
 
 export type Service = {
   slug: string;
