@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { careModel, images, philosophy, stats } from "@/lib/site-data";
+import { careModel, facilityHighlights, images, missionVision, philosophy, stats } from "@/lib/site-data";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { ClosingCta } from "@/components/ClosingCta";
@@ -90,6 +90,24 @@ function About() {
       </section>
 
       <section className="container-x py-20 sm:py-24">
+        <Reveal className="max-w-2xl">
+          <span className="eyebrow">Mission &amp; vision</span>
+          <h2 className="display-lg mt-6">Why Thrive exists.</h2>
+        </Reveal>
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          {missionVision.map((item, index) => (
+            <Reveal key={item.title} delay={index * 90}>
+              <article className="card-soft h-full p-8">
+                <h3 className="display-md">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+                <p className="mt-6 border-l-2 border-primary pl-4 text-base leading-relaxed text-deep">{item.quote}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-x py-20 sm:py-24">
         <Reveal className="max-w-3xl">
           <span className="eyebrow">More than pain relief</span>
           <h2 className="display-lg mt-6">Because feeling better is only the beginning.</h2>
@@ -126,9 +144,9 @@ function About() {
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { src: images.procedureSuite, alt: "Procedure space with imaging support" },
-              { src: images.diagnostics, alt: "In-house diagnostics room" },
-              { src: images.physio, alt: "Physiotherapy and rehabilitation area" },
+              { src: images.recovery, alt: "Dedicated recovery room at Thrive" },
+              { src: images.wellness, alt: "Wellness treatment room for IV-based therapies" },
+              { src: images.physio, alt: "Physiotherapy and rehabilitation space" },
             ].map((item, index) => (
               <Reveal key={item.alt} delay={index * 70} variant="clip">
                 <img
@@ -143,6 +161,16 @@ function About() {
               </Reveal>
             ))}
           </div>
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {facilityHighlights.map((item, index) => (
+              <Reveal key={item.title} delay={index * 60}>
+                <li className="card-flat h-full p-5">
+                  <p className="text-sm font-semibold">{item.title}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
+                </li>
+              </Reveal>
+            ))}
+          </ul>
           <dl className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="card-flat p-5">
