@@ -1,11 +1,26 @@
-import heroClinic from "@/assets/hero-clinic.jpg";
-import procedureSuite from "@/assets/procedure-suite.jpg";
-import physioImg from "@/assets/physio.jpg";
-import psychologyImg from "@/assets/psychology.jpg";
-import wellnessImg from "@/assets/wellness.jpg";
-import receptionImg from "@/assets/reception.jpg";
-import diagnosticsImg from "@/assets/diagnostics.jpg";
-import nutritionImg from "@/assets/nutrition.jpg";
+import heroAsset from "@/assets/clinic/hero.jpg.asset.json";
+import receptionAsset from "@/assets/clinic/reception.jpg.asset.json";
+import loungeAsset from "@/assets/clinic/lounge.jpg.asset.json";
+import corridorAsset from "@/assets/clinic/corridor.jpg.asset.json";
+import consultationAsset from "@/assets/clinic/consultation.jpg.asset.json";
+import consultationTwoAsset from "@/assets/clinic/consultation-two.jpg.asset.json";
+import recoveryAsset from "@/assets/clinic/recovery.jpg.asset.json";
+import recoveryTwoAsset from "@/assets/clinic/recovery-two.jpg.asset.json";
+import wellnessRoomAsset from "@/assets/clinic/wellness-room.jpg.asset.json";
+import rehabAsset from "@/assets/clinic/rehab.jpg.asset.json";
+import vipLoungeAsset from "@/assets/clinic/vip-lounge.jpg.asset.json";
+import physioGymAsset from "@/assets/clinic/physio-gym.jpg.asset.json";
+import therapyRoomAsset from "@/assets/clinic/therapy-room.jpg.asset.json";
+import massageAsset from "@/assets/clinic/massage.jpg.asset.json";
+
+const heroClinic = heroAsset.url;
+const procedureSuite = recoveryAsset.url;
+const physioImg = physioGymAsset.url;
+const psychologyImg = consultationTwoAsset.url;
+const wellnessImg = wellnessRoomAsset.url;
+const receptionImg = receptionAsset.url;
+const diagnosticsImg = therapyRoomAsset.url;
+const nutritionImg = vipLoungeAsset.url;
 
 export const clinic = {
   name: "Thrive Pain Clinic, Wellness & More",
