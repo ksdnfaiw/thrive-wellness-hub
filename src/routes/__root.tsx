@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: clinic.name },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#2E6E6E" },
+      { name: "theme-color", content: "#68674E" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "geo.region", content: "IN-TG" },
       { name: "geo.placename", content: "Raidurgam, Hyderabad" },
