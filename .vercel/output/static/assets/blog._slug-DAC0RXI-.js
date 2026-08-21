@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Cltr0gcK.js";import{t}from"./link-CzpMdCkQ.js";var n=e(),r=()=>(0,n.jsxs)(`section`,{className:`container-x py-24 text-center`,children:[(0,n.jsx)(`h1`,{className:`display-lg`,children:`Article not found`}),(0,n.jsx)(t,{to:`/blog`,className:`btn btn-primary mt-8`,children:`Back to the journal`})]});export{r as notFoundComponent};

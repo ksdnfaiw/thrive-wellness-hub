@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heal-restore-thrive.lovable.app/sitemap.xml
