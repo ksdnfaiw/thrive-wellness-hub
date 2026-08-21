@@ -41,18 +41,23 @@ export function LeadForm({
       .join("\n");
 
     trackEvent(mode === "booking" ? "booking_form_submit" : "inquiry_form_submit", { service });
-    setSentTo(whatsappLink(message));
+    const link = whatsappLink(message);
+    setSentTo(link);
     setDone(true);
+    // Hand the lead straight to the clinic WhatsApp number.
+    window.open(link, "_blank", "noopener,noreferrer");
   };
+
 
   if (done) {
     return (
       <div className="card-soft p-6 sm:p-8">
         <h3 className="text-xl">Request received</h3>
         <p className="mt-3 text-sm text-muted-foreground">
-          Our care team will call you on the number you shared, usually within one working hour. To confirm faster, send
-          the same details straight to our WhatsApp desk.
+          Your details have been opened in WhatsApp so they reach our care team on {clinic.phone}. If the WhatsApp window
+          did not open, use the button below. You can also write to {clinic.email}.
         </p>
+
         <div className="mt-5 flex flex-wrap gap-3">
           {sentTo ? (
             <a

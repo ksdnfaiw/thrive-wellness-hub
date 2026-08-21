@@ -75,16 +75,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Thrive Pain & Wellness Clinic | Hyderabad" },
+      { title: "Thrive Pain Clinic, Wellness & More | Raidurgam, Hyderabad" },
       {
         name: "description",
         content:
-          "Physician-led interventional pain management and integrative wellness in Hyderabad. Heal. Restore. Thrive.",
+          "Physician-led interventional pain management and integrative wellness at Raidurgam, Hyderabad. Heal. Restore. Thrive.",
       },
       { property: "og:site_name", content: clinic.name },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#2E6E6E" },
+      { name: "theme-color", content: "#68674E" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "geo.region", content: "IN-TG" },
+      { name: "geo.placename", content: "Raidurgam, Hyderabad" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -93,8 +96,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Marcellus&family=Instrument+Sans:wght@400;500;600;700&display=swap",
       },
+
     ],
     scripts: [
       {
@@ -107,17 +111,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           telephone: clinic.phone,
           email: clinic.email,
           medicalSpecialty: "PainMedicine",
+          url: "https://heal-restore-thrive.lovable.app",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Habsiguda",
+            streetAddress: "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurgam, Shaikpet",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
+            postalCode: "500081",
             addressCountry: "IN",
           },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              opens: "09:00",
+              closes: "18:00",
+            },
+          ],
         }),
       },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
