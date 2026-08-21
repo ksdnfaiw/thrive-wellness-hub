@@ -55,7 +55,7 @@ export function Reveal({
   return (
     <Tag
       ref={ref}
-      style={shown ? undefined : { transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: delay ? `${delay}ms` : undefined }}
       className={`reveal reveal-${variant} ${shown ? "reveal-in" : ""} ${className}`}
     >
       {children}
