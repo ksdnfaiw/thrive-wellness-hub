@@ -94,6 +94,10 @@
   #lovable-badge {
     display: none !important;
   }
+  img[src^="/images/clinic/page_"] {
+    scale: 1.15;
+    transform-origin: center;
+  }
 }
 
 @utility container-x {
