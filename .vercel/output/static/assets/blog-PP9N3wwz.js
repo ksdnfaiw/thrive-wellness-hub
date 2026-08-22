@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BAoxMT4A.js";import{C as t}from"./index-B1tseNcZ.js";var n=e(),r=()=>(0,n.jsx)(t,{"data-tsd-source":`/src/routes/blog.tsx:4:20`});export{r as component};

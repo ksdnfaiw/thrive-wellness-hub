@@ -1,18 +1,18 @@
-const heroClinic = "/images/clinic/page_3.jpg";
-const procedureSuite = "/images/clinic/page_8.jpg";
-const physioImg = "/images/clinic/page_15.jpg";
-const psychologyImg = "/images/clinic/page_7.jpg";
-const wellnessImg = "/images/clinic/page_17.jpg";
-const receptionImg = "/images/clinic/page_2.jpg";
-const diagnosticsImg = "/images/clinic/page_16.jpg";
-const nutritionImg = "/images/clinic/page_12.jpg";
-const loungeAssetUrl = "/images/clinic/page_11.jpg";
-const corridorAssetUrl = "/images/clinic/page_5.jpg";
-const consultationAssetUrl = "/images/clinic/page_6.jpg";
-const recoveryTwoAssetUrl = "/images/clinic/page_9.jpg";
-const rehabAssetUrl = "/images/clinic/page_14.jpg";
-const massageAssetUrl = "/images/clinic/page_18.jpg";
-const therapyRoomAssetUrl = "/images/clinic/page_16.jpg";
+import heroClinic from "../../public/images/clinic/page_3.jpg";
+import procedureSuite from "../../public/images/clinic/page_8.jpg";
+import physioImg from "../../public/images/clinic/page_15.jpg";
+import psychologyImg from "../../public/images/clinic/page_7.jpg";
+import wellnessImg from "../../public/images/clinic/page_17.jpg";
+import receptionImg from "../../public/images/clinic/page_2.jpg";
+import diagnosticsImg from "../../public/images/clinic/page_16.jpg";
+import nutritionImg from "../../public/images/clinic/page_12.jpg";
+import loungeAssetUrl from "../../public/images/clinic/page_11.jpg";
+import corridorAssetUrl from "../../public/images/clinic/page_5.jpg";
+import consultationAssetUrl from "../../public/images/clinic/page_6.jpg";
+import recoveryTwoAssetUrl from "../../public/images/clinic/page_9.jpg";
+import rehabAssetUrl from "../../public/images/clinic/page_14.jpg";
+import massageAssetUrl from "../../public/images/clinic/page_18.jpg";
+import therapyRoomAssetUrl from "../../public/images/clinic/page_16.jpg";
 export const clinic = {
   name: "Thrive Pain Clinic, Wellness & More",
   shortName: "Thrive",
