@@ -3,7 +3,7 @@ import { t as Reveal } from "./Reveal-jswzWroC.mjs";
 import { t as PageHero } from "./PageHero-Bh_kqYOl.mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as ClosingCta } from "./ClosingCta-CirgJkai.mjs";
-import { b as teamDisciplines, l as doctors } from "./router-CYUzs4y0.mjs";
+import { b as teamDisciplines, l as doctors } from "./router-Bt7Mn-BL.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/doctors-B1ztM0pG.js
 var import_jsx_runtime = require_jsx_runtime();
 function Doctors() {

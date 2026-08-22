@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { t as Reveal } from "./Reveal-jswzWroC.mjs";
 import { t as PageHero } from "./PageHero-Bh_kqYOl.mjs";
 import { t as ClosingCta } from "./ClosingCta-CirgJkai.mjs";
-import { S as whatsappLink, c as clinic, p as insuranceFaqs, s as cashlessSteps, x as trackEvent } from "./router-CYUzs4y0.mjs";
+import { S as whatsappLink, c as clinic, p as insuranceFaqs, s as cashlessSteps, x as trackEvent } from "./router-Bt7Mn-BL.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/insurance-BgEZKQhd.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();

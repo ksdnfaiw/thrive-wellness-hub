@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { t as Reveal } from "./Reveal-jswzWroC.mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as ClosingCta } from "./ClosingCta-CirgJkai.mjs";
-import { C as whyThrive, S as whatsappLink, _ as services, a as blogPosts, c as clinic, f as images, i as approach, m as insuranceTrustPoints, v as socials, x as trackEvent, y as stats } from "./router-CYUzs4y0.mjs";
+import { C as whyThrive, S as whatsappLink, _ as services, a as blogPosts, c as clinic, f as images, i as approach, m as insuranceTrustPoints, v as socials, x as trackEvent, y as stats } from "./router-Bt7Mn-BL.mjs";
 import { a as Pill, c as Mail, d as CircleCheck, f as Brain, h as Activity, i as Scan, l as Droplets, m as Apple, n as Stethoscope, o as Phone, p as ArrowUpRight, r as ShieldCheck, s as MapPin, t as Syringe, u as Clock } from "../_libs/lucide-react.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/routes-_WTAsGla.js
 var import_react = /* @__PURE__ */ __toESM(require_react());

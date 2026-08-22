@@ -1,7 +1,7 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { t as Reveal } from "./Reveal-jswzWroC.mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { S as whatsappLink, c as clinic, x as trackEvent } from "./router-CYUzs4y0.mjs";
+import { S as whatsappLink, c as clinic, x as trackEvent } from "./router-Bt7Mn-BL.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/ClosingCta-CirgJkai.js
 var import_jsx_runtime = require_jsx_runtime();
 function ClosingCta() {
