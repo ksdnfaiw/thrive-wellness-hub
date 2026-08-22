@@ -1,26 +1,18 @@
-import heroAsset from "@/assets/clinic/hero.jpg.asset.json";
-import receptionAsset from "@/assets/clinic/reception.jpg.asset.json";
-import loungeAsset from "@/assets/clinic/lounge.jpg.asset.json";
-import corridorAsset from "@/assets/clinic/corridor.jpg.asset.json";
-import consultationAsset from "@/assets/clinic/consultation.jpg.asset.json";
-import consultationTwoAsset from "@/assets/clinic/consultation-two.jpg.asset.json";
-import recoveryAsset from "@/assets/clinic/recovery.jpg.asset.json";
-import recoveryTwoAsset from "@/assets/clinic/recovery-two.jpg.asset.json";
-import wellnessRoomAsset from "@/assets/clinic/wellness-room.jpg.asset.json";
-import rehabAsset from "@/assets/clinic/rehab.jpg.asset.json";
-import vipLoungeAsset from "@/assets/clinic/vip-lounge.jpg.asset.json";
-import physioGymAsset from "@/assets/clinic/physio-gym.jpg.asset.json";
-import therapyRoomAsset from "@/assets/clinic/therapy-room.jpg.asset.json";
-import massageAsset from "@/assets/clinic/massage.jpg.asset.json";
-
-const heroClinic = heroAsset.url;
-const procedureSuite = recoveryAsset.url;
-const physioImg = physioGymAsset.url;
-const psychologyImg = consultationTwoAsset.url;
-const wellnessImg = wellnessRoomAsset.url;
-const receptionImg = receptionAsset.url;
-const diagnosticsImg = therapyRoomAsset.url;
-const nutritionImg = vipLoungeAsset.url;
+const heroClinic = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000";
+const procedureSuite = "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1000";
+const physioImg = "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1000";
+const psychologyImg = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=1000";
+const wellnessImg = "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=1000";
+const receptionImg = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000";
+const diagnosticsImg = "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=1000";
+const nutritionImg = "https://images.unsplash.com/photo-1560662105-57f8ad6ae2d1?auto=format&fit=crop&q=80&w=1000";
+const loungeAssetUrl = "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=1000";
+const corridorAssetUrl = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=1000";
+const consultationAssetUrl = "https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?auto=format&fit=crop&q=80&w=1000";
+const recoveryTwoAssetUrl = "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=1000";
+const rehabAssetUrl = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000";
+const massageAssetUrl = "https://images.unsplash.com/photo-1519823551278-64ac92734fb4?auto=format&fit=crop&q=80&w=1000";
+const therapyRoomAssetUrl = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000";
 
 export const clinic = {
   name: "Thrive Pain Clinic, Wellness & More",
@@ -56,13 +48,13 @@ export const images = {
   reception: receptionImg,
   diagnostics: diagnosticsImg,
   nutrition: nutritionImg,
-  lounge: loungeAsset.url,
-  corridor: corridorAsset.url,
-  consultation: consultationAsset.url,
-  recovery: recoveryTwoAsset.url,
-  rehab: rehabAsset.url,
-  massage: massageAsset.url,
-  therapyRoom: therapyRoomAsset.url,
+  lounge: loungeAssetUrl,
+  corridor: corridorAssetUrl,
+  consultation: consultationAssetUrl,
+  recovery: recoveryTwoAssetUrl,
+  rehab: rehabAssetUrl,
+  massage: massageAssetUrl,
+  therapyRoom: therapyRoomAssetUrl,
 };
 
 
@@ -380,12 +372,12 @@ export const galleryCategories = [
   {
     title: "Consultation Rooms",
     detail: "Private rooms for detailed clinical evaluation and treatment planning.",
-    image: consultationAsset.url,
+    image: consultationAssetUrl,
   },
   {
     title: "Recovery Rooms",
     detail: "Dedicated monitoring and post-procedure care after interventional treatment.",
-    image: recoveryAsset.url,
+    image: procedureSuite,
   },
   {
     title: "Physiotherapy & Rehabilitation",
