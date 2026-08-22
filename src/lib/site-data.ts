@@ -1,19 +1,18 @@
-const heroClinic = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000";
-const procedureSuite = "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1000";
-const physioImg = "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1000";
-const psychologyImg = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=1000";
-const wellnessImg = "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=1000";
-const receptionImg = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000";
-const diagnosticsImg = "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=1000";
-const nutritionImg = "https://images.unsplash.com/photo-1560662105-57f8ad6ae2d1?auto=format&fit=crop&q=80&w=1000";
-const loungeAssetUrl = "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=1000";
-const corridorAssetUrl = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=1000";
-const consultationAssetUrl = "https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?auto=format&fit=crop&q=80&w=1000";
-const recoveryTwoAssetUrl = "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=1000";
-const rehabAssetUrl = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000";
-const massageAssetUrl = "https://images.unsplash.com/photo-1519823551278-64ac92734fb4?auto=format&fit=crop&q=80&w=1000";
-const therapyRoomAssetUrl = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000";
-
+const heroClinic = "/images/clinic/page_3.jpg";
+const procedureSuite = "/images/clinic/page_8.jpg";
+const physioImg = "/images/clinic/page_15.jpg";
+const psychologyImg = "/images/clinic/page_7.jpg";
+const wellnessImg = "/images/clinic/page_17.jpg";
+const receptionImg = "/images/clinic/page_2.jpg";
+const diagnosticsImg = "/images/clinic/page_16.jpg";
+const nutritionImg = "/images/clinic/page_12.jpg";
+const loungeAssetUrl = "/images/clinic/page_11.jpg";
+const corridorAssetUrl = "/images/clinic/page_5.jpg";
+const consultationAssetUrl = "/images/clinic/page_6.jpg";
+const recoveryTwoAssetUrl = "/images/clinic/page_9.jpg";
+const rehabAssetUrl = "/images/clinic/page_14.jpg";
+const massageAssetUrl = "/images/clinic/page_18.jpg";
+const therapyRoomAssetUrl = "/images/clinic/page_16.jpg";
 export const clinic = {
   name: "Thrive Pain Clinic, Wellness & More",
   shortName: "Thrive",
