@@ -216,6 +216,25 @@ export const services: Service[] = [
       { stage: "Continuity", detail: "Ongoing prescriptions are supported as your plan progresses." },
     ],
   },
+  {
+    slug: "polyclinic",
+    title: "Polyclinic",
+    short: "Comprehensive multi-specialty care in one location.",
+    intro:
+      "Our polyclinic brings together various specialists to offer complete healthcare services, from routine checkups to complex diagnoses, all coordinated under one roof.",
+    image: consultationAssetUrl,
+    highlights: [
+      "Multi-specialty consultations",
+      "Comprehensive health checkups",
+      "Integrated care approach",
+      "Seamless referral between specialists",
+    ],
+    journey: [
+      { stage: "Consultation", detail: "Initial assessment by a general physician or specialist." },
+      { stage: "Diagnosis", detail: "Access to our in-house diagnostics for swift results." },
+      { stage: "Treatment", detail: "Collaborative treatment plan designed by our multidisciplinary team." },
+    ],
+  },
 ];
 
 export const approach = [

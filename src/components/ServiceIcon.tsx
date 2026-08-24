@@ -18,6 +18,7 @@ const map: Record<string, LucideIcon> = {
   nutrition: Apple,
   "wellness-therapies": Droplets,
   "in-house-pharmacy": Pill,
+  polyclinic: Stethoscope,
 };
 
 export function ServiceIcon({ slug, className = "h-5 w-5" }: { slug: string; className?: string }) {

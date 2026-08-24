@@ -87,7 +87,7 @@ function Home() {
             </a>
           </div>
 
-          <p className="mt-8 text-xs tracking-[0.14em] text-muted-foreground uppercase">
+          <p className="mt-8 text-sm sm:text-base font-bold tracking-[0.14em] text-deep uppercase">
             Physician-led care &middot; Personalised treatment &middot; Multidisciplinary support
           </p>
         </Reveal>
