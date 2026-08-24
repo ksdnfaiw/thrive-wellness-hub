@@ -50,7 +50,7 @@ export function Header() {
           }`}
         >
           <Link to="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-            <Logo className="h-16 sm:h-20 md:h-24 w-auto" />
+            <Logo className="h-24 sm:h-32 md:h-40 w-auto drop-shadow-2xl" />
           </Link>
 
           <nav aria-label="Primary" className="mx-auto hidden items-center gap-1 lg:flex">
