@@ -87,9 +87,13 @@ function Home() {
             </a>
           </div>
 
-          <p className="mt-8 text-sm sm:text-base font-bold tracking-[0.14em] text-deep uppercase">
-            Physician-led care &middot; Personalised treatment &middot; Multidisciplinary support
-          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm font-bold tracking-[0.1em] text-deep uppercase">
+            <span>Physician-led care</span>
+            <span className="text-primary/60">&middot;</span>
+            <span>Personalised treatment</span>
+            <span className="text-primary/60">&middot;</span>
+            <span>Multidisciplinary support</span>
+          </div>
         </Reveal>
 
         <Reveal delay={120} variant="scale">

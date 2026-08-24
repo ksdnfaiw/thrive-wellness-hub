@@ -45,12 +45,12 @@ export function Header() {
     <header className="sticky top-0 z-50 pt-3 sm:pt-5">
       <div className="container-x">
         <div
-          className={`flex min-h-[64px] items-center gap-4 rounded-2xl border border-border bg-card/95 px-4 backdrop-blur transition-shadow sm:px-6 ${
+          className={`flex min-h-[80px] py-2 items-center gap-4 rounded-2xl border border-border bg-card/95 px-4 backdrop-blur transition-shadow sm:px-6 ${
             scrolled ? "shadow-soft" : ""
           }`}
         >
           <Link to="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-            <Logo className="h-28 sm:h-32 md:h-40 w-auto" />
+            <Logo className="h-16 sm:h-20 md:h-24 w-auto" />
           </Link>
 
           <nav aria-label="Primary" className="mx-auto hidden items-center gap-1 lg:flex">
@@ -65,11 +65,14 @@ export function Header() {
               <Link
                 to="/services"
                 activeProps={{ className: "!text-deep" }}
-                className={linkClass}
+                className={`${linkClass} inline-flex items-center gap-1`}
                 onFocus={() => setMenu("services")}
                 aria-expanded={menu === "services"}
               >
                 Services
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 opacity-70" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
               </Link>
               {menu === "services" ? (
                 <div className="absolute top-full left-0 w-80 pt-3">
@@ -100,8 +103,8 @@ export function Header() {
                 onFocus={() => setMenu("pages")}
                 aria-expanded={menu === "pages"}
               >
-                Pages
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5">
+                More
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 opacity-70" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="m6 9 6 6 6-6" />
                 </svg>
               </button>
