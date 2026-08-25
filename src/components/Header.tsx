@@ -45,12 +45,12 @@ export function Header() {
     <header className="sticky top-0 z-50 pt-3 sm:pt-5">
       <div className="container-x">
         <div
-          className={`flex min-h-[80px] py-2 items-center gap-4 rounded-2xl border border-border bg-card/95 px-4 backdrop-blur transition-shadow sm:px-6 ${
+          className={`flex min-h-[72px] py-2 items-center gap-4 rounded-2xl border border-border bg-card/95 px-4 backdrop-blur transition-shadow sm:px-6 ${
             scrolled ? "shadow-soft" : ""
           }`}
         >
           <Link to="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-            <Logo className="h-24 sm:h-32 md:h-40 w-auto drop-shadow-2xl" />
+            <Logo className="h-12 sm:h-14 md:h-16 w-auto" />
           </Link>
 
           <nav aria-label="Primary" className="mx-auto hidden items-center gap-1 lg:flex">
