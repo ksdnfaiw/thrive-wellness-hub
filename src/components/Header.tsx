@@ -66,7 +66,7 @@ export function Header() {
       <div
         className={`
           hidden lg:grid
-          grid-cols-[1fr_auto_1fr]
+          grid-cols-[1fr_auto_minmax(0,max-content)]
           items-center
           rounded-2xl border border-border
           bg-card/90 backdrop-blur-md
@@ -126,11 +126,11 @@ export function Header() {
         {/* Center — Logo */}
         <Link
           to="/"
-          className="flex items-center justify-center px-8 py-3"
+          className="flex items-center justify-center px-6 py-2"
           onClick={() => setOpen(false)}
           aria-label="Thrive — home"
         >
-          <Logo className="h-20 xl:h-24 w-auto" />
+          <Logo className="h-24 xl:h-28 w-auto" />
         </Link>
 
         {/* Right nav */}
@@ -146,14 +146,14 @@ export function Header() {
             </Link>
           ))}
 
-          <div className="ml-2 flex items-center gap-2.5 border-l border-border pl-5">
+          <div className="ml-2 flex shrink-0 items-center gap-2.5 border-l border-border pl-5">
             <a
               href={clinic.phoneHref}
-              className="hidden text-sm font-semibold text-deep xl:inline hover:opacity-70 transition-opacity"
+              className="hidden whitespace-nowrap text-sm font-semibold text-deep xl:inline hover:opacity-70 transition-opacity"
             >
               {clinic.phone}
             </a>
-            <Link to="/contact" className="btn btn-primary text-sm">
+            <Link to="/contact" className="btn btn-primary whitespace-nowrap text-sm">
               Contact us
             </Link>
           </div>
