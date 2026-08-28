@@ -51,9 +51,6 @@ function ServiceDetail() {
               <Link to="/book" className="btn btn-primary">
                 Book a consultation
               </Link>
-              <Link to="/insurance" className="btn btn-outline">
-                Insurance & billing
-              </Link>
             </div>
           </Reveal>
           <Reveal delay={110}>

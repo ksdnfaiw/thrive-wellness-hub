@@ -428,31 +428,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Insurance trust bar */}
-      <section className="container-x py-16 sm:py-20">
-        <Reveal className="card-flat grid gap-8 p-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div>
-            <span className="eyebrow">Insurance</span>
-            <h2 className="display-lg mt-5 text-2xl">Care with greater clarity</h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              We believe understanding the financial side of treatment should be as straightforward as understanding the
-              treatment itself. Thrive works with empanelled insurers and TPAs to help eligible patients navigate the
-              cashless process.
-            </p>
-            <Link to="/insurance" className="btn btn-primary mt-6">
-              View insurance &amp; billing
-            </Link>
-          </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {insuranceTrustPoints.map((point) => (
-              <li key={point} className="flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
-                {point}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </section>
 
       <ContactSection />
 
