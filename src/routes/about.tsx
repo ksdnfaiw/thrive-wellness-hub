@@ -44,6 +44,18 @@ function About() {
         </Link>
       </PageHero>
 
+      <section className="container-x py-10 sm:py-16">
+        <Reveal>
+          <img
+            src="https://res.cloudinary.com/dizaawlyl/image/upload/v1787908392/DSC03413_gisw1i.jpg"
+            alt="Thrive Pain & Wellness Clinic Team"
+            loading="lazy"
+            decoding="async"
+            className="aspect-video w-full rounded-[2rem] object-cover shadow-lg"
+          />
+        </Reveal>
+      </section>
+
       <section className="container-x grid gap-12 py-20 lg:grid-cols-2 lg:items-center sm:py-24">
         <Reveal>
           <h2 className="display-lg">Care brought together, not scattered.</h2>
