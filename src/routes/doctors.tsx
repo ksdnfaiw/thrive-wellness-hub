@@ -63,7 +63,7 @@ function Doctors() {
                     <img
                       src={doctor.image}
                       alt={doctor.name}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                   ) : (

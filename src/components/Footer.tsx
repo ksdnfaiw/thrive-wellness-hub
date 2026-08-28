@@ -6,6 +6,7 @@ const quickLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
+  { label: "Interventions", to: "/interventions" },
   { label: "Doctors & Team", to: "/doctors" },
   { label: "Gallery", to: "/gallery" },
   { label: "Blog", to: "/blog" },
