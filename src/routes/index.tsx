@@ -62,7 +62,7 @@ function Home() {
       <section className="container-x grid items-center gap-10 py-10 lg:grid-cols-[1.02fr_1fr] lg:gap-14 lg:py-16">
         <Reveal>
           <span className="eyebrow">Heal. Restore. Thrive.</span>
-          <h1 className="display-xl mt-6">Advanced pain care. Integrated wellness. One place to heal.</h1>
+          <h1 className="display-lg mt-6">Advanced pain care. Integrated wellness. One place to heal.</h1>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
             At Thrive, we bring physician-led interventional pain management and integrative
             wellness together under one roof. From diagnosis and minimally invasive procedures to physiotherapy,

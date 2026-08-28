@@ -4,6 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { LeadForm } from "@/components/LeadForm";
 import { ClosingCta } from "@/components/ClosingCta";
+import { HumanoidMap } from "@/components/HumanoidMap";
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
@@ -61,6 +62,18 @@ function ServicesHub() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Conditions we treat (Humanoid Map) */}
+      <section className="container-x py-16 sm:py-20">
+        <Reveal className="mb-12 text-center">
+          <span className="eyebrow">Conditions we treat</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-3xl">Comprehensive pain management</h2>
+          <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground">
+            Explore our interactive map to see the wide range of chronic and acute pain conditions we treat across the body.
+          </p>
+        </Reveal>
+        <HumanoidMap />
       </section>
 
       <section className="container-x pb-20">

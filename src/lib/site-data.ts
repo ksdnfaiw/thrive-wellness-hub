@@ -365,6 +365,26 @@ export const doctors = [
       "POCUS Workshop, 2022",
     ],
   },
+  {
+    name: "Dr. Spoorthi",
+    image: "",
+    qualifications: "Details to be updated",
+    specialty: "Pain Management Specialist",
+    bio: "Dr. Spoorthi is a valued member of the Thrive Pain & Wellness Clinic team. Her complete biography and credentials will be updated shortly.",
+    experience: "Details to be updated",
+    expertise: ["Chronic pain management", "Integrative wellness"],
+    recognition: [],
+  },
+  {
+    name: "Dr. Aparajita",
+    image: "",
+    qualifications: "Details to be updated",
+    specialty: "Pain Management Specialist",
+    bio: "Dr. Aparajita brings dedicated expertise to the multidisciplinary team at Thrive. Her detailed profile and qualifications will be published soon.",
+    experience: "Details to be updated",
+    expertise: ["Chronic pain management", "Integrative wellness"],
+    recognition: [],
+  },
 ];
 
 export const teamDisciplines = [
@@ -597,6 +617,25 @@ export const blogPosts: BlogPost[] = [
       "Support often starts with practical routines around sleep timing, activity and pacing, alongside psychological support for the worry and tension that persistent pain creates.",
       "Because psychology sits within the same team as pain management and physiotherapy at Thrive, this support forms part of one plan rather than a separate referral.",
       "If pain is affecting your mood or sleep, mention it at your consultation so it can be included in your care.",
+    ],
+  },
+  {
+    slug: "inflammation-and-adjuvant-therapies",
+    title: "Inflammation and Pain: The Adjuvant Role of Cold Plunge, HBOT, Molecular Hydrogen, and Ozone Therapy",
+    excerpt: "How emerging adjuvant therapies can help modulate chronic inflammation and support pain management.",
+    author: "Thrive Clinical Team",
+    date: "2026-08-25",
+    displayDate: "25 August 2026",
+    readTime: "6 min read",
+    image: wellnessImg,
+    body: [
+      "Chronic inflammation is often at the core of persistent pain conditions. While conventional pain management focuses on diagnosing and treating the structural or neuropathic causes of pain, addressing systemic inflammation can play a crucial adjunctive role in a patient's overall recovery.",
+      "At Thrive, we recognise that therapies designed to modulate inflammation, oxidative stress, and tissue oxygenation can be valuable tools when used alongside evidence-based pain interventions. These include Cold Water Immersion (Cold Plunge), Hyperbaric Oxygen Therapy (HBOT), Molecular Hydrogen, and advanced ozone therapies like MAHT and EBOO.",
+      "**Cold Water Immersion (Cold Plunge)**: Exposure to cold temperatures can trigger a systemic anti-inflammatory response, constricting blood vessels to reduce acute swelling and subsequently promoting a rush of oxygen-rich blood to tissues as the body warms. It is increasingly recognised for its potential to support muscle recovery and reduce systemic inflammatory markers.",
+      "**Hyperbaric Oxygen Therapy (HBOT)**: Delivering pure oxygen in a pressurised environment allows oxygen to dissolve directly into the blood plasma, reaching tissues with compromised circulation. This can help reduce swelling, promote the formation of new blood vessels, and support the body's natural healing processes in chronic pain conditions.",
+      "**Molecular Hydrogen**: An emerging antioxidant therapy, molecular hydrogen is thought to selectively neutralise harmful free radicals without affecting essential reactive oxygen species. By modulating oxidative stress, it offers a novel approach to managing the inflammatory cascades associated with chronic pain.",
+      "**Ozone Therapy (MAHT and EBOO)**: Major Autohemotherapy (MAHT) and Extracorporeal Blood Oxygenation and Ozonation (EBOO) are advanced blood-based therapies. By exposing a patient's blood to a precise medical ozone-oxygen mixture before returning it to the body, these therapies aim to improve microcirculation, stimulate antioxidant enzyme activity, and modulate inflammatory signalling.",
+      "It is important to note that these modalities are **adjunctive**. They are not standalone cures for chronic pain, but rather supportive therapies that address the underlying biological environment. When combined with accurate diagnosis, interventional treatments, and proper rehabilitation, they can help patients build a healthier, more active life beyond pain."
     ],
   },
 ];

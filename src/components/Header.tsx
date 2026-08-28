@@ -124,14 +124,16 @@ export function Header() {
         </nav>
 
         {/* Center — Logo */}
-        <Link
-          to="/"
-          className="flex items-center justify-center px-6 py-2"
-          onClick={() => setOpen(false)}
-          aria-label="Thrive — home"
-        >
-          <Logo className="h-24 xl:h-28 w-auto" />
-        </Link>
+        <div className="flex h-20 items-center justify-center pt-2 sm:h-24">
+          <Link
+            to="/"
+            className="group relative inline-flex transition-transform duration-300 hover:scale-105"
+            onClick={() => setOpen(false)}
+          >
+            <Logo className="h-32 w-auto xl:h-40" />
+            <span className="sr-only">Thrive Pain Clinic - Home</span>
+          </Link>
+        </div>
 
         {/* Right nav */}
         <nav aria-label="Primary right" className="flex items-center justify-end gap-5">
