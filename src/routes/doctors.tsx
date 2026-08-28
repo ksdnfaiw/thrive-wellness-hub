@@ -54,43 +54,66 @@ function Doctors() {
           <h2 className="display-lg mt-5 text-2xl">Physician-led pain and regenerative care</h2>
         </Reveal>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-[1.1fr_1fr]">
-          {doctors.map((doctor) => (
-            <Reveal key={doctor.name}>
-              <article className="card-soft h-full p-7">
-                <div
-                  aria-hidden="true"
-                  className="grid h-16 w-16 place-items-center rounded-full bg-secondary font-display text-xl font-bold text-secondary-foreground"
-                >
-                  D
+        <div className="mt-10 grid gap-8">
+          {doctors.map((doctor, i) => (
+            <Reveal key={doctor.name} delay={i * 100}>
+              <article className="card-soft group relative flex h-full flex-col overflow-hidden p-0 transition-all hover:shadow-xl sm:flex-row">
+                <div className="relative h-72 sm:h-auto sm:w-2/5 shrink-0 overflow-hidden bg-secondary">
+                  {doctor.image ? (
+                    <img
+                      src={doctor.image}
+                      alt={doctor.name}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-primary/5">
+                      <div className="grid h-24 w-24 place-items-center rounded-full bg-secondary font-display text-3xl font-bold text-secondary-foreground shadow-sm">
+                        {doctor.name.charAt(0)}
+                      </div>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent sm:bg-gradient-to-r" />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold">{doctor.name}</h3>
-                <p className="mt-1 text-xs font-semibold tracking-[0.14em] text-primary uppercase">
-                  {doctor.specialty}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed">{doctor.bio}</p>
-                <dl className="mt-6 space-y-3 text-sm text-muted-foreground">
-                  <div>
-                    <dt className="text-xs font-semibold tracking-[0.16em] text-deep uppercase">Qualifications</dt>
-                    <dd className="mt-1">{doctor.qualifications}</dd>
+                <div className="flex flex-1 flex-col p-8 sm:p-10">
+                  <h3 className="font-display text-2xl font-semibold tracking-tight text-foreground">{doctor.name}</h3>
+                  <p className="mt-2 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wider text-primary uppercase">
+                    {doctor.specialty}
+                  </p>
+                  <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{doctor.bio}</p>
+                  
+                  <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                    <div>
+                      <dt className="flex items-center gap-2 text-xs font-semibold tracking-widest text-deep uppercase">
+                        <span className="h-px w-4 bg-primary/40"></span> Qualifications
+                      </dt>
+                      <dd className="mt-2 text-sm leading-snug text-muted-foreground">{doctor.qualifications}</dd>
+                    </div>
+                    <div>
+                      <dt className="flex items-center gap-2 text-xs font-semibold tracking-widest text-deep uppercase">
+                        <span className="h-px w-4 bg-primary/40"></span> Experience
+                      </dt>
+                      <dd className="mt-2 text-sm leading-snug text-muted-foreground">{doctor.experience}</dd>
+                    </div>
                   </div>
-                  <div>
-                    <dt className="text-xs font-semibold tracking-[0.16em] text-deep uppercase">Experience</dt>
-                    <dd className="mt-1">{doctor.experience}</dd>
-                  </div>
-                </dl>
+                </div>
               </article>
             </Reveal>
           ))}
 
-          <Reveal delay={90}>
-            <div className="card-flat h-full p-7">
-              <h3 className="display-md">Our multidisciplinary team</h3>
-              <ul className="mt-6 space-y-5">
+          <Reveal delay={200}>
+            <div className="card-soft mt-8 grid gap-8 overflow-hidden p-0 sm:grid-cols-[1fr_1.5fr]">
+              <div className="bg-primary/5 p-8 sm:p-10">
+                <h3 className="font-display text-2xl font-semibold tracking-tight">Our multidisciplinary team</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  Different expertise, one shared goal: helping you heal, restore and thrive. We bring together professionals across pain management, rehabilitation, psychology, nutrition and wellness.
+                </p>
+              </div>
+              <ul className="grid gap-6 p-8 sm:grid-cols-2 sm:p-10">
                 {teamDisciplines.map((item) => (
                   <li key={item.title}>
-                    <p className="text-sm font-semibold">{item.title}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{item.detail}</p>
+                    <p className="text-sm font-semibold tracking-wide text-foreground">{item.title}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
                   </li>
                 ))}
               </ul>

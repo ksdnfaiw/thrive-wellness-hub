@@ -322,6 +322,7 @@ export const careModel = [
 export const doctors = [
   {
     name: "Dr. S Dheeraj Kumar",
+    image: "https://res.cloudinary.com/dizaawlyl/image/upload/v1787908388/DSC03212_idwksm.jpg",
     qualifications: "MBBS, MD (Anaesthesia), FIAPM (Fellowship in Interventional Pain Management)",
     specialty: "Interventional Pain & Palliative Care Specialist",
     bio: "Dr. Dheeraj Kumar is an interventional pain and palliative care specialist with a strong foundation in anaesthesia and advanced non-surgical pain interventions. He manages chronic spine, joint, neuropathic and cancer-related pain using evidence-based interventional, molecular and regenerative therapies, with a focus on minimally invasive techniques that reduce surgical referrals and long-term opioid dependence. He is a consultant in pain and palliative care at Renova Hospitals, Hyderabad, and a visiting consultant across the Warangal, Bidar, Nirmal and Karimnagar districts.",
