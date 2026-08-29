@@ -100,10 +100,7 @@
   #lovable-badge {
     display: none !important;
   }
-  img[src^="/images/clinic/page_"] {
-    scale: 1.15;
-    transform-origin: center;
-  }
+  /* Removed: scale:1.15 caused images to bleed outside rounded containers. */
 }
 
 @utility container-x {
@@ -169,19 +166,23 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 46px;
+  min-height: 48px;
   border-radius: 0.7rem;
-  padding: 0.7rem 1.4rem;
+  padding: 0.72rem 1.5rem;
   font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
+  cursor: pointer;
   transition:
     background-color 0.25s ease,
     color 0.25s ease,
     transform 0.25s ease,
     box-shadow 0.25s ease;
+  &:active {
+    transform: scale(0.975);
+  }
 }
 
 @utility btn-primary {
@@ -190,6 +191,7 @@
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lift);
+    background: color-mix(in oklab, var(--color-primary) 88%, black);
   }
 }
 
@@ -207,8 +209,10 @@
   background: var(--color-card);
   color: var(--color-deep);
   &:hover {
-    border-color: var(--color-deep);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
     transform: translateY(-2px);
+    box-shadow: 0 4px 16px -6px color-mix(in oklab, var(--color-primary) 22%, transparent);
   }
 }
 

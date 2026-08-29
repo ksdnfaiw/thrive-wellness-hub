@@ -88,46 +88,56 @@ function Home() {
             </a>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs sm:text-sm font-semibold tracking-wider text-deep/90 uppercase">
-            <span className="whitespace-nowrap">Physician-Led Care</span>
-            <span className="text-primary font-black" aria-hidden="true">&bull;</span>
-            <span className="whitespace-nowrap">Personalised Treatment</span>
-            <span className="text-primary font-black" aria-hidden="true">&bull;</span>
-            <span className="whitespace-nowrap">Multidisciplinary Support</span>
+          <div className="mt-8 flex flex-wrap items-center gap-2">
+            {["Physician-Led Care", "Personalised Treatment", "Multidisciplinary Support"].map((label) => (
+              <span
+                key={label}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-sand/70 px-3 py-1 text-xs font-semibold tracking-wide text-foreground/80"
+              >
+                <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-primary" strokeWidth={2} aria-hidden="true" />
+                {label}
+              </span>
+            ))}
           </div>
         </Reveal>
 
         <Reveal delay={120} variant="scale">
-          <img
-            src={images.hero}
-            alt="A pain physician assessing a patient in a calm, sunlit treatment room"
-            fetchPriority="high"
-            decoding="async"
-            width={1280}
-            height={1024}
-            className="aspect-4/3 w-full rounded-2xl object-cover"
-          />
-          <div className="mt-3 grid gap-3 sm:grid-cols-[auto_1fr_auto]">
+          <div className="overflow-hidden rounded-2xl">
             <img
-              src={images.physio}
-              alt="Physiotherapist guiding a patient through a movement exercise"
-              loading="lazy"
+              src={images.hero}
+              alt="A pain physician assessing a patient in a calm, sunlit treatment room"
+              fetchPriority="high"
               decoding="async"
-              className="hidden h-24 w-24 rounded-xl object-cover sm:block"
+              width={1280}
+              height={1024}
+              className="aspect-4/3 w-full object-cover"
             />
-            <div className="rounded-xl bg-sand p-4">
-              <p className="font-display text-xs font-bold tracking-[0.1em] uppercase">One coordinated team</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          </div>
+          <div className="mt-3 grid gap-3 sm:grid-cols-[auto_1fr_auto]">
+            <div className="hidden overflow-hidden rounded-xl sm:block h-24 w-24 shrink-0">
+              <img
+                src={images.physio}
+                alt="Physiotherapist guiding a patient through a movement exercise"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="rounded-xl bg-sand/80 p-5 border border-border/40">
+              <p className="font-sans text-xs font-semibold tracking-[0.12em] uppercase text-primary">One coordinated team</p>
+              <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                 Diagnosis, treatment, rehabilitation and wellness, planned together rather than separately.
               </p>
             </div>
-            <img
-              src={images.procedureSuite}
-              alt="The image-guided procedure space at Thrive"
-              loading="lazy"
-              decoding="async"
-              className="hidden h-24 w-24 rounded-xl object-cover sm:block"
-            />
+            <div className="hidden overflow-hidden rounded-xl sm:block h-24 w-24 shrink-0">
+              <img
+                src={images.procedureSuite}
+                alt="The image-guided procedure space at Thrive"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </Reveal>
       </section>
