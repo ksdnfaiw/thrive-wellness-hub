@@ -16,7 +16,7 @@ import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DoctorsRouteImport } from './routes/doctors'
 import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as InsuranceRouteImport } from './routes/insurance'
+import { Route as InterventionsRouteImport } from './routes/interventions'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -58,9 +58,9 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InsuranceRoute = InsuranceRouteImport.update({
-  id: '/insurance',
-  path: '/insurance',
+const InterventionsRoute = InterventionsRouteImport.update({
+  id: '/interventions',
+  path: '/interventions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -97,7 +97,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/doctors': typeof DoctorsRoute
   '/gallery': typeof GalleryRoute
-  '/insurance': typeof InsuranceRoute
+  '/interventions': typeof InterventionsRoute
   '/services': typeof ServicesRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -111,7 +111,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/doctors': typeof DoctorsRoute
   '/gallery': typeof GalleryRoute
-  '/insurance': typeof InsuranceRoute
+  '/interventions': typeof InterventionsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -126,7 +126,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/doctors': typeof DoctorsRoute
   '/gallery': typeof GalleryRoute
-  '/insurance': typeof InsuranceRoute
+  '/interventions': typeof InterventionsRoute
   '/services': typeof ServicesRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -143,7 +143,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/doctors'
     | '/gallery'
-    | '/insurance'
+    | '/interventions'
     | '/services'
     | '/blog/$slug'
     | '/services/$slug'
@@ -157,7 +157,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/doctors'
     | '/gallery'
-    | '/insurance'
+    | '/interventions'
     | '/blog/$slug'
     | '/services/$slug'
     | '/blog'
@@ -171,7 +171,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/doctors'
     | '/gallery'
-    | '/insurance'
+    | '/interventions'
     | '/services'
     | '/blog/$slug'
     | '/services/$slug'
@@ -187,7 +187,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DoctorsRoute: typeof DoctorsRoute
   GalleryRoute: typeof GalleryRoute
-  InsuranceRoute: typeof InsuranceRoute
+  InterventionsRoute: typeof InterventionsRoute
   ServicesRoute: typeof ServicesRouteWithChildren
 }
 
@@ -242,11 +242,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/insurance': {
-      id: '/insurance'
-      path: '/insurance'
-      fullPath: '/insurance'
-      preLoaderRoute: typeof InsuranceRouteImport
+    '/interventions': {
+      id: '/interventions'
+      path: '/interventions'
+      fullPath: '/interventions'
+      preLoaderRoute: typeof InterventionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -321,7 +321,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DoctorsRoute: DoctorsRoute,
   GalleryRoute: GalleryRoute,
-  InsuranceRoute: InsuranceRoute,
+  InterventionsRoute: InterventionsRoute,
   ServicesRoute: ServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport

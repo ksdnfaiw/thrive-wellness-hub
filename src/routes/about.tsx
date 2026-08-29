@@ -93,7 +93,12 @@ function About() {
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {philosophy.map((item, index) => (
               <Reveal key={item.title} delay={index * 80}>
-                <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase">{item.title}</p>
+                <p
+                  className="text-xs font-semibold tracking-[0.2em] text-primary uppercase"
+                  style={{ fontFamily: '"Inter", system-ui, sans-serif' }}
+                >
+                  {item.title}
+                </p>
                 <p className="mt-4 text-lg leading-relaxed">{item.detail}</p>
               </Reveal>
             ))}
