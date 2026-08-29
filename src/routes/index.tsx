@@ -17,6 +17,7 @@ import { ServiceIcon } from "@/components/ServiceIcon";
 import { Marquee } from "@/components/Marquee";
 import { ContactSection } from "@/components/ContactSection";
 import { ClosingCta } from "@/components/ClosingCta";
+import { HumanoidMap } from "@/components/HumanoidMap";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,12 +88,12 @@ function Home() {
             </a>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm font-bold tracking-[0.1em] text-deep uppercase">
-            <span>Physician-led care</span>
-            <span className="text-primary/60">&middot;</span>
-            <span>Personalised treatment</span>
-            <span className="text-primary/60">&middot;</span>
-            <span>Multidisciplinary support</span>
+          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs sm:text-sm font-semibold tracking-wider text-deep/90 uppercase">
+            <span className="whitespace-nowrap">Physician-Led Care</span>
+            <span className="text-primary font-black" aria-hidden="true">&bull;</span>
+            <span className="whitespace-nowrap">Personalised Treatment</span>
+            <span className="text-primary font-black" aria-hidden="true">&bull;</span>
+            <span className="whitespace-nowrap">Multidisciplinary Support</span>
           </div>
         </Reveal>
 
@@ -258,25 +259,45 @@ function Home() {
               </li>
             ))}
           </ul>
-          <Link
-            to="/services/$slug"
-            params={{ slug: "interventional-procedures" }}
-            className="btn btn-primary mt-8"
-          >
-            Explore pain procedures
-          </Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/interventions"
+              className="btn btn-primary"
+            >
+              Explore all interventions & protocols
+            </Link>
+            <Link
+              to="/services/$slug"
+              params={{ slug: "interventional-procedures" }}
+              className="btn btn-outline"
+            >
+              Department overview
+            </Link>
+          </div>
         </Reveal>
         <Reveal delay={100} variant="clip">
           <img
-            src={images.procedureSuite}
-            alt="Procedure suite equipped with C-arm fluoroscopy"
+            src="/images/prp-therapy.jpg"
+            alt="Interventional ultrasound-guided pain procedure"
             loading="lazy"
             decoding="async"
             width={1024}
             height={768}
-            className="aspect-4/3 w-full rounded-2xl object-cover"
+            className="aspect-4/3 w-full rounded-2xl object-cover shadow-soft"
           />
         </Reveal>
+      </section>
+
+      {/* Conditions We Treat Interactive Map on Homepage */}
+      <section className="container-x py-16 sm:py-24">
+        <Reveal className="mb-12 text-center">
+          <span className="eyebrow">Interactive Pain Map</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-3xl">Pain conditions we treat</h2>
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Explore specific conditions treated across the body with PRP, Radiofrequency Ablation (VENOM™), and multi-disciplinary therapies.
+          </p>
+        </Reveal>
+        <HumanoidMap />
       </section>
 
       {/* Diagnostics */}

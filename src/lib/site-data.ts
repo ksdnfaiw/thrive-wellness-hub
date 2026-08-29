@@ -1,18 +1,18 @@
-import heroClinic from "../../public/images/clinic/page_3.jpg";
-import procedureSuite from "../../public/images/clinic/page_8.jpg";
-import physioImg from "../../public/images/clinic/page_15.jpg";
-import psychologyImg from "../../public/images/clinic/page_7.jpg";
-import wellnessImg from "../../public/images/clinic/page_17.jpg";
-import receptionImg from "../../public/images/clinic/page_2.jpg";
-import diagnosticsImg from "../../public/images/clinic/page_16.jpg";
-import nutritionImg from "../../public/images/clinic/page_12.jpg";
-import loungeAssetUrl from "../../public/images/clinic/page_11.jpg";
-import corridorAssetUrl from "../../public/images/clinic/page_5.jpg";
-import consultationAssetUrl from "../../public/images/clinic/page_6.jpg";
-import recoveryTwoAssetUrl from "../../public/images/clinic/page_9.jpg";
-import rehabAssetUrl from "../../public/images/clinic/page_14.jpg";
-import massageAssetUrl from "../../public/images/clinic/page_18.jpg";
-import therapyRoomAssetUrl from "../../public/images/clinic/page_16.jpg";
+const heroClinic = "/images/clinic/page_3.jpg";
+const procedureSuite = "/images/clinic/page_8.jpg";
+const physioImg = "/images/clinic/page_15.jpg";
+const psychologyImg = "/images/clinic/page_7.jpg";
+const wellnessImg = "/images/clinic/page_17.jpg";
+const receptionImg = "/images/clinic/page_2.jpg";
+const diagnosticsImg = "/images/clinic/page_16.jpg";
+const nutritionImg = "/images/clinic/page_12.jpg";
+const loungeAssetUrl = "/images/clinic/page_11.jpg";
+const corridorAssetUrl = "/images/clinic/page_5.jpg";
+const consultationAssetUrl = "/images/clinic/page_6.jpg";
+const recoveryTwoAssetUrl = "/images/clinic/page_9.jpg";
+const rehabAssetUrl = "/images/clinic/page_14.jpg";
+const massageAssetUrl = "/images/clinic/page_18.jpg";
+const therapyRoomAssetUrl = "/images/clinic/page_16.jpg";
 export const clinic = {
   name: "Thrive Pain Clinic, Wellness & More",
   shortName: "Thrive",
@@ -74,14 +74,14 @@ export const services: Service[] = [
     short: "Advanced, minimally invasive treatments that target specific sources of chronic pain with precision.",
     intro:
       "When pain continues despite conventional treatment, interventional pain management can offer targeted, minimally invasive options. Every procedure begins with appropriate assessment and diagnosis, followed by a treatment plan tailored to the individual.",
-    image: procedureSuite,
+    image: "/images/prp-therapy.jpg",
     highlights: [
       "Neuromodulation: techniques that work on pain signalling pathways for selected chronic pain conditions",
       "Epiduroplasty: a minimally invasive option for selected spinal conditions",
-      "Regenerative therapies: approaches that support the body's natural healing where clinically appropriate",
-      "Radiofrequency Ablation (RFA): controlled radiofrequency energy to reduce pain signals from specific nerves",
+      "Regenerative therapies: Platelet-Rich Plasma (PRP) approaches that support biological healing",
+      "Radiofrequency Ablation (VENOM™ RFA): controlled thermal energy to reduce pain signals from specific nerves",
       "Cryotherapy: controlled cold-based techniques for selected pain-management applications",
-      "Ultrasound-guided injections: image guidance for precise delivery of treatment",
+      "Ultrasound-guided injections: high-resolution image guidance for precise delivery",
     ],
     journey: [
       {
@@ -107,12 +107,12 @@ export const services: Service[] = [
     short: "In-house diagnostic and imaging capabilities that support accurate assessment and treatment planning.",
     intro:
       "Accurate diagnosis is the foundation of effective pain management. Thrive provides in-house diagnostic and imaging support to help our clinical team assess conditions and plan appropriate treatment.",
-    image: diagnosticsImg,
+    image: "/images/services/diagnostics.jpg",
     highlights: [
-      "In-house laboratory for convenient access to diagnostic services",
-      "Digital X-ray for evaluating bones, joints and other relevant structures",
-      "Ultrasound for real-time assessment and selected image-guided procedures",
-      "Fluoroscopy and C-arm imaging support for precise interventional procedures",
+      "In-house laboratory for convenient access to diagnostic blood and inflammatory markers",
+      "Digital X-ray for evaluating bones, joints and structural alignment",
+      "High-resolution ultrasound for dynamic real-time musculoskeletal assessment",
+      "Fluoroscopy and C-arm imaging support for millimetre-accurate interventional procedures",
     ],
     journey: [
       { stage: "Assessment", detail: "Your physician identifies which investigations are relevant to your condition." },
@@ -126,14 +126,13 @@ export const services: Service[] = [
     short: "Personalised programs designed to restore movement, strength, function and confidence.",
     intro:
       "Pain relief is only one part of recovery. Our personalised physiotherapy and rehabilitation programs help restore movement, improve strength, rebuild function and support your return to everyday activities. Your program is adapted to your condition, physical capacity and recovery goals.",
-    image: physioImg,
+    image: "/images/services/physiotherapy.jpg",
     highlights: [
-      "Restoring mobility",
-      "Improving strength",
-      "Building functional movement",
-      "Supporting recovery after treatment",
-      "Improving confidence in movement",
-      "Reducing the impact of recurring pain",
+      "Targeted joint mobility restoration and biomechanics correction",
+      "Eccentric strengthening and tenocyte remodeling protocols",
+      "Post-procedure rehabilitation and functional kinetic chain retraining",
+      "Personalized spine, neck and joint stabilization programs",
+      "Long-term injury recurrence prevention strategies",
     ],
     journey: [
       { stage: "Assessment", detail: "Movement and strength are assessed to establish your starting point." },
@@ -147,12 +146,12 @@ export const services: Service[] = [
     short: "Professional support recognising the connection between chronic pain, emotional wellbeing and quality of life.",
     intro:
       "Living with persistent pain can affect mood, sleep, confidence, relationships and everyday life. With professional support, patients can develop healthier ways to understand and manage the psychological impact of chronic pain while building greater confidence in their recovery journey.",
-    image: psychologyImg,
+    image: "/images/services/psychology.jpg",
     highlights: [
-      "Support for the emotional impact of persistent pain",
-      "Strategies for sleep, stress and low mood",
-      "Confidence building through recovery",
-      "Support for families and caregivers",
+      "Cognitive and behavioral pain reprocessing strategies",
+      "Evidence-based interventions for sleep quality, stress and anxiety",
+      "Building confidence and overcoming fear-avoidance behaviors",
+      "Support for families and caregivers managing chronic illness",
     ],
     journey: [
       { stage: "Consultation", detail: "A confidential first session to understand your history and goals." },
@@ -162,16 +161,16 @@ export const services: Service[] = [
   },
   {
     slug: "nutrition",
-    title: "Nutrition",
+    title: "Nutrition & Metabolic Health",
     short: "Personalised nutritional guidance to support recovery, energy, metabolic health and overall wellbeing.",
     intro:
-      "Nutrition plays an important role in overall health, energy, recovery and long-term wellbeing. Our nutrition support focuses on personalised guidance based on your individual needs rather than generic diet plans, making healthier choices practical and sustainable.",
-    image: nutritionImg,
+      "Nutrition plays an important role in systemic inflammation, recovery, tissue repair and long-term wellbeing. Our nutrition support focuses on personalised guidance based on your individual needs rather than generic diet plans, making healthier choices practical and sustainable.",
+    image: "/images/services/nutrition.jpg",
     highlights: [
-      "Guidance built around your routine and preferences",
-      "Support for recovery and energy levels",
-      "Weight and metabolic health support",
-      "Practical, sustainable everyday changes",
+      "Anti-inflammatory dietary protocols tailored to your lifestyle",
+      "Nutritional support for connective tissue and cartilage recovery",
+      "Metabolic health, glucose balance and sustainable weight support",
+      "Micro-nutrient optimization for cellular energy and vitality",
     ],
     journey: [
       { stage: "Assessment", detail: "A review of your health, routine and current eating patterns." },
@@ -181,19 +180,18 @@ export const services: Service[] = [
   },
   {
     slug: "wellness-therapies",
-    title: "Wellness Therapies",
+    title: "Wellness & Restorative Therapies",
     short: "Evidence-informed therapies designed to complement clinical care and support recovery and wellbeing.",
     intro:
-      "Our wellness therapies are designed to complement clinical care and support overall wellbeing. They are selected according to individual needs and are intended to complement, not replace, appropriate medical care.",
-    image: wellnessImg,
+      "Our restorative therapies are designed to complement interventional clinical care and support cellular recovery. They are selected according to individual needs and are intended to support biological resilience and systemic health.",
+    image: "/images/services/wellness.jpg",
     highlights: [
-      "Infra red light therapy",
-      "Hyperbaric oxygen (HBOT)",
+      "Infrared photobiomodulation light therapy",
+      "Mild Hyperbaric Oxygen Therapy (HBOT)",
+      "MAHT & EBOO systemic ozone therapy",
       "Molecular hydrogen infusion",
-      "Ozone therapy",
-      "EBOO",
-      "COLD PLUNGE",
-      "IV DRIPS",
+      "Cold plunge and thermal recovery",
+      "Targeted wellness IV drips and micronutrient infusions",
     ],
     journey: [
       { stage: "Consultation", detail: "We confirm which therapies are safe and suitable for your condition." },
@@ -207,12 +205,12 @@ export const services: Service[] = [
     short: "Convenient access to prescribed medications and healthcare essentials as part of connected care.",
     intro:
       "Your treatment journey should be simple from consultation to recovery. Our in-house pharmacy provides convenient access to prescribed medications and healthcare essentials, helping keep important parts of your care connected under one roof.",
-    image: receptionImg,
+    image: "/images/services/pharmacy.jpg",
     highlights: [
-      "Prescribed medication available on site",
-      "Guidance on how and when to take your medication",
-      "Support for ongoing and repeat prescriptions",
-      "Healthcare essentials and supports",
+      "Prescribed medication available immediately on site",
+      "Detailed pharmacist guidance on dosage and administration",
+      "Support for ongoing and repeat prescription management",
+      "Specialized rehabilitation supports and medical-grade essentials",
     ],
     journey: [
       { stage: "Prescription", detail: "Your clinician's prescription is shared directly with our pharmacy." },
@@ -222,16 +220,16 @@ export const services: Service[] = [
   },
   {
     slug: "polyclinic",
-    title: "Polyclinic",
-    short: "Comprehensive multi-specialty care in one location.",
+    title: "Polyclinic & Specialists",
+    short: "Comprehensive multi-specialty consultations and integrated care coordinated in one location.",
     intro:
       "Our polyclinic brings together various specialists to offer complete healthcare services, from routine checkups to complex diagnoses, all coordinated under one roof.",
-    image: consultationAssetUrl,
+    image: "/images/clinic/page_6.jpg",
     highlights: [
-      "Multi-specialty consultations",
-      "Comprehensive health checkups",
-      "Integrated care approach",
-      "Seamless referral between specialists",
+      "Multi-specialty clinical consultations",
+      "Comprehensive physician-led health assessments",
+      "Seamless internal referrals and unified electronic medical record",
+      "Collaborative care conferences for complex pain cases",
     ],
     journey: [
       { stage: "Consultation", detail: "Initial assessment by a general physician or specialist." },

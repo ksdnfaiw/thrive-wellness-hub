@@ -6,23 +6,23 @@ import { Logo } from "@/components/Logo";
 const leftNav = [
   { label: "Home", to: "/", exact: true },
   { label: "About", to: "/about" },
-  { label: "Blog", to: "/blog" },
+  { label: "Interventions", to: "/interventions" },
 ];
 
 const rightNav = [
   { label: "Doctors", to: "/doctors" },
   { label: "Gallery", to: "/gallery" },
-  { label: "Insurance", to: "/insurance" },
+  { label: "Blog", to: "/blog" },
 ];
 
 const mobileAllNav = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
-  { label: "Blog", to: "/blog" },
+  { label: "Interventions", to: "/interventions" },
   { label: "Doctors & Team", to: "/doctors" },
   { label: "Gallery", to: "/gallery" },
-  { label: "Insurance & Billing", to: "/insurance" },
+  { label: "Blog", to: "/blog" },
   { label: "Book an Appointment", to: "/book" },
 ];
 
@@ -61,28 +61,28 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-5">
+    <header className="sticky top-0 z-50 px-4 pt-3 sm:px-6 sm:pt-4">
       {/* ── Desktop pill ── */}
       <div
         className={`
           hidden lg:grid
-          grid-cols-[1fr_auto_minmax(0,max-content)]
+          grid-cols-[1fr_auto_1fr]
           items-center
           rounded-2xl border border-border
-          bg-card/90 backdrop-blur-md
-          px-6 py-0
+          bg-card/95 backdrop-blur-md
+          px-6 py-1
           transition-all duration-300
           ${scrolled ? "shadow-soft" : ""}
         `}
       >
         {/* Left nav */}
-        <nav aria-label="Primary left" className="flex items-center gap-5">
+        <nav aria-label="Primary left" className="flex items-center gap-6">
           {leftNav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={item.exact ? { exact: true } : {}}
-              activeProps={{ className: "!text-deep after:!w-full" }}
+              activeProps={{ className: "!text-deep after:!w-full font-semibold" }}
               className={linkClass}
             >
               {item.label}
@@ -97,22 +97,22 @@ export function Header() {
           >
             <Link
               to="/services"
-              activeProps={{ className: "!text-deep after:!w-full" }}
+              activeProps={{ className: "!text-deep after:!w-full font-semibold" }}
               className={`${linkClass} inline-flex items-center gap-1`}
               aria-expanded={menu === "services"}
             >
               Services <ChevronDown />
             </Link>
             {menu === "services" && (
-              <div className="absolute top-full left-0 w-72 pt-4">
-                <div className="card-flat overflow-hidden rounded-xl border border-border p-1.5 shadow-soft">
+              <div className="absolute top-full left-0 w-72 pt-3">
+                <div className="card-flat overflow-hidden rounded-xl border border-border p-1.5 shadow-soft bg-card">
                   {services.map((s) => (
                     <Link
                       key={s.slug}
                       to="/services/$slug"
                       params={{ slug: s.slug }}
                       onClick={() => setMenu(null)}
-                      className="block rounded-lg px-3.5 py-2.5 text-sm transition-colors hover:bg-sand"
+                      className="block rounded-lg px-3.5 py-2 text-sm transition-colors hover:bg-sand"
                     >
                       {s.title}
                     </Link>
@@ -123,14 +123,14 @@ export function Header() {
           </div>
         </nav>
 
-        {/* Center — Logo */}
-        <div className="flex h-20 items-center justify-center pt-2 sm:h-24">
+        {/* Center — Logo perfectly centered & prominent */}
+        <div className="flex h-20 items-center justify-center px-4">
           <Link
             to="/"
-            className="group relative inline-flex transition-transform duration-300 hover:scale-105"
+            className="group relative inline-flex items-center justify-center transition-transform duration-300 hover:scale-105"
             onClick={() => setOpen(false)}
           >
-            <Logo className="h-12 w-auto sm:h-16 xl:h-20" />
+            <Logo className="h-16 w-auto max-h-[72px] sm:h-20 lg:h-[76px]" />
             <span className="sr-only">Thrive Pain Clinic - Home</span>
           </Link>
         </div>
@@ -141,21 +141,21 @@ export function Header() {
             <Link
               key={item.to}
               to={item.to}
-              activeProps={{ className: "!text-deep after:!w-full" }}
+              activeProps={{ className: "!text-deep after:!w-full font-semibold" }}
               className={linkClass}
             >
               {item.label}
             </Link>
           ))}
 
-          <div className="ml-2 flex shrink-0 items-center gap-2.5 border-l border-border pl-5">
+          <div className="ml-2 flex shrink-0 items-center gap-3 border-l border-border pl-4">
             <a
               href={clinic.phoneHref}
-              className="hidden whitespace-nowrap text-sm font-semibold text-deep xl:inline hover:opacity-70 transition-opacity"
+              className="hidden whitespace-nowrap text-sm font-semibold text-deep xl:inline hover:opacity-75 transition-opacity"
             >
               {clinic.phone}
             </a>
-            <Link to="/contact" className="btn btn-primary whitespace-nowrap text-sm">
+            <Link to="/contact" className="btn btn-primary whitespace-nowrap text-xs sm:text-sm px-4 py-2">
               Contact us
             </Link>
           </div>
@@ -167,15 +167,15 @@ export function Header() {
         className={`
           flex lg:hidden items-center justify-between
           rounded-2xl border border-border
-          bg-card/90 backdrop-blur-md
-          px-4 py-3
+          bg-card/95 backdrop-blur-md
+          px-4 py-2.5
           transition-all duration-300
           ${scrolled ? "shadow-soft" : ""}
         `}
       >
         {/* Logo left on mobile */}
-        <Link to="/" onClick={() => setOpen(false)} aria-label="Thrive — home">
-          <Logo className="h-10 w-auto sm:h-12" />
+        <Link to="/" onClick={() => setOpen(false)} aria-label="Thrive — home" className="flex items-center">
+          <Logo className="h-12 w-auto sm:h-14" />
         </Link>
 
         <div className="flex items-center gap-2">
@@ -200,10 +200,10 @@ export function Header() {
 
       {/* ── Mobile drawer ── */}
       {open && (
-        <div className="lg:hidden mt-2 card-flat overflow-hidden rounded-2xl border border-border shadow-soft">
+        <div className="lg:hidden mt-2 card-flat overflow-hidden rounded-2xl border border-border shadow-soft bg-card">
           {/* Logo centered in drawer */}
-          <div className="flex justify-center border-b border-border py-5">
-            <Logo className="h-12 w-auto sm:h-14" />
+          <div className="flex justify-center border-b border-border py-4">
+            <Logo className="h-16 w-auto" />
           </div>
 
           <nav aria-label="Mobile" className="p-3">
