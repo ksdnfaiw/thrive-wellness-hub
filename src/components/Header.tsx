@@ -130,7 +130,7 @@ export function Header() {
             className="group relative inline-flex transition-transform duration-300 hover:scale-105"
             onClick={() => setOpen(false)}
           >
-            <Logo className="h-32 w-auto xl:h-40" />
+            <Logo className="h-12 w-auto sm:h-16 xl:h-20" />
             <span className="sr-only">Thrive Pain Clinic - Home</span>
           </Link>
         </div>
@@ -175,7 +175,7 @@ export function Header() {
       >
         {/* Logo left on mobile */}
         <Link to="/" onClick={() => setOpen(false)} aria-label="Thrive — home">
-          <Logo className="h-14 w-auto" />
+          <Logo className="h-10 w-auto sm:h-12" />
         </Link>
 
         <div className="flex items-center gap-2">
@@ -203,7 +203,7 @@ export function Header() {
         <div className="lg:hidden mt-2 card-flat overflow-hidden rounded-2xl border border-border shadow-soft">
           {/* Logo centered in drawer */}
           <div className="flex justify-center border-b border-border py-5">
-            <Logo className="h-16 w-auto" />
+            <Logo className="h-12 w-auto sm:h-14" />
           </div>
 
           <nav aria-label="Mobile" className="p-3">

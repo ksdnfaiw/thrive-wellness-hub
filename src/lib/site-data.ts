@@ -187,9 +187,13 @@ export const services: Service[] = [
       "Our wellness therapies are designed to complement clinical care and support overall wellbeing. They are selected according to individual needs and are intended to complement, not replace, appropriate medical care.",
     image: wellnessImg,
     highlights: [
-      "Ozonation: controlled, medically guided ozone-based approaches where appropriate",
-      "Hydration: therapies that support the body's hydration and recovery needs",
-      "Blood circulation: support for healthy circulation and overall physiological wellbeing",
+      "Infra red light therapy",
+      "Hyperbaric oxygen (HBOT)",
+      "Molecular hydrogen infusion",
+      "Ozone therapy",
+      "EBOO",
+      "COLD PLUNGE",
+      "IV DRIPS",
     ],
     journey: [
       { stage: "Consultation", detail: "We confirm which therapies are safe and suitable for your condition." },
@@ -345,6 +349,7 @@ export const doctors = [
   },
   {
     name: "Dr. Anahita Reddy",
+    image: "https://res.cloudinary.com/dizaawlyl/image/upload/v1787908386/DSC03383_qfnqhd.jpg",
     qualifications: "MD (Anesthesiology), FIPM, FIRM",
     specialty: "Pain, Regenerative & Palliative Medicine Specialist",
     bio: "Dr. Anahita Reddy is an anaesthesiologist and pain physician with formal training in interventional pain, regenerative medicine and palliative medicine. She is skilled in ultrasound-guided procedures, selective nerve root blocks, sports injury interventions, headache management and symptom control in advanced illness. She consults in English, Telugu and Hindi.",
@@ -383,16 +388,6 @@ export const doctors = [
     bio: "Dr Remalla Aparajitha is a highly skilled Interventional Pain Physician with an extensive background in Anaesthesia. She brings dedicated expertise to the multidisciplinary team at Thrive, focusing on advanced pain management solutions.",
     experience: "Extensive background in Anaesthesia and Interventional Pain Management.",
     expertise: ["Interventional pain management", "Chronic pain conditions"],
-    recognition: [],
-  },
-  {
-    name: "Dr M Anahita Reddy",
-    image: "https://res.cloudinary.com/dizaawlyl/image/upload/v1787908386/DSC03383_qfnqhd.jpg",
-    qualifications: "MBBS, MD (Anaesthesia), FIPM, FIRM",
-    specialty: "Interventional Pain Physician",
-    bio: "Dr M Anahita Reddy is an Interventional Pain Physician with extensive training and a background in Anaesthesia. She brings dedicated expertise to the multidisciplinary team at Thrive, providing compassionate, minimally invasive care for patients suffering from chronic pain.",
-    experience: "Extensive background in Anaesthesia and Interventional Pain Management.",
-    expertise: ["Interventional pain management", "Chronic pain conditions", "Regenerative therapies"],
     recognition: [],
   },
 ];
