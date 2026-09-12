@@ -65,6 +65,10 @@ export type Service = {
   image: string;
   highlights: string[];
   journey: { stage: string; detail: string }[];
+  overview?: {
+    suitableFor: string;
+    benefits: string[];
+  };
 };
 
 export const services: Service[] = [
@@ -80,7 +84,6 @@ export const services: Service[] = [
       "Epiduroplasty: a minimally invasive option for selected spinal conditions",
       "Regenerative therapies: Platelet-Rich Plasma (PRP) approaches that support biological healing",
       "Radiofrequency Ablation (VENOM™ RFA): controlled thermal energy to reduce pain signals from specific nerves",
-      "Cryotherapy: controlled cold-based techniques for selected pain-management applications",
       "Ultrasound-guided injections: high-resolution image guidance for precise delivery",
     ],
     journey: [
@@ -100,6 +103,16 @@ export const services: Service[] = [
           "Recovery and rehabilitation are considered part of the wider care journey, with support from physiotherapy and our wider team.",
       },
     ],
+    overview: {
+      suitableFor:
+        "People with persistent spine, joint or nerve-related pain may be considered when medication, activity changes or rehabilitation alone have not provided enough relief. A pain physician confirms the source of symptoms before recommending any procedure.",
+      benefits: [
+        "Targets a clearly identified source of pain",
+        "Uses image guidance to support accuracy and safety",
+        "Often allows a shorter recovery than open surgery",
+        "Can create a more comfortable window for rehabilitation",
+      ],
+    },
   },
   {
     slug: "diagnostics-and-imaging",
@@ -139,6 +152,16 @@ export const services: Service[] = [
       { stage: "Program", detail: "Guided sessions with clear, progressive goals suited to your capacity." },
       { stage: "Maintenance", detail: "A home program and reviews help protect your progress over time." },
     ],
+    overview: {
+      suitableFor:
+        "Physiotherapy can support people recovering from back or neck pain, joint stiffness, sports injuries, surgery or an interventional procedure. It is also useful when weakness, poor balance or fear of movement is limiting everyday activity.",
+      benefits: [
+        "Improves mobility, strength and movement confidence",
+        "Builds a paced return to work, sport and daily routines",
+        "Supports recovery before and after selected procedures",
+        "Provides practical home exercises to maintain progress",
+      ],
+    },
   },
   {
     slug: "psychology-and-mental-wellness",
@@ -198,6 +221,16 @@ export const services: Service[] = [
       { stage: "Session", detail: "Therapies are delivered in a calm, private setting within the clinic." },
       { stage: "Rhythm", detail: "A recommended cadence that fits your stage of treatment." },
     ],
+    overview: {
+      suitableFor:
+        "Restorative therapies may be considered for people seeking medically guided support for recovery, fatigue, inflammation or general wellbeing. They complement diagnosis, treatment and rehabilitation rather than replacing them.",
+      benefits: [
+        "Supports recovery within a physician-guided care plan",
+        "Offers options tailored to individual health goals",
+        "Provides monitored sessions in a calm clinical setting",
+        "Works alongside nutrition, movement and medical care",
+      ],
+    },
   },
   {
     slug: "in-house-pharmacy",
@@ -454,7 +487,7 @@ export const facilityHighlights = [
   },
   {
     title: "Advanced wellness facilities",
-    detail: "Including Hyperbaric Oxygen Therapy (HBOT), infrared therapy and cryotherapy.",
+    detail: "Including Hyperbaric Oxygen Therapy (HBOT), infrared therapy and molecular hydrogen support.",
   },
   { title: "In-house pharmacy", detail: "Prescriptions, supplements and wellness essentials in a single visit." },
 ];

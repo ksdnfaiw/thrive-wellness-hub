@@ -6,7 +6,7 @@ import { Logo } from "@/components/Logo";
 const leftNav = [
   { label: "Home", to: "/", exact: true },
   { label: "About", to: "/about" },
-  { label: "Interventions", to: "/interventions" },
+  { label: "Treatments", to: "/interventions" },
 ];
 
 const rightNav = [
@@ -19,7 +19,7 @@ const mobileAllNav = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
-  { label: "Interventions", to: "/interventions" },
+  { label: "Treatments", to: "/interventions" },
   { label: "Doctors & Team", to: "/doctors" },
   { label: "Gallery", to: "/gallery" },
   { label: "Blog", to: "/blog" },
@@ -66,7 +66,7 @@ export function Header() {
       <div
         className={`
           hidden lg:grid
-          grid-cols-[1fr_auto_1fr]
+          grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]
           items-center
           rounded-2xl border border-border
           bg-card/95 backdrop-blur-md
@@ -76,7 +76,7 @@ export function Header() {
         `}
       >
         {/* Left nav */}
-        <nav aria-label="Primary left" className="flex items-center gap-6">
+        <nav aria-label="Primary left" className="flex min-w-0 items-center gap-5 xl:gap-6">
           {leftNav.map((item) => (
             <Link
               key={item.to}
@@ -124,19 +124,19 @@ export function Header() {
         </nav>
 
         {/* Center — Logo perfectly centered & prominent */}
-        <div className="flex h-20 items-center justify-center px-4">
+        <div className="flex h-24 items-center justify-center px-3 xl:h-28 xl:px-5">
           <Link
             to="/"
             className="group relative inline-flex items-center justify-center transition-transform duration-300 hover:scale-105"
             onClick={() => setOpen(false)}
           >
-            <Logo className="h-16 w-auto max-h-[72px] sm:h-20 lg:h-[76px]" />
+            <Logo className="h-20 w-auto max-w-[260px] xl:h-24 xl:max-w-[310px]" />
             <span className="sr-only">Thrive Pain Clinic - Home</span>
           </Link>
         </div>
 
         {/* Right nav */}
-        <nav aria-label="Primary right" className="flex items-center justify-end gap-5">
+        <nav aria-label="Primary right" className="flex min-w-0 items-center justify-end gap-4 xl:gap-5">
           {rightNav.map((item) => (
             <Link
               key={item.to}
@@ -175,7 +175,7 @@ export function Header() {
       >
         {/* Logo left on mobile */}
         <Link to="/" onClick={() => setOpen(false)} aria-label="Thrive — home" className="flex items-center">
-          <Logo className="h-12 w-auto sm:h-14" />
+          <Logo className="h-14 w-auto max-w-[190px] sm:h-16 sm:max-w-[230px]" />
         </Link>
 
         <div className="flex items-center gap-2">
@@ -203,7 +203,7 @@ export function Header() {
         <div className="lg:hidden mt-2 card-flat overflow-hidden rounded-2xl border border-border shadow-soft bg-card">
           {/* Logo centered in drawer */}
           <div className="flex justify-center border-b border-border py-4">
-            <Logo className="h-16 w-auto" />
+            <Logo className="h-20 w-auto max-w-[260px]" />
           </div>
 
           <nav aria-label="Mobile" className="p-3">
