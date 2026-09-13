@@ -272,7 +272,93 @@ export const services: Service[] = [
   },
 ];
 
+export type Treatment = {
+  name: string;
+  summary: string;
+  details: string[];
+  goodToKnow?: string;
+};
+
+export const treatments: Treatment[] = [
+  {
+    name: "PRP & Regenerative Injections",
+    summary:
+      "A small sample of your own blood is concentrated into platelet-rich plasma and placed precisely into the injured tendon, ligament or joint to support natural repair.",
+    details: [
+      "Commonly used for knee osteoarthritis, tennis elbow, plantar fasciitis, Achilles and patellar tendon problems, rotator cuff strain and partial ligament injuries.",
+      "The injection is guided by high-resolution ultrasound, so the treatment reaches the exact tissue causing your pain.",
+      "Most people are back to light daily activity the same day, with a graded physiotherapy plan to protect the healing tissue.",
+      "Relief is usually gradual, building over four to twelve weeks as the tissue responds.",
+    ],
+    goodToKnow:
+      "Suitability is confirmed after clinical examination and, where needed, imaging and blood parameters.",
+  },
+  {
+    name: "VENOM™ Radiofrequency Ablation (RFA)",
+    summary:
+      "Controlled heat is applied to the small sensory nerves carrying your pain signal, calming pain from spine, knee, hip or shoulder joints without open surgery.",
+    details: [
+      "Used for chronic facet joint pain in the neck and back, sacroiliac joint pain, knee osteoarthritis, cervicogenic headache and selected nerve pain.",
+      "A diagnostic nerve block is often performed first to confirm the exact pain generator before ablation.",
+      "The procedure is done under live imaging with sensory and motor testing, so movement-controlling nerves are protected.",
+      "It is a day-care procedure, and relief commonly lasts several months to well over a year.",
+    ],
+  },
+  {
+    name: "Epidural & Spinal Interventions",
+    summary:
+      "Targeted, image-guided injections and epiduroplasty that relieve pressure and inflammation around irritated spinal nerves.",
+    details: [
+      "Helpful in disc-related leg pain (sciatica), spinal canal narrowing, scar tissue around nerves and persistent back pain.",
+      "Performed under fluoroscopy so medication reaches the affected nerve level precisely.",
+      "Often used to create a comfortable window for rehabilitation to begin.",
+    ],
+  },
+  {
+    name: "Neuromodulation",
+    summary:
+      "Gentle electrical signals are used to change how pain messages reach the brain, for pain that has not responded to other treatment.",
+    details: [
+      "Considered for long-standing nerve pain, failed back surgery pain and complex regional pain syndrome.",
+      "A trial phase is used first, so you can experience the benefit before any longer-term step is planned.",
+      "Care continues alongside physiotherapy and psychological support for the best functional result.",
+    ],
+  },
+  {
+    name: "Ultrasound-Guided Joint & Soft Tissue Injections",
+    summary:
+      "Precise injections into joints, bursae, tendon sheaths and trigger points, placed under real-time ultrasound rather than by feel.",
+    details: [
+      "Used for shoulder impingement, frozen shoulder, hip bursitis, knee and small joint pain and myofascial trigger points.",
+      "Image guidance improves accuracy and comfort and reduces the chance of a repeat procedure.",
+      "Usually takes a few minutes, with normal activity resumed the same day in most cases.",
+    ],
+  },
+  {
+    name: "MAHT & EBOO Ozone Therapy",
+    summary:
+      "Medically supervised blood ozone therapies used as supportive treatment for inflammation, fatigue and slow recovery.",
+    details: [
+      "Blood is treated with a precise medical ozone and oxygen mixture in a closed system, then returned safely to the body.",
+      "Considered alongside pain treatment for chronic inflammatory conditions, fibromyalgia, post-viral fatigue and slow tissue recovery.",
+      "Every session is monitored by a physician, with vital signs checked throughout.",
+    ],
+    goodToKnow: "These are supportive therapies used with medical treatment, not a replacement for it.",
+  },
+  {
+    name: "Hyperbaric Oxygen Therapy (HBOT)",
+    summary:
+      "Breathing oxygen in a pressurised chamber so more oxygen reaches tissues with reduced blood supply.",
+    details: [
+      "Used to support healing in slow-recovering wounds, chronic inflammatory conditions and post-procedure recovery.",
+      "Sessions are comfortable, calm and supervised, and the recommended number is planned for your condition.",
+      "Delivered as part of a wider plan that includes movement, nutrition and medical care.",
+    ],
+  },
+];
+
 export const approach = [
+
   {
     step: "01",
     title: "Understand",
