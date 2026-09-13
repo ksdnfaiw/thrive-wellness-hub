@@ -3,24 +3,28 @@ import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { ClosingCta } from "@/components/ClosingCta";
 import { HumanoidMap } from "@/components/HumanoidMap";
-import { CheckCircle2, ShieldCheck, Sparkles, Activity, AlertCircle, ArrowRight } from "lucide-react";
+import { TreatmentList } from "@/components/TreatmentList";
+import { CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
 
 export const Route = createFileRoute("/interventions")({
   head: () => ({
     meta: [
-      { title: "Advanced Pain Interventions & Regenerative Therapies | Thrive Clinic Hyderabad" },
+      { title: "Treatments: Pain Procedures & Regenerative Therapies | Thrive Hyderabad" },
       {
         name: "description",
         content:
-          "Targeted interventional pain procedures including PRP regenerative therapies, MAHT & EBOO blood ozone therapy, and VENOM™ Radiofrequency Ablation (RFA).",
+          "Explore our treatments: PRP and regenerative injections, VENOM™ radiofrequency ablation, epidural and spinal procedures, neuromodulation, ozone therapy and HBOT.",
       },
-      { property: "og:title", content: "Advanced Pain Interventions | Thrive Pain Clinic" },
+      { property: "og:title", content: "Treatments | Thrive Pain Clinic, Hyderabad" },
       {
         property: "og:description",
-        content: "Physician-led PRP, EBOO ozone therapies, and precision radiofrequency ablation under one roof.",
+        content: "Physician-led PRP, ozone therapies, spinal procedures and precision radiofrequency ablation in one clinic.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/interventions" },
     ],
+    links: [{ rel: "canonical", href: "/interventions" }],
   }),
   component: InterventionsPage,
 });
@@ -29,30 +33,45 @@ export function InterventionsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Evidence-Based Interventional Pain Medicine"
-        title="Targeted Pain Interventions."
-        accent="Regenerative & Precision Care."
-        description="When conservative measures are not enough, our physician-led clinic offers state-of-the-art biological therapies, precision nerve ablation, and advanced systemic therapies designed to restore function and treat root causes."
+        eyebrow="Evidence-based pain medicine"
+        title="Our treatments."
+        accent="Regenerative & precision care."
+        description="When conservative measures are not enough, our physician-led clinic offers advanced biological therapies, precision nerve treatment and supportive systemic therapies designed to restore function and treat the root cause."
       >
         <Link to="/book" className="btn btn-primary">
           Schedule Evaluation
         </Link>
-        <a href="#interactive-map" className="btn btn-outline">
-          Explore Pain Regions
+        <a href="#treatments" className="btn btn-outline">
+          Browse treatments
         </a>
       </PageHero>
 
+      {/* Treatments with expandable detail */}
+      <section id="treatments" className="container-x py-16 sm:py-24">
+        <Reveal className="max-w-3xl">
+          <span className="eyebrow">Treatments we offer</span>
+          <h2 className="display-lg mt-5">Every treatment, explained simply</h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Select any treatment to read what it involves, the conditions it helps and what recovery usually looks
+            like. Your physician confirms which option suits your diagnosis.
+          </p>
+        </Reveal>
+        <TreatmentList />
+      </section>
+
       {/* Interactive Anatomy Section */}
-      <section id="interactive-map" className="container-x py-16 sm:py-24">
+      <section id="interactive-map" className="container-x pb-16 sm:pb-24">
         <Reveal className="mb-12 text-center">
-          <span className="eyebrow">Interactive Clinical Map</span>
-          <h2 className="display-lg mx-auto mt-5 max-w-3xl">Pain Conditions We Treat</h2>
+          <span className="eyebrow">Interactive clinical map</span>
+          <h2 className="display-lg mx-auto mt-5 max-w-3xl">Pain conditions we treat</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Click on any joint or anatomical hotspot on our runner below to inspect the specific conditions, injuries, and evidence-backed therapies we provide.
+            Select any joint or area on the figure below to see the specific conditions, injuries and evidence-backed
+            therapies we provide.
           </p>
         </Reveal>
         <HumanoidMap />
       </section>
+
 
       {/* ─── SECTION 1: PRP & REGENERATIVE MEDICINE ─── */}
       <section className="bg-sand/40 border-y border-border py-16 sm:py-24">

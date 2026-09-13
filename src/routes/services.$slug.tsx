@@ -101,6 +101,33 @@ function ServiceDetail() {
         </div>
       </section>
 
+      {service.overview ? (
+        <section className="bg-sand">
+          <div className="container-x grid gap-10 py-16 lg:grid-cols-2 sm:py-20">
+            <Reveal>
+              <span className="eyebrow !bg-card">Who it helps</span>
+              <h2 className="display-lg mt-5 text-2xl">Is this right for me?</h2>
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                {service.overview.suitableFor}
+              </p>
+            </Reveal>
+            <Reveal delay={90}>
+              <span className="eyebrow !bg-card">What you can expect</span>
+              <h2 className="display-lg mt-5 text-2xl">Benefits of this care</h2>
+              <ul className="mt-6 grid gap-3">
+                {service.overview.benefits.map((benefit) => (
+                  <li key={benefit} className="flex gap-3 rounded-2xl border border-border bg-card p-4 text-sm">
+                    <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                    <span className="min-w-0 break-words">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
+
       <section className="container-x grid gap-10 pb-20 lg:grid-cols-[1.05fr_1fr] lg:items-start">
         <Reveal>
           <span className="eyebrow">Related departments</span>
