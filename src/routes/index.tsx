@@ -5,13 +5,13 @@ import {
   clinic,
   images,
   services,
-  services,
   stats,
   whatsappLink,
   whyThrive,
 } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
-import { ArrowUpRight, CheckCircle2, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+
 import { Reveal } from "@/components/Reveal";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { Marquee } from "@/components/Marquee";
