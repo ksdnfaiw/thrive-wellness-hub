@@ -4,7 +4,7 @@ import {
   blogPosts,
   clinic,
   images,
-  insuranceTrustPoints,
+  images as _unusedImages,
   services,
   stats,
   whatsappLink,
