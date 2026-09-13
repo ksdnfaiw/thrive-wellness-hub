@@ -423,3 +423,23 @@
     clip-path: none !important;
   }
 }
+
+/* Text overflow safety across cards, buttons and badges */
+body {
+  overflow-wrap: break-word;
+}
+
+.btn {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+.eyebrow {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+details > summary {
+  overflow-wrap: break-word;
+}
