@@ -50,7 +50,7 @@ const interventionalProcedures = [
   "Epiduroplasty",
   "Regenerative therapies",
   "Radiofrequency Ablation (RFA)",
-  "Epidural &amp; spinal interventions",
+  "Epidural & spinal interventions",
   "Ultrasound-guided injections",
 ];
 
@@ -288,7 +288,7 @@ function Home() {
               to="/interventions"
               className="btn btn-primary"
             >
-              Explore all interventions & protocols
+              Explore all treatments
             </Link>
             <Link
               to="/services/$slug"
