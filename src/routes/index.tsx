@@ -50,7 +50,7 @@ const interventionalProcedures = [
   "Epiduroplasty",
   "Regenerative therapies",
   "Radiofrequency Ablation (RFA)",
-  "Cryotherapy",
+  "Epidural &amp; spinal interventions",
   "Ultrasound-guided injections",
 ];
 
@@ -179,6 +179,20 @@ function Home() {
         </Reveal>
       </section>
 
+      {/* Conditions We Treat Interactive Map */}
+      <section className="container-x py-16 sm:py-24">
+        <Reveal className="mb-12 text-center">
+          <span className="eyebrow">Interactive pain map</span>
+          <h2 className="display-lg mx-auto mt-6 max-w-3xl">Pain conditions we treat</h2>
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Explore specific conditions treated across the body with PRP, Radiofrequency Ablation (VENOM™), and
+            multidisciplinary therapies.
+          </p>
+        </Reveal>
+        <HumanoidMap />
+      </section>
+
+
       {/* Our approach */}
       <section className="bg-sand">
         <div className="container-x py-16 sm:py-24">
@@ -298,17 +312,8 @@ function Home() {
         </Reveal>
       </section>
 
-      {/* Conditions We Treat Interactive Map on Homepage */}
-      <section className="container-x py-16 sm:py-24">
-        <Reveal className="mb-12 text-center">
-          <span className="eyebrow">Interactive Pain Map</span>
-          <h2 className="display-lg mx-auto mt-6 max-w-3xl">Pain conditions we treat</h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Explore specific conditions treated across the body with PRP, Radiofrequency Ablation (VENOM™), and multi-disciplinary therapies.
-          </p>
-        </Reveal>
-        <HumanoidMap />
-      </section>
+
+
 
       {/* Diagnostics */}
       <section className="bg-sand">
