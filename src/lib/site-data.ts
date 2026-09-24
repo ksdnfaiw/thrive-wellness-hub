@@ -446,9 +446,9 @@ export const doctors = [
     image: "https://res.cloudinary.com/dizaawlyl/image/upload/v1787908388/DSC03212_idwksm.jpg",
     qualifications: "MBBS, MD (Anaesthesia), FIAPM (Fellowship in Interventional Pain Management)",
     specialty: "Interventional Pain & Palliative Care Specialist",
-    bio: "Dr. Dheeraj Kumar is an interventional pain and palliative care specialist with a strong foundation in anaesthesia and advanced non-surgical pain interventions. He manages chronic spine, joint, neuropathic and cancer-related pain using evidence-based interventional, molecular and regenerative therapies, with a focus on minimally invasive techniques that reduce surgical referrals and long-term opioid dependence. He is a consultant in pain and palliative care at Renova Hospitals, Hyderabad, and a visiting consultant across the Warangal, Bidar, Nirmal and Karimnagar districts.",
+    bio: "Dr. Dheeraj Kumar is the Founder of Dr Dheeraj Pain Relief and Wellness Centre, Habsiguda. He is an interventional pain and palliative care specialist with a strong foundation in anaesthesia and advanced non-surgical pain interventions. He manages chronic spine, joint, neuropathic and cancer-related pain using evidence-based interventional, molecular and regenerative therapies, with a focus on minimally invasive techniques that reduce surgical referrals and long-term opioid dependence. He is also a mentor for pain physicians and conducts workshops to train young doctors.",
     experience:
-      "Interventional pain management consultant since 2022, following senior residency in anaesthesia at ESI Medical College (2019 to 2022). MD Anaesthesia, Bangalore Medical College & Research Institute.",
+      "More than 10 years of clinical experience and 4 years exclusively in Pain medicine. Has done more than 5000 pain management interventions including advanced interventions.",
     expertise: [
       "Chronic low back pain and sciatica",
       "Cervical and lumbar disc disorders",
@@ -458,10 +458,11 @@ export const doctors = [
       "Non-surgical spine and joint interventions",
     ],
     recognition: [
+      "National Faculty at ISSPCON (Indian Society for Study of Pain) & ISACON KARNATAKA",
+      "Organising member and workshop coordinator for ISSPCON 2026",
+      "4 publications in index journals",
       "Abdul Kalam Medical Excellence Award, 2024",
       "ISTA Heal Excellency Award in Pain Management, 2025",
-      "Faculty, ISACON Karnataka 2024",
-      "3 published papers and 4 posters",
     ],
   },
   {
