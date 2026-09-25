@@ -82,6 +82,16 @@ function Doctors() {
                   </p>
                   <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{doctor.bio}</p>
                   
+                  {doctor.highlights && doctor.highlights.length > 0 && (
+                    <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
+                      {doctor.highlights.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60"></span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="mt-8 grid gap-6 sm:grid-cols-2">
                     <div>
                       <dt className="flex items-center gap-2 text-xs font-semibold tracking-widest text-deep uppercase">

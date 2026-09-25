@@ -446,7 +446,17 @@ export const doctors = [
     image: "https://res.cloudinary.com/dizaawlyl/image/upload/v1787908388/DSC03212_idwksm.jpg",
     qualifications: "MBBS, MD (Anaesthesia), FIAPM (Fellowship in Interventional Pain Management)",
     specialty: "Interventional Pain & Palliative Care Specialist",
-    bio: "Dr. Dheeraj Kumar is the Founder of Dr Dheeraj Pain Relief and Wellness Centre, Habsiguda. He is an interventional pain and palliative care specialist with a strong foundation in anaesthesia and advanced non-surgical pain interventions. He manages chronic spine, joint, neuropathic and cancer-related pain using evidence-based interventional, molecular and regenerative therapies, with a focus on minimally invasive techniques that reduce surgical referrals and long-term opioid dependence. He is also a mentor for pain physicians and conducts workshops to train young doctors.",
+    bio: "Dr. Dheeraj Kumar is an interventional pain and palliative care specialist with a strong foundation in anaesthesia and advanced non-surgical pain interventions. He manages chronic spine, joint, neuropathic and cancer-related pain using evidence-based interventional, molecular and regenerative therapies, with a focus on minimally invasive techniques that reduce surgical referrals and long-term opioid dependence.",
+    highlights: [
+      "Founder of Dr Dheeraj Pain Relief and Wellness Centre, Habsiguda",
+      "Has done more than 5000 pain management interventions including advanced interventions",
+      "National Faculty at ISSPCON (Indian society for study of pain) & ISACON KARNATAKA",
+      "Organising member and workshop coordinator for ISSPCON 2026",
+      "Conducted several workshops in pain management to train young doctors",
+      "Mentor for Pain physicians",
+      "Has 4 publications in index journals",
+      "More than 10 years of clinical experience and 4 years exclusively in Pain medicine"
+    ],
     experience:
       "More than 10 years of clinical experience and 4 years exclusively in Pain medicine. Has done more than 5000 pain management interventions including advanced interventions.",
     expertise: [
