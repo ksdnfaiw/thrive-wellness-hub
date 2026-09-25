@@ -130,7 +130,7 @@ export function Header() {
             className="group relative inline-flex items-center justify-center transition-transform duration-300 hover:scale-105"
             onClick={() => setOpen(false)}
           >
-            <Logo className="h-20 w-auto max-w-[260px] xl:h-24 xl:max-w-[310px]" />
+            <Logo className="h-24 w-auto max-w-[300px] xl:h-28 xl:max-w-[360px]" />
             <span className="sr-only">Thrive Pain Clinic - Home</span>
           </Link>
         </div>
@@ -175,7 +175,7 @@ export function Header() {
       >
         {/* Logo left on mobile */}
         <Link to="/" onClick={() => setOpen(false)} aria-label="Thrive — home" className="flex items-center">
-          <Logo className="h-14 w-auto max-w-[190px] sm:h-16 sm:max-w-[230px]" />
+          <Logo className="h-16 w-auto max-w-[220px] sm:h-20 sm:max-w-[260px]" />
         </Link>
 
         <div className="flex items-center gap-2">
@@ -203,7 +203,7 @@ export function Header() {
         <div className="lg:hidden mt-2 card-flat overflow-hidden rounded-2xl border border-border shadow-soft bg-card">
           {/* Logo centered in drawer */}
           <div className="flex justify-center border-b border-border py-4">
-            <Logo className="h-20 w-auto max-w-[260px]" />
+            <Logo className="h-24 w-auto max-w-[300px]" />
           </div>
 
           <nav aria-label="Mobile" className="p-3">
