@@ -108,7 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "MedicalClinic",
           name: clinic.name,
           slogan: clinic.brandLine,
-          telephone: clinic.phone,
+          telephone: [clinic.phone, clinic.phone2],
           email: clinic.email,
           medicalSpecialty: "PainMedicine",
           url: "https://heal-restore-thrive.lovable.app",

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { galleryCategories, images } from "@/lib/site-data";
+import { clinicPhotos, galleryCategories, images } from "@/lib/site-data";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { ClosingCta } from "@/components/ClosingCta";
@@ -12,6 +12,13 @@ const media = [
   { src: images.wellness, alt: "Private wellness therapy room", span: "", w: 1024, h: 1280 },
   { src: images.psychology, alt: "Consultation room for psychology and mental wellness", span: "", w: 1024, h: 768 },
   { src: images.nutrition, alt: "Nutrition consultation space", span: "", w: 1024, h: 768 },
+  ...clinicPhotos.map((photo, i) => ({
+    src: photo.src,
+    alt: photo.alt,
+    span: i === 0 || i === 3 ? "lg:col-span-2" : "",
+    w: 1280,
+    h: 853,
+  })),
 ];
 
 export const Route = createFileRoute("/gallery")({
@@ -101,8 +108,7 @@ function Gallery() {
           ))}
         </div>
         <p className="mt-8 text-xs text-muted-foreground">
-          Placeholder imagery. To be replaced with the clinic's own facility, procedure and equipment photography before
-          launch.
+          Photography of Thrive Pain Clinic, Wellness & More facility and care spaces.
         </p>
       </section>
 

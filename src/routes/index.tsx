@@ -3,6 +3,7 @@ import {
   approach,
   blogPosts,
   clinic,
+  clinicPhotos,
   images,
   services,
   stats,
@@ -301,8 +302,8 @@ function Home() {
         </Reveal>
         <Reveal delay={100} variant="clip">
           <img
-            src="/images/prp-therapy.jpg"
-            alt="Interventional ultrasound-guided pain procedure"
+            src="https://res.cloudinary.com/dizaawlyl/image/upload/v1790591799/ANIL2826_bqadke.jpg"
+            alt="Thrive operating theatre with Stryker MultiGen 2 radiofrequency generator and advanced pain procedure equipment"
             loading="lazy"
             decoding="async"
             width={1024}
@@ -416,9 +417,9 @@ function Home() {
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { src: images.reception, alt: "Reception and waiting area" },
-            { src: images.physio, alt: "Physiotherapy and rehabilitation space" },
-            { src: images.wellness, alt: "Wellness therapy room" },
+            { src: clinicPhotos[0].src, alt: clinicPhotos[0].alt },
+            { src: clinicPhotos[1].src, alt: clinicPhotos[1].alt },
+            { src: clinicPhotos[2].src, alt: clinicPhotos[2].alt },
           ].map((item, index) => (
             <Reveal key={item.alt} delay={index * 70} variant="clip">
               <img

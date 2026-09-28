@@ -18,9 +18,11 @@ export const clinic = {
   shortName: "Thrive",
   brandLine: "Heal. Restore. Thrive.",
   tagline: "Your pain ends here. Your life begins.",
-  phone: "+91 86395 09446",
-  phoneHref: "tel:+918639509446",
-  whatsapp: "918639509446",
+  phone: "+91 9676 741 888",
+  phoneHref: "tel:+919676741888",
+  phone2: "+91 9676 926 888",
+  phone2Href: "tel:+919676926888",
+  whatsapp: "919676741888",
   email: "adashealthcare@gmail.com",
   bookingEmail: "adashealthcare@gmail.com",
   address:
@@ -544,6 +546,33 @@ export const teamDisciplines = [
   {
     title: "Wellness Team",
     detail: "Professionals delivering selected wellness therapies as part of an integrated care approach.",
+  },
+];
+
+export const clinicPhotos = [
+  {
+    src: "https://res.cloudinary.com/dizaawlyl/image/upload/v1790591656/DSC08722_t4s8l3.jpg",
+    alt: "Thrive clinic interior",
+  },
+  {
+    src: "https://res.cloudinary.com/dizaawlyl/image/upload/v1790591656/DSC08700_rivwop.jpg",
+    alt: "Thrive clinic care space",
+  },
+  {
+    src: "https://res.cloudinary.com/dizaawlyl/image/upload/v1790591656/DSC08716_px0bjv.jpg",
+    alt: "Thrive treatment area",
+  },
+  {
+    src: "https://res.cloudinary.com/dizaawlyl/image/upload/v1790591657/DSC08734_zaeqwi.jpg",
+    alt: "Thrive clinic environment",
+  },
+  {
+    src: "https://res.cloudinary.com/dizaawlyl/image/upload/v1790591657/DSC08656_ii1gij.jpg",
+    alt: "Thrive wellness facility",
+  },
+  {
+    src: "https://res.cloudinary.com/dizaawlyl/image/upload/v1790591657/DSC08662_ausk1e.jpg",
+    alt: "Thrive clinical facility",
   },
 ];
 

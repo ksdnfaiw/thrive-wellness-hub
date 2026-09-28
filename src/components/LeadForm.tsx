@@ -54,7 +54,7 @@ export function LeadForm({
       <div className="card-soft p-6 sm:p-8">
         <h3 className="text-xl">Request received</h3>
         <p className="mt-3 text-sm text-muted-foreground">
-          Your details have been opened in WhatsApp so they reach our care team on {clinic.phone}. If the WhatsApp window
+          Your details have been opened in WhatsApp so they reach our care team on {clinic.phone} / {clinic.phone2}. If the WhatsApp window
           did not open, use the button below. You can also write to {clinic.email}.
         </p>
 
@@ -79,6 +79,13 @@ export function LeadForm({
             className="btn btn-outline"
           >
             Call {clinic.phone}
+          </a>
+          <a
+            href={clinic.phone2Href}
+            onClick={() => trackEvent("phone_click", { location: "form_confirmation" })}
+            className="btn btn-outline"
+          >
+            Call {clinic.phone2}
           </a>
         </div>
       </div>

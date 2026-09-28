@@ -62,6 +62,13 @@ function Book() {
             >
               Call {clinic.phone}
             </a>
+            <a
+              href={clinic.phone2Href}
+              onClick={() => trackEvent("phone_click", { location: "book_page" })}
+              className="btn btn-outline"
+            >
+              Call {clinic.phone2}
+            </a>
           </div>
         </Reveal>
 

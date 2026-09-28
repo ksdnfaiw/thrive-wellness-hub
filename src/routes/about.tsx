@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { careModel, facilityHighlights, images, missionVision, philosophy, stats } from "@/lib/site-data";
+import { careModel, clinicPhotos, facilityHighlights, images, missionVision, philosophy, stats } from "@/lib/site-data";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { ClosingCta } from "@/components/ClosingCta";
@@ -161,9 +161,9 @@ function About() {
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { src: images.recovery, alt: "Dedicated recovery room at Thrive" },
-              { src: images.wellness, alt: "Wellness treatment room for IV-based therapies" },
-              { src: images.physio, alt: "Physiotherapy and rehabilitation space" },
+              { src: clinicPhotos[3].src, alt: clinicPhotos[3].alt },
+              { src: clinicPhotos[4].src, alt: clinicPhotos[4].alt },
+              { src: clinicPhotos[5].src, alt: clinicPhotos[5].alt },
             ].map((item, index) => (
               <Reveal key={item.alt} delay={index * 70} variant="clip">
                 <img

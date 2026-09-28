@@ -42,6 +42,10 @@ export function ClosingCta() {
             <a href={clinic.phoneHref} className="underline">
               {clinic.phone}
             </a>
+            {" / "}
+            <a href={clinic.phone2Href} className="underline">
+              {clinic.phone2}
+            </a>
           </p>
         </Reveal>
       </div>

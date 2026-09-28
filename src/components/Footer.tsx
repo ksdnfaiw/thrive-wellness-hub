@@ -43,6 +43,9 @@ export function Footer() {
               <a href={clinic.phoneHref} onClick={() => trackEvent("phone_click", { location: "footer" })}>
                 {clinic.phone}
               </a>
+              <a href={clinic.phone2Href} onClick={() => trackEvent("phone_click", { location: "footer" })}>
+                {clinic.phone2}
+              </a>
               <a href={`mailto:${clinic.email}`}>{clinic.email}</a>
               <p>{clinic.address}</p>
               {clinic.hours.map((entry) => (

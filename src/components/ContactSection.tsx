@@ -50,9 +50,14 @@ export function ContactSection() {
           <ul className="mt-8 space-y-4 text-sm">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
-              <a href={clinic.phoneHref} className="font-semibold text-deep">
-                {clinic.phone}
-              </a>
+              <div className="flex flex-col gap-1">
+                <a href={clinic.phoneHref} className="font-semibold text-deep">
+                  {clinic.phone}
+                </a>
+                <a href={clinic.phone2Href} className="font-semibold text-deep">
+                  {clinic.phone2}
+                </a>
+              </div>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} aria-hidden="true" />
@@ -90,7 +95,7 @@ export function ContactSection() {
             <div className="card-flat p-6 sm:p-8">
               <h3 className="display-md">Request received</h3>
               <p className="mt-4 text-sm text-muted-foreground">
-                Your enquiry has been opened in WhatsApp so it reaches our team on {clinic.phone}. If the window did not
+                Your enquiry has been opened in WhatsApp so it reaches our team on {clinic.phone} / {clinic.phone2}. If the window did not
                 open, use the button below.
               </p>
 

@@ -155,6 +155,13 @@ export function Header() {
             >
               {clinic.phone}
             </a>
+            <span className="hidden xl:inline text-sm text-deep/40">|</span>
+            <a
+              href={clinic.phone2Href}
+              className="hidden whitespace-nowrap text-sm font-semibold text-deep xl:inline hover:opacity-75 transition-opacity"
+            >
+              {clinic.phone2}
+            </a>
             <Link to="/contact" className="btn btn-primary whitespace-nowrap text-xs sm:text-sm px-4 py-2">
               Contact us
             </Link>
@@ -225,9 +232,14 @@ export function Header() {
               <Link to="/contact" onClick={() => setOpen(false)} className="btn btn-primary flex-1">
                 Contact us
               </Link>
-              <a href={clinic.phoneHref} onClick={() => setOpen(false)} className="btn btn-outline flex-1">
+            <div className="flex flex-col gap-2 flex-1">
+              <a href={clinic.phoneHref} onClick={() => setOpen(false)} className="btn btn-outline w-full">
                 {clinic.phone}
               </a>
+              <a href={clinic.phone2Href} onClick={() => setOpen(false)} className="btn btn-outline w-full">
+                {clinic.phone2}
+              </a>
+            </div>
             </div>
           </nav>
         </div>

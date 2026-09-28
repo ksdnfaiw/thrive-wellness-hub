@@ -63,6 +63,13 @@ function Contact() {
           Call {clinic.phone}
         </a>
         <a
+          href={clinic.phone2Href}
+          onClick={() => trackEvent("phone_click", { location: "contact_hero" })}
+          className="btn btn-primary"
+        >
+          Call {clinic.phone2}
+        </a>
+        <a
           href={whatsappLink()}
           target="_blank"
           rel="noopener noreferrer"
@@ -100,6 +107,11 @@ function Contact() {
                 <p>
                   <a href={clinic.phoneHref} className="underline">
                     {clinic.phone}
+                  </a>
+                </p>
+                <p>
+                  <a href={clinic.phone2Href} className="underline">
+                    {clinic.phone2}
                   </a>
                 </p>
                 <p>
