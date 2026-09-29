@@ -39,9 +39,48 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: "https://www.thrivepainandwellness.com/" },
       { rel: "preload", as: "image", href: images.hero, fetchPriority: "high" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalClinic",
+          "name": "Thrive Pain Clinic, Wellness & More",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam",
+            "addressLocality": "Shaikpet, Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500081",
+            "addressCountry": "IN"
+          },
+          "telephone": "+91 86395 09446",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "description": "By appointment"
+            }
+          ],
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "17.420000",
+            "longitude": "78.380000"
+          },
+          "medicalSpecialty": "Pain Management",
+          "url": "https://www.thrivepainandwellness.com/"
+        })
+      }
+    ]
   }),
   component: Home,
 });

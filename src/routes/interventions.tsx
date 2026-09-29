@@ -9,22 +9,79 @@ import { CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
 export const Route = createFileRoute("/interventions")({
   head: () => ({
     meta: [
-      { title: "Treatments: Pain Procedures & Regenerative Therapies | Thrive Hyderabad" },
+      { title: "Interventional Pain Procedures in Hyderabad | Thrive Pain Clinic, Raidurgam" },
       {
         name: "description",
         content:
-          "Explore our treatments: PRP and regenerative injections, VENOM™ radiofrequency ablation, epidural and spinal procedures, neuromodulation, ozone therapy and HBOT.",
+          "Interventional Pain Procedures designed around you. Physician-led, evidence-informed care at Thrive's Raidurgam clinic. Target the root cause of pain. Book a consultation today.",
       },
-      { property: "og:title", content: "Treatments | Thrive Pain Clinic, Hyderabad" },
+      { property: "og:title", content: "Interventional Pain Procedures in Hyderabad | Thrive Pain Clinic, Raidurgam" },
       {
         property: "og:description",
-        content: "Physician-led PRP, ozone therapies, spinal procedures and precision radiofrequency ablation in one clinic.",
+        content: "Interventional Pain Procedures designed around you. Physician-led, evidence-informed care at Thrive's Raidurgam clinic. Target the root cause of pain. Book a consultation today.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/interventions" },
+      { property: "og:url", content: "https://www.thrivepainandwellness.com/interventions" },
     ],
-    links: [{ rel: "canonical", href: "/interventions" }],
+    links: [{ rel: "canonical", href: "https://www.thrivepainandwellness.com/interventions" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Interventional Pain Procedures",
+          "provider": {
+            "@type": "MedicalClinic",
+            "name": "Thrive Pain Clinic, Wellness & More"
+          },
+          "areaServed": ["Hyderabad", "Raidurg", "Gachibowli"],
+          "description": "Physician-led, image-guided pain interventions including PRP, Radiofrequency Ablation (RFA), Epidurals, and Ozone Therapy."
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is an interventional pain procedure?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Interventional pain procedures are minimally invasive treatments, such as image-guided injections or nerve blocks, used to target and treat the root cause of chronic or acute pain conditions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does recovery take after PRP or RFA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Recovery varies depending on the specific procedure and condition, but many patients can resume light activities within a few days. We provide a customized post-procedure rehabilitation plan to support healing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is medical ozone therapy safe for joint pain?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, when performed by a qualified pain specialist under precise image guidance, medical ozone therapy is a safe and minimally invasive option for reducing inflammation and supporting tissue recovery."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need a referral to visit the clinic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, you do not need a referral to schedule a consultation with our pain specialists at our Raidurgam, Hyderabad clinic."
+              }
+            }
+          ]
+        }),
+      }
+    ]
   }),
   component: InterventionsPage,
 });
@@ -385,6 +442,52 @@ export function InterventionsPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-20 lg:py-28 bg-deep text-deep-foreground">
+        <div className="container-lg">
+          <Reveal>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-center max-w-2xl mx-auto">
+              Frequently Asked Questions
+            </h2>
+          </Reveal>
+          
+          <div className="mt-12 max-w-3xl mx-auto space-y-6">
+            <Reveal delay={100}>
+              <div className="border border-white/10 p-6 rounded-xl bg-white/5">
+                <h3 className="text-lg font-bold text-sand">What is an interventional pain procedure?</h3>
+                <p className="mt-2 text-sm text-white/70 leading-relaxed">
+                  Interventional pain procedures are minimally invasive treatments, such as image-guided injections or nerve blocks, used to target and treat the root cause of chronic or acute pain conditions.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="border border-white/10 p-6 rounded-xl bg-white/5">
+                <h3 className="text-lg font-bold text-sand">How long does recovery take after PRP or RFA?</h3>
+                <p className="mt-2 text-sm text-white/70 leading-relaxed">
+                  Recovery varies depending on the specific procedure and condition, but many patients can resume light activities within a few days. We provide a customized post-procedure rehabilitation plan to support healing.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={300}>
+              <div className="border border-white/10 p-6 rounded-xl bg-white/5">
+                <h3 className="text-lg font-bold text-sand">Is medical ozone therapy safe for joint pain?</h3>
+                <p className="mt-2 text-sm text-white/70 leading-relaxed">
+                  Yes, when performed by a qualified pain specialist under precise image guidance, medical ozone therapy is a safe and minimally invasive option for reducing inflammation and supporting tissue recovery.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={400}>
+              <div className="border border-white/10 p-6 rounded-xl bg-white/5">
+                <h3 className="text-lg font-bold text-sand">Do I need a referral to visit the clinic?</h3>
+                <p className="mt-2 text-sm text-white/70 leading-relaxed">
+                  No, you do not need a referral to schedule a consultation with our pain specialists at our Raidurgam, Hyderabad clinic.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

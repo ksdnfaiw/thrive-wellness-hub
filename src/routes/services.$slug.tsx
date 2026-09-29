@@ -17,13 +17,29 @@ export const Route = createFileRoute("/services/$slug")({
     const { service } = loaderData;
     return {
       meta: [
-        { title: `${service.title} | Thrive Pain & Wellness Clinic, Hyderabad` },
-        { name: "description", content: service.short },
-        { property: "og:title", content: `${service.title} | Thrive Pain & Wellness Clinic` },
-        { property: "og:description", content: service.short },
-        { property: "og:url", content: `/services/${params.slug}` },
+        { title: `${service.title} in Hyderabad | Thrive Pain Clinic, Raidurgam` },
+        { name: "description", content: `${service.title} designed around you. Physician-led, evidence-informed care at Thrive's Raidurgam clinic. ${service.short} Book a consultation today.` },
+        { property: "og:title", content: `${service.title} in Hyderabad | Thrive Pain Clinic, Raidurgam` },
+        { property: "og:description", content: `${service.title} designed around you. Physician-led, evidence-informed care at Thrive's Raidurgam clinic. ${service.short} Book a consultation today.` },
+        { property: "og:url", content: `https://www.thrivepainandwellness.com/services/${params.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/services/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://www.thrivepainandwellness.com/services/${params.slug}` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": service.title,
+            "provider": {
+              "@type": "MedicalClinic",
+              "name": "Thrive Pain Clinic, Wellness & More"
+            },
+            "areaServed": ["Hyderabad", "Raidurg", "Gachibowli"],
+            "description": service.intro || service.short
+          }),
+        }
+      ]
     };
   },
   component: ServiceDetail,

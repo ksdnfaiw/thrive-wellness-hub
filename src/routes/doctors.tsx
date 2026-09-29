@@ -22,7 +22,7 @@ export const Route = createFileRoute("/doctors")({
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/doctors" },
     ],
-    links: [{ rel: "canonical", href: "/doctors" }],
+    links: [{ rel: "canonical", href: "https://www.thrivepainandwellness.com/doctors" }],
     scripts: doctors.map((doctor) => ({
       type: "application/ld+json",
       children: JSON.stringify({

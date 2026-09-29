@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /staging/
 
-Sitemap: https://heal-restore-thrive.lovable.app/sitemap.xml
+Sitemap: https://www.thrivepainandwellness.com/sitemap.xml
