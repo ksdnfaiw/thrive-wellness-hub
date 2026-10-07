@@ -194,6 +194,7 @@ export function Header() {
           </Link>
           <Button
             type="button"
+             variant="outline"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
              aria-controls="mobile-navigation"

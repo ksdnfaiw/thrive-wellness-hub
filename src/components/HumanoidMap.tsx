@@ -126,16 +126,17 @@ export const bodyZones: BodyZone[] = [
 
 export function HumanoidMap() {
   const [activeId, setActiveId] = useState<string>("knee");
-  const activeZone: BodyZone = bodyZones.find((z) => z.id === activeId) ?? bodyZones[0]!;
+  const activeZone = bodyZones.find((z) => z.id === activeId) ?? bodyZones[0];
+  if (!activeZone) return null;
 
   return (
     <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
       {/* Visual Anatomy Runner Column */}
       <div className="lg:col-span-6 xl:col-span-5">
         <div className="relative overflow-hidden rounded-[2rem] border border-border bg-gradient-to-b from-[#111827] via-[#0c121e] to-[#060b13] p-4 sm:p-5 shadow-2xl">
-          <div className="flex items-center justify-between pb-3">
+          <div className="grid gap-2 pb-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-deep/90 px-3 py-1 text-[11px] font-bold tracking-wider text-lime-foreground backdrop-blur-md">
-              <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+              <span className="h-2 w-2 shrink-0 rounded-full bg-red-500 animate-pulse" />
               INTERACTIVE ANATOMICAL RUNNER
             </span>
             <span className="text-[11px] font-medium text-muted-foreground/80">Click joints to inspect</span>
@@ -181,7 +182,7 @@ export function HumanoidMap() {
                   
                   {/* Tooltip text badge on hover / active */}
                   <span
-                    className={`absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md px-2 py-0.5 text-[11px] font-bold tracking-wide transition-opacity shadow-md pointer-events-none ${
+                    className={`absolute left-1/2 top-full mt-2 w-24 -translate-x-1/2 rounded-md px-2 py-0.5 text-center text-[11px] leading-tight font-bold tracking-wide transition-opacity shadow-md pointer-events-none ${
                       isSelected
                         ? "bg-white text-deep opacity-100 ring-2 ring-red-500"
                         : "bg-deep/90 text-white opacity-0 group-hover:opacity-100"
@@ -217,7 +218,7 @@ export function HumanoidMap() {
       {/* Conditions & Evidence Details Column */}
       <div className="lg:col-span-6 xl:col-span-7">
         <Reveal className="card-soft overflow-hidden p-6 sm:p-8 border-2 border-primary/20 bg-card">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-5">
+          <div className="grid gap-3 border-b border-border pb-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
             <div>
               <span className="text-xs font-bold tracking-[0.16em] text-primary uppercase">
                 TARGETED PAIN REGION
@@ -226,14 +227,14 @@ export function HumanoidMap() {
                 {activeZone.name}
               </h3>
             </div>
-            <span className="rounded-full bg-sand px-3.5 py-1 text-xs font-bold text-deep">
+            <span className="w-fit rounded-full bg-sand px-3.5 py-1 text-xs font-bold text-deep">
               {activeZone.badge}
             </span>
           </div>
 
           <div className="mt-6">
             <h4 className="flex items-center gap-2 text-xs font-bold tracking-wider text-muted-foreground uppercase">
-              <Activity className="h-4 w-4 text-primary" />
+              <Activity className="h-4 w-4 shrink-0 text-primary" />
               Conditions We Treat in this Area
             </h4>
             <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
@@ -271,7 +272,7 @@ export function HumanoidMap() {
               className="inline-flex items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-deep"
             >
               Explore PRP, RFA & Ozone Protocols
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4 shrink-0" />
             </Link>
 
             <Link to="/book" className="btn btn-primary text-xs px-5 py-2.5">

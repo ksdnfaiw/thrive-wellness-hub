@@ -30,6 +30,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-sand: var(--sand);
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #20bd5a;
   --font-display: "Marcellus", "Cormorant Garamond", Georgia, serif;
   --font-sans: "Instrument Sans", "Inter", system-ui, sans-serif;
   --shadow-soft: 0 30px 70px -40px color-mix(in oklab, var(--deep) 40%, transparent);
@@ -458,6 +460,9 @@ img, video, iframe, input, select, textarea {
 }
 .field {
   min-width: 0;
+}
+body:has(#mobile-navigation) .whatsapp-float {
+  display: none;
 }
 @media (max-width: 639px) {
   input, select, textarea {

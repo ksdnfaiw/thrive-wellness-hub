@@ -22,6 +22,10 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:title", content: `${service.title} in Hyderabad | Thrive Pain Clinic, Raidurgam` },
         { property: "og:description", content: `${service.title} designed around you. Physician-led, evidence-informed care at Thrive's Raidurgam clinic. ${service.short} Book a consultation today.` },
         { property: "og:url", content: `https://www.thrivepainandwellness.com/services/${params.slug}` },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { property: "og:image", content: service.image },
+        { name: "twitter:image", content: service.image },
       ],
       links: [{ rel: "canonical", href: `https://www.thrivepainandwellness.com/services/${params.slug}` }],
       scripts: [

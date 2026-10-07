@@ -20,6 +20,8 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact & Locate Us | Thrive Pain & Wellness Clinic" },
       { property: "og:description", content: "Raidurgam, Hyderabad. Call, WhatsApp or get directions." },
       { property: "og:url", content: "/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://www.thrivepainandwellness.com/contact" }],
     scripts: [

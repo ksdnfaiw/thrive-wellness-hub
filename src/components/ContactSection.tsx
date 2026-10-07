@@ -39,8 +39,8 @@ export function ContactSection() {
         <Reveal>
           <span className="eyebrow">Contact us</span>
           <h2 className="display-lg mt-6">
-            Ready to take
-            <br />
+            Ready to take{" "}
+            <br className="hidden sm:block" />
             the next step?
           </h2>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -157,7 +157,7 @@ export function ContactSection() {
                 <div className="mt-4 space-y-3">
                   {supportOptions.map((option) => (
                     <label key={option} className="flex items-center gap-3 text-sm">
-                      <input type="checkbox" name="support" value={option} className="h-4 w-4 accent-[var(--deep)]" />
+                      <input type="checkbox" name="support" value={option} className="h-4 w-4 shrink-0 accent-deep" />
                       {option}
                     </label>
                   ))}

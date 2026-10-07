@@ -18,6 +18,8 @@ export const Route = createFileRoute("/services/")({
       { property: "og:title", content: "Our Services | Thrive Pain & Wellness Clinic" },
       { property: "og:description", content: "Complete care for a better life, coordinated by one team." },
       { property: "og:url", content: "/services" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
   }),
