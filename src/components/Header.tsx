@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { clinic, services } from "@/lib/site-data";
 import { Logo } from "@/components/Logo";
+import { Button } from "@/components/ui/button";
 
 const leftNav = [
   { label: "Home", to: "/", exact: true },
@@ -65,7 +66,7 @@ export function Header() {
       {/* ── Desktop pill ── */}
       <div
         className={`
-          hidden lg:grid
+           hidden xl:grid
           grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]
           items-center
           rounded-2xl border border-border
@@ -76,7 +77,7 @@ export function Header() {
         `}
       >
         {/* Left nav */}
-        <nav aria-label="Primary left" className="flex min-w-0 items-center gap-5 xl:gap-6">
+          <nav aria-label="Primary left" className="flex min-w-0 items-center gap-4 2xl:gap-6">
           {leftNav.map((item) => (
             <Link
               key={item.to}
@@ -94,6 +95,8 @@ export function Header() {
             className="relative"
             onMouseEnter={() => setMenu("services")}
             onMouseLeave={() => setMenu(null)}
+             onFocus={() => setMenu("services")}
+             onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setMenu(null); }}
           >
             <Link
               to="/services"
@@ -124,19 +127,19 @@ export function Header() {
         </nav>
 
         {/* Center — Logo perfectly centered & prominent */}
-        <div className="flex h-32 items-center justify-center px-3 xl:h-36 xl:px-5">
+        <div className="flex h-28 min-w-0 items-center justify-center px-4 2xl:h-32">
           <Link
             to="/"
             className="group relative inline-flex items-center justify-center transition-transform duration-300 hover:scale-105"
             onClick={() => setOpen(false)}
           >
-            <Logo className="h-32 w-auto max-w-[400px] xl:h-36 xl:max-w-[480px]" />
+            <Logo className="h-auto w-64 max-w-full 2xl:w-72" />
             <span className="sr-only">Thrive Pain Clinic - Home</span>
           </Link>
         </div>
 
         {/* Right nav */}
-        <nav aria-label="Primary right" className="flex min-w-0 items-center justify-end gap-4 xl:gap-5">
+        <nav aria-label="Primary right" className="flex min-w-0 items-center justify-end gap-4 2xl:gap-5">
           {rightNav.map((item) => (
             <Link
               key={item.to}
@@ -151,14 +154,14 @@ export function Header() {
           <div className="ml-2 flex shrink-0 items-center gap-3 border-l border-border pl-4">
             <a
               href={clinic.phoneHref}
-              className="hidden whitespace-nowrap text-sm font-semibold text-deep xl:inline hover:opacity-75 transition-opacity"
+              className="hidden whitespace-nowrap text-sm font-semibold text-deep min-[1800px]:inline hover:opacity-75 transition-opacity"
             >
               {clinic.phone}
             </a>
-            <span className="hidden xl:inline text-sm text-deep/40">|</span>
+            <span className="hidden min-[1800px]:inline text-sm text-deep/40">|</span>
             <a
               href={clinic.phone2Href}
-              className="hidden whitespace-nowrap text-sm font-semibold text-deep xl:inline hover:opacity-75 transition-opacity"
+              className="hidden whitespace-nowrap text-sm font-semibold text-deep min-[1800px]:inline hover:opacity-75 transition-opacity"
             >
               {clinic.phone2}
             </a>
@@ -172,7 +175,7 @@ export function Header() {
       {/* ── Mobile bar ── */}
       <div
         className={`
-          flex lg:hidden items-center justify-between
+          grid grid-cols-[minmax(0,1fr)_auto] xl:hidden items-center gap-3
           rounded-2xl border border-border
           bg-card/95 backdrop-blur-md
           px-4 py-2.5
@@ -181,18 +184,20 @@ export function Header() {
         `}
       >
         {/* Logo left on mobile */}
-        <Link to="/" onClick={() => setOpen(false)} aria-label="Thrive — home" className="flex items-center">
-          <Logo className="h-20 w-auto max-w-[260px] sm:h-24 sm:max-w-[320px]" />
+        <Link to="/" onClick={() => setOpen(false)} aria-label="Thrive home" className="flex min-w-0 items-center">
+          <Logo className="h-auto w-full max-w-56 sm:max-w-64" />
         </Link>
 
-        <div className="flex items-center gap-2">
-          <Link to="/contact" className="btn btn-primary text-xs px-3 py-2 sm:text-sm sm:px-4">
+        <div className="flex shrink-0 items-center gap-2">
+          <Link to="/contact" className="btn btn-primary hidden sm:inline-flex text-sm px-4 py-2">
             Contact us
           </Link>
-          <button
+          <Button
             type="button"
+             variant="outline"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
+             aria-controls="mobile-navigation"
             aria-label={open ? "Close menu" : "Open menu"}
             className="btn btn-outline h-10 w-10 shrink-0 !px-0"
           >
@@ -201,16 +206,16 @@ export function Header() {
                 ? <path d="M6 6l12 12M18 6 6 18" />
                 : <path d="M4 7h16M4 12h16M4 17h16" />}
             </svg>
-          </button>
+          </Button>
         </div>
       </div>
 
       {/* ── Mobile drawer ── */}
       {open && (
-        <div className="lg:hidden mt-2 card-flat overflow-hidden rounded-2xl border border-border shadow-soft bg-card">
+        <div id="mobile-navigation" data-lenis-prevent className="xl:hidden mt-2 max-h-[calc(100dvh-9rem)] overflow-y-auto overscroll-contain rounded-2xl border border-border shadow-soft bg-card">
           {/* Logo centered in drawer */}
           <div className="flex justify-center border-b border-border py-4">
-            <Logo className="h-28 w-auto max-w-[360px]" />
+            <Logo className="h-auto w-60 max-w-full" />
           </div>
 
           <nav aria-label="Mobile" className="p-3">
@@ -228,7 +233,7 @@ export function Header() {
               ))}
             </div>
 
-            <div className="mt-4 flex gap-2 border-t border-border pt-4">
+            <div className="mt-4 grid gap-3 border-t border-border pt-4 sm:grid-cols-2">
               <Link to="/contact" onClick={() => setOpen(false)} className="btn btn-primary flex-1">
                 Contact us
               </Link>

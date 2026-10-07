@@ -5,7 +5,7 @@ export function Logo({ className = "h-16 w-auto", title = "Thrive Pain Clinic, W
       alt={title}
       width={1920}
       height={878}
-      className={`object-contain bg-white transition-all duration-200 ${className}`}
+      className={`object-contain bg-card transition-all duration-200 ${className}`}
     />
   );
 }

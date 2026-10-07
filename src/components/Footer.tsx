@@ -16,7 +16,7 @@ export function Footer() {
   return (
     <footer className="bg-deep text-deep-foreground">
       <div className="container-x pt-16 pb-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1.2fr_0.8fr_1fr]">
           <div>
             <p className="font-display text-sm font-bold tracking-[0.12em] uppercase">About us</p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed opacity-75">
@@ -39,7 +39,7 @@ export function Footer() {
 
           <div>
             <p className="font-display text-sm font-bold tracking-[0.12em] uppercase">Contact info</p>
-            <div className="mt-4 flex flex-col gap-3 text-sm opacity-75">
+            <div className="mt-4 flex min-w-0 flex-col gap-3 text-sm opacity-75 [overflow-wrap:anywhere]">
               <a href={clinic.phoneHref} onClick={() => trackEvent("phone_click", { location: "footer" })}>
                 {clinic.phone}
               </a>
@@ -94,7 +94,7 @@ export function Footer() {
           Thrive
         </p>
 
-        <div className="mt-8 flex flex-col gap-4 border-t border-white/15 pt-6 text-xs opacity-70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 grid gap-4 border-t border-deep-foreground/15 pt-6 pb-16 text-xs opacity-70 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:pb-8">
           <p>
             © {new Date().getFullYear()} {clinic.name}. All rights reserved.
           </p>
