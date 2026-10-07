@@ -22,8 +22,10 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: post.excerpt },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:image", content: post.image },
-        { name: "twitter:image", content: post.image },
+        ...(post.image.startsWith("https://") ? [
+          { property: "og:image", content: post.image },
+          { name: "twitter:image", content: post.image },
+        ] : []),
         { property: "og:url", content: `/blog/${post.slug}` },
       ],
       links: [{ rel: "canonical", href: `/blog/${post.slug}` }],

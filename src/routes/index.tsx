@@ -35,8 +35,6 @@ export const Route = createFileRoute("/")({
         content: "Advanced pain care and integrated wellness, brought together under one roof.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: images.hero },
-      { name: "twitter:image", content: images.hero },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],

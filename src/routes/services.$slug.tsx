@@ -24,8 +24,10 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:url", content: `https://www.thrivepainandwellness.com/services/${params.slug}` },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:image", content: service.image },
-        { name: "twitter:image", content: service.image },
+        ...(service.image.startsWith("https://") ? [
+          { property: "og:image", content: service.image },
+          { name: "twitter:image", content: service.image },
+        ] : []),
       ],
       links: [{ rel: "canonical", href: `https://www.thrivepainandwellness.com/services/${params.slug}` }],
       scripts: [
