@@ -35,6 +35,8 @@ export const Route = createFileRoute("/")({
         content: "Advanced pain care and integrated wellness, brought together under one roof.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: images.hero },
+      { name: "twitter:image", content: images.hero },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
@@ -455,11 +457,7 @@ function Home() {
           </Link>
         </Reveal>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { src: clinicPhotos[0].src, alt: clinicPhotos[0].alt },
-            { src: clinicPhotos[1].src, alt: clinicPhotos[1].alt },
-            { src: clinicPhotos[2].src, alt: clinicPhotos[2].alt },
-          ].map((item, index) => (
+          {clinicPhotos.slice(0, 3).map((item, index) => (
             <Reveal key={item.alt} delay={index * 70} variant="clip">
               <img
                 src={item.src}

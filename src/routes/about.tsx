@@ -19,6 +19,8 @@ export const Route = createFileRoute("/about")({
         content: "Physician-led pain medicine and integrative wellness under one roof in Hyderabad.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://res.cloudinary.com/dizaawlyl/image/upload/v1787908392/DSC03413_gisw1i.jpg" },
+      { name: "twitter:image", content: "https://res.cloudinary.com/dizaawlyl/image/upload/v1787908392/DSC03413_gisw1i.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/about" },
     ],
@@ -160,11 +162,7 @@ function About() {
             </Link>
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { src: clinicPhotos[3].src, alt: clinicPhotos[3].alt },
-              { src: clinicPhotos[4].src, alt: clinicPhotos[4].alt },
-              { src: clinicPhotos[5].src, alt: clinicPhotos[5].alt },
-            ].map((item, index) => (
+            {clinicPhotos.slice(3, 6).map((item, index) => (
               <Reveal key={item.alt} delay={index * 70} variant="clip">
                 <img
                   src={item.src}
