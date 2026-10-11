@@ -7,19 +7,19 @@ import { ClosingCta } from "@/components/ClosingCta";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog | Pain, Recovery & Wellness Insight from Thrive" },
+      { title: "Pain & Wellness Journal | Thrive Pain Clinic Hyderabad" },
       {
         name: "description",
         content:
-          "The Thrive Journal: practical insights on pain, recovery, movement, nutrition, mental wellness and living better.",
+          "Explore clinical articles on back pain, knee arthritis, and image-guided recovery from our physician team at Thrive in Raidurgam, Hyderabad. Read the journal.",
       },
-      { property: "og:title", content: "Blog | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Practical insights on pain, recovery and living better." },
-      { property: "og:url", content: "/blog" },
+      { property: "og:title", content: "Pain & Wellness Journal | Thrive Pain Clinic Hyderabad" },
+      { property: "og:description", content: "Explore clinical articles on back pain, knee arthritis, and image-guided recovery from our physician team at Thrive in Raidurgam, Hyderabad." },
+      { property: "og:url", content: "https://www.thrivepainandwellness.com/blog" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://www.thrivepainandwellness.com/blog" }],
   }),
   component: BlogIndex,
 });

@@ -11,14 +11,18 @@ const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(clinic.m
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Locate Us | Thrive Pain Clinic, Hyderabad" },
+      { title: "Contact Thrive Pain Clinic, Wellness & More | Raidurgam" },
       {
         name: "description",
         content:
-          "Contact Thrive Pain Clinic, Wellness & More at Raidurgam, Hyderabad. Phone, email, WhatsApp and driving directions.",
+          "Need to reach our pain clinic Raidurg? Contact Thrive Pain Clinic, Wellness & More in Raidurgam, Hyderabad for appointments, phone, WhatsApp and directions.",
       },
-      { property: "og:title", content: "Contact & Locate Us | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Raidurgam, Hyderabad. Call, WhatsApp or get directions." },
+      { property: "og:title", content: "Contact Thrive Pain Clinic, Wellness & More | Raidurgam" },
+      {
+        property: "og:description",
+        content:
+          "Need to reach our pain clinic Raidurg? Contact Thrive Pain Clinic, Wellness & More in Raidurgam, Hyderabad for appointments, phone, WhatsApp and directions.",
+      },
       { property: "og:url", content: "/contact" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -29,17 +33,18 @@ export const Route = createFileRoute("/contact")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalClinic",
+          "@type": ["MedicalClinic", "LocalBusiness"],
           "name": "Thrive Pain Clinic, Wellness & More",
+          "url": "https://www.thrivepainandwellness.com/contact",
+          "telephone": "+91 86395 09446",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam",
-            "addressLocality": "Shaikpet, Hyderabad",
+            "streetAddress": "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam, Shaikpet",
+            "addressLocality": "Hyderabad",
             "addressRegion": "Telangana",
             "postalCode": "500081",
             "addressCountry": "IN"
           },
-          "telephone": "+91 86395 09446",
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
@@ -58,8 +63,7 @@ export const Route = createFileRoute("/contact")({
             "latitude": "17.420000",
             "longitude": "78.380000"
           },
-          "medicalSpecialty": "Pain Management",
-          "url": "https://www.thrivepainandwellness.com/contact"
+          "medicalSpecialty": "Pain Management"
         }),
       },
     ],

@@ -10,6 +10,7 @@ export type BodyZone = {
   coordinates: { x: number; y: number }; // percentage coordinates on 3:4 image
   conditions: string[];
   recommendedTreatments: string[];
+  pillarLink?: { to: string; label: string };
 };
 
 export const bodyZones: BodyZone[] = [
@@ -46,7 +47,7 @@ export const bodyZones: BodyZone[] = [
     badge: "Level I Evidence",
     coordinates: { x: 34, y: 30 },
     conditions: [
-      "Tennis elbow (Lateral epicondylitis) — Level I evidence",
+      "Tennis elbow (Lateral epicondylitis): Level I evidence",
       "Golfer's elbow (Medial epicondylitis)",
       "Distal biceps tendinopathy",
       "Chronic elbow ligament strains",
@@ -80,6 +81,10 @@ export const bodyZones: BodyZone[] = [
       "Thoracic and cervical spinal pain",
     ],
     recommendedTreatments: ["VENOM™ RFA Thermal Neurotomy", "Epiduroplasty", "Disc Biologics / PRP", "MAHT / EBOO Therapy"],
+    pillarLink: {
+      to: "/back-pain-treatment-in-hyderabad",
+      label: "Read our Back Pain Treatment guide in Hyderabad",
+    },
   },
   {
     id: "hip-pelvis",
@@ -108,6 +113,10 @@ export const bodyZones: BodyZone[] = [
       "Post-ACL reconstruction healing support",
     ],
     recommendedTreatments: ["High-Density PRP Therapy", "Genicular Nerve RFA (VENOM)", "EBOO / Ozone Adjunctive Therapy"],
+    pillarLink: {
+      to: "/knee-pain-treatment-in-hyderabad",
+      label: "Read our Knee Pain Treatment guide in Hyderabad",
+    },
   },
   {
     id: "ankle-foot",
@@ -265,6 +274,18 @@ export function HumanoidMap() {
               ))}
             </div>
           </div>
+
+          {activeZone.pillarLink && (
+            <div className="mt-4">
+              <Link
+                to={activeZone.pillarLink.to}
+                className="inline-flex items-center gap-2 rounded-xl bg-primary/10 px-4 py-2.5 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
+              >
+                {activeZone.pillarLink.label}
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          )}
 
           <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
             <Link

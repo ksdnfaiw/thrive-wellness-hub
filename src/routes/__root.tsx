@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Physician-led interventional pain management and integrative wellness at Raidurgam, Hyderabad. Heal. Restore. Thrive.",
+          "Struggling with chronic pain? At our physician-led pain clinic Raidurg, we diagnose the cause and guide your recovery in Raidurgam. Book your visit today.",
       },
       { property: "og:site_name", content: clinic.name },
       { property: "og:type", content: "website" },
@@ -106,16 +106,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalClinic",
+          "@type": ["MedicalClinic", "LocalBusiness"],
           name: clinic.name,
           slogan: clinic.brandLine,
-          telephone: [clinic.phone, clinic.phone2],
+          telephone: "+91 86395 09446",
           email: clinic.email,
           medicalSpecialty: "PainMedicine",
-          url: "https://heal-restore-thrive.lovable.app",
+          url: "https://www.thrivepainandwellness.com/",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurgam, Shaikpet",
+            streetAddress: "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam, Shaikpet",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
             postalCode: "500081",
@@ -127,6 +127,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
               opens: "09:00",
               closes: "18:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Sunday",
+              description: "By appointment",
             },
           ],
         }),

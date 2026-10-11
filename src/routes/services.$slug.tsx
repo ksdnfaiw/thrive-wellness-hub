@@ -15,12 +15,64 @@ export const Route = createFileRoute("/services/$slug")({
       return { meta: [{ title: "Service not found" }, { name: "robots", content: "noindex" }] };
     }
     const { service } = loaderData;
+    const title =
+      service.seo?.metaTitle || `${service.title} in Hyderabad | Thrive Pain Clinic, Raidurgam`;
+    const description =
+      service.seo?.metaDescription ||
+      `Looking for ${service.title.toLowerCase()} in Hyderabad? Consult our experienced medical team at Thrive in Raidurgam for personalised care. Book a visit.`;
+
+    const scripts: Array<{ type: string; children: string }> = [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: service.title,
+          provider: {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            name: "Thrive Pain Clinic, Wellness & More",
+            telephone: "+91 86395 09446",
+            url: "https://www.thrivepainandwellness.com/",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam, Shaikpet",
+              addressLocality: "Hyderabad",
+              addressRegion: "Telangana",
+              postalCode: "500081",
+              addressCountry: "IN",
+            },
+          },
+          areaServed: ["Hyderabad", "Raidurg", "Gachibowli", "Madhapur", "Kondapur"],
+          description: service.intro || service.short,
+        }),
+      },
+    ];
+
+    if (service.faqs && service.faqs.length > 0) {
+      scripts.push({
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }),
+      });
+    }
+
     return {
       meta: [
-        { title: `${service.title} in Hyderabad | Thrive Pain Clinic, Raidurgam` },
-        { name: "description", content: `${service.title} designed around you. Physician-led, evidence-informed care at Thrive's Raidurgam clinic. ${service.short} Book a consultation today.` },
-        { property: "og:title", content: `${service.title} in Hyderabad | Thrive Pain Clinic, Raidurgam` },
-        { property: "og:description", content: `${service.title} designed around you. Physician-led, evidence-informed care at Thrive's Raidurgam clinic. ${service.short} Book a consultation today.` },
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
         { property: "og:url", content: `https://www.thrivepainandwellness.com/services/${params.slug}` },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
@@ -30,26 +82,50 @@ export const Route = createFileRoute("/services/$slug")({
         ] : []),
       ],
       links: [{ rel: "canonical", href: `https://www.thrivepainandwellness.com/services/${params.slug}` }],
-      scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": service.title,
-            "provider": {
-              "@type": "MedicalClinic",
-              "name": "Thrive Pain Clinic, Wellness & More"
-            },
-            "areaServed": ["Hyderabad", "Raidurg", "Gachibowli"],
-            "description": service.intro || service.short
-          }),
-        }
-      ]
+      scripts,
     };
   },
   component: ServiceDetail,
 });
+
+const serviceGuides: Record<string, Array<{ to: string; label: string }>> = {
+  "interventional-procedures": [
+    { to: "/back-pain-treatment-in-hyderabad", label: "Back Pain Treatment Guide (Hyderabad)" },
+    { to: "/knee-pain-treatment-in-hyderabad", label: "Knee Pain Treatment Guide (Hyderabad)" },
+    { to: "/blog/causes-of-chronic-lower-back-pain", label: "Causes of Chronic Lower Back Pain" },
+    { to: "/blog/prp-therapy-for-knee-osteoarthritis", label: "Evidence for PRP Knee Osteoarthritis" },
+  ],
+  "diagnostics-and-imaging": [
+    { to: "/back-pain-treatment-in-hyderabad", label: "Back Pain Clinical Diagnostics" },
+    { to: "/knee-pain-treatment-in-hyderabad", label: "Knee Joint Ultrasound Evaluation" },
+    { to: "/blog/what-to-expect-from-an-image-guided-procedure", label: "Guide to Image-Guided Diagnostics" },
+  ],
+  "physiotherapy-and-rehabilitation": [
+    { to: "/back-pain-treatment-in-hyderabad", label: "Spine Rehabilitation Pathway" },
+    { to: "/knee-pain-treatment-in-hyderabad", label: "Knee Kinetic Chain Strengthening" },
+    { to: "/blog/understanding-persistent-back-pain", label: "Understanding Movement & Recovery" },
+  ],
+  "psychology-and-mental-wellness": [
+    { to: "/blog/sleep-mood-and-chronic-pain", label: "Sleep, Mood and Chronic Pain Connection" },
+    { to: "/back-pain-treatment-in-hyderabad", label: "Nociplastic Pain & Central Sensitization" },
+  ],
+  "nutrition": [
+    { to: "/blog/inflammation-and-adjuvant-therapies", label: "Dietary Modulation of Inflammation" },
+    { to: "/services/wellness-therapies", label: "Integrative Wellness Therapies" },
+  ],
+  "wellness-therapies": [
+    { to: "/blog/inflammation-and-adjuvant-therapies", label: "HBOT, Cold Plunge & Ozone Evidence" },
+    { to: "/services/interventional-procedures", label: "Interventional Procedures Department" },
+  ],
+  "in-house-pharmacy": [
+    { to: "/services/interventional-procedures", label: "Medication Management & Procedures" },
+    { to: "/doctors", label: "Consult Prescribing Physicians" },
+  ],
+  "polyclinic": [
+    { to: "/back-pain-treatment-in-hyderabad", label: "Spine & Joint Clinical Care" },
+    { to: "/doctors", label: "Meet all Multi-Specialty Physicians" },
+  ],
+};
 
 function ServiceDetail() {
   const { service } = Route.useLoaderData();
@@ -175,6 +251,66 @@ function ServiceDetail() {
             description="A clinician from this department reviews your enquiry and calls you back."
           />
         </Reveal>
+      </section>
+
+      {service.faqs && service.faqs.length > 0 && (
+        <section className="bg-sand/60 py-16 sm:py-20">
+          <div className="container-x max-w-4xl">
+            <Reveal>
+              <span className="eyebrow !bg-card">Frequently asked questions</span>
+              <h2 className="display-lg mt-5 text-2xl">Questions about {service.title.toLowerCase()}</h2>
+            </Reveal>
+            <div className="mt-8 space-y-4">
+              {service.faqs.map((faq) => (
+                <Reveal key={faq.question} className="rounded-2xl border border-border bg-card p-6">
+                  <h3 className="text-base font-semibold text-foreground">{faq.question}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {serviceGuides[service.slug] && (
+        <section className="border-t border-border bg-sand/30 py-12">
+          <div className="container-x">
+            <span className="eyebrow !bg-card">Clinical resources & reading</span>
+            <h3 className="display-md mt-2 text-xl font-bold">Related treatment guides and articles</h3>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {serviceGuides[service.slug].map((guide) => (
+                <Link
+                  key={guide.to}
+                  to={guide.to}
+                  className="flex items-center justify-between rounded-xl border border-border bg-card p-4 text-sm font-medium hover:border-primary/50 hover:bg-secondary/40 transition-colors"
+                >
+                  <span>{guide.label}</span>
+                  <span aria-hidden="true" className="text-primary text-xs">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="border-t border-border bg-card py-12">
+        <div className="container-x flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <div>
+            <span className="eyebrow">Physician-led oversight</span>
+            <h3 className="display-md mt-2 text-xl">Guided by our clinical team</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Every procedure and rehabilitation protocol is overseen by our pain physicians in Raidurgam.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/doctors" className="btn btn-primary text-xs">
+              Meet our pain specialists
+            </Link>
+            <Link to="/blog" className="btn btn-outline text-xs">
+              Read clinical articles
+            </Link>
+          </div>
+        </div>
       </section>
 
       <ClosingCta />

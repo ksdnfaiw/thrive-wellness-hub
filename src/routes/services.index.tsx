@@ -13,15 +13,19 @@ export const Route = createFileRoute("/services/")({
       {
         name: "description",
         content:
-          "Interventional pain procedures, diagnostics and imaging, physiotherapy, psychology, nutrition, wellness therapies and an in-house pharmacy, all under one roof.",
+          "Looking for integrated pain management in Hyderabad? We combine interventional procedures, physiotherapy, diagnostics and nutrition under one roof. Book today.",
       },
-      { property: "og:title", content: "Our Services | Thrive Pain & Wellness Clinic" },
-      { property: "og:description", content: "Complete care for a better life, coordinated by one team." },
-      { property: "og:url", content: "/services" },
+      { property: "og:title", content: "Our Services | Pain Management & Wellness in Hyderabad" },
+      {
+        property: "og:description",
+        content:
+          "Looking for integrated pain management in Hyderabad? We combine interventional procedures, physiotherapy, diagnostics and nutrition under one roof. Book today.",
+      },
+      { property: "og:url", content: "https://www.thrivepainandwellness.com/services" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://www.thrivepainandwellness.com/services" }],
   }),
   component: ServicesHub,
 });

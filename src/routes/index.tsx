@@ -27,12 +27,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Physician-led interventional pain management with in-house diagnostics, physiotherapy, psychology, nutrition and wellness therapies at Raidurgam, Hyderabad.",
+          "Struggling with chronic pain? At our physician-led pain clinic Raidurg, we diagnose the cause and guide your recovery in Raidurgam. Book your visit today.",
       },
-      { property: "og:title", content: "Thrive Pain Clinic, Wellness & More | Hyderabad" },
+      { property: "og:title", content: "Thrive Pain Clinic, Wellness & More | Raidurgam, Hyderabad" },
       {
         property: "og:description",
-        content: "Advanced pain care and integrated wellness, brought together under one roof.",
+        content:
+          "Struggling with chronic pain? At our physician-led pain clinic Raidurg, we diagnose the cause and guide your recovery in Raidurgam. Book your visit today.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -47,17 +48,18 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalClinic",
+          "@type": ["MedicalClinic", "LocalBusiness"],
           "name": "Thrive Pain Clinic, Wellness & More",
+          "url": "https://www.thrivepainandwellness.com/",
+          "telephone": "+91 86395 09446",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam",
-            "addressLocality": "Shaikpet, Hyderabad",
+            "streetAddress": "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam, Shaikpet",
+            "addressLocality": "Hyderabad",
             "addressRegion": "Telangana",
             "postalCode": "500081",
             "addressCountry": "IN"
           },
-          "telephone": "+91 86395 09446",
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
@@ -76,8 +78,7 @@ export const Route = createFileRoute("/")({
             "latitude": "17.420000",
             "longitude": "78.380000"
           },
-          "medicalSpecialty": "Pain Management",
-          "url": "https://www.thrivepainandwellness.com/"
+          "medicalSpecialty": "Pain Management"
         })
       }
     ]
@@ -230,6 +231,36 @@ function Home() {
           </p>
         </Reveal>
         <HumanoidMap />
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <Reveal className="rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-lg">
+            <span className="eyebrow !bg-primary/10 !text-primary">Clinical pillar guide</span>
+            <h3 className="display-md mt-3 text-xl font-semibold">Back Pain Treatment in Hyderabad</h3>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              Explore evidence-informed care pathways for chronic lower back pain, disc herniation, sciatica, and facet arthritis at our Raidurgam clinic.
+            </p>
+            <Link
+              to="/back-pain-treatment-in-hyderabad"
+              className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+            >
+              Read full back pain care guide →
+            </Link>
+          </Reveal>
+
+          <Reveal delay={80} className="rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-lg">
+            <span className="eyebrow !bg-primary/10 !text-primary">Clinical pillar guide</span>
+            <h3 className="display-md mt-3 text-xl font-semibold">Knee Pain Treatment in Hyderabad</h3>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              Learn how autologous PRP, Genicular RFA, and kinetic physiotherapy help preserve natural joint function and manage knee osteoarthritis.
+            </p>
+            <Link
+              to="/knee-pain-treatment-in-hyderabad"
+              className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+            >
+              Read full knee pain care guide →
+            </Link>
+          </Reveal>
+        </div>
       </section>
 
 

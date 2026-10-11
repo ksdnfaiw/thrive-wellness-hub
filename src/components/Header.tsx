@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { clinic, services } from "@/lib/site-data";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 const leftNav = [
   { label: "Home", to: "/", exact: true },
@@ -154,6 +155,7 @@ export function Header() {
           <div className="ml-2 flex shrink-0 items-center gap-3 border-l border-border pl-4">
             <a
               href={clinic.phoneHref}
+              onClick={() => trackEvent("phone_click", { location: "header_desktop" })}
               className="hidden whitespace-nowrap text-sm font-semibold text-deep min-[1800px]:inline hover:opacity-75 transition-opacity"
             >
               {clinic.phone}
@@ -161,11 +163,16 @@ export function Header() {
             <span className="hidden min-[1800px]:inline text-sm text-deep/40">|</span>
             <a
               href={clinic.phone2Href}
+              onClick={() => trackEvent("phone_click", { location: "header_desktop" })}
               className="hidden whitespace-nowrap text-sm font-semibold text-deep min-[1800px]:inline hover:opacity-75 transition-opacity"
             >
               {clinic.phone2}
             </a>
-            <Link to="/contact" className="btn btn-primary whitespace-nowrap text-xs sm:text-sm px-4 py-2">
+            <Link
+              to="/contact"
+              onClick={() => trackEvent("contact_click", { location: "header_desktop" })}
+              className="btn btn-primary whitespace-nowrap text-xs sm:text-sm px-4 py-2"
+            >
               Contact us
             </Link>
           </div>
@@ -234,17 +241,38 @@ export function Header() {
             </div>
 
             <div className="mt-4 grid gap-3 border-t border-border pt-4 sm:grid-cols-2">
-              <Link to="/contact" onClick={() => setOpen(false)} className="btn btn-primary flex-1">
+              <Link
+                to="/contact"
+                onClick={() => {
+                  trackEvent("contact_click", { location: "header_mobile" });
+                  setOpen(false);
+                }}
+                className="btn btn-primary flex-1"
+              >
                 Contact us
               </Link>
-            <div className="flex flex-col gap-2 flex-1">
-              <a href={clinic.phoneHref} onClick={() => setOpen(false)} className="btn btn-outline w-full">
-                {clinic.phone}
-              </a>
-              <a href={clinic.phone2Href} onClick={() => setOpen(false)} className="btn btn-outline w-full">
-                {clinic.phone2}
-              </a>
-            </div>
+              <div className="flex flex-col gap-2 flex-1">
+                <a
+                  href={clinic.phoneHref}
+                  onClick={() => {
+                    trackEvent("phone_click", { location: "header_mobile" });
+                    setOpen(false);
+                  }}
+                  className="btn btn-outline w-full"
+                >
+                  {clinic.phone}
+                </a>
+                <a
+                  href={clinic.phone2Href}
+                  onClick={() => {
+                    trackEvent("phone_click", { location: "header_mobile" });
+                    setOpen(false);
+                  }}
+                  className="btn btn-outline w-full"
+                >
+                  {clinic.phone2}
+                </a>
+              </div>
             </div>
           </nav>
         </div>

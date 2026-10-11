@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { doctors, teamDisciplines } from "@/lib/site-data";
+import { doctors, doctorsFaqs, teamDisciplines } from "@/lib/site-data";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { ClosingCta } from "@/components/ClosingCta";
@@ -7,33 +7,65 @@ import { ClosingCta } from "@/components/ClosingCta";
 export const Route = createFileRoute("/doctors")({
   head: () => ({
     meta: [
-      { title: "Our Doctors & Team | Thrive Pain & Wellness Clinic" },
+      { title: "Our Doctors & Specialists | Thrive Pain Clinic Hyderabad" },
       {
         name: "description",
         content:
-          "Meet Dr. Dheeraj and the multidisciplinary team across pain management, physiotherapy, psychology, nutrition and wellness at Thrive Pain & Wellness Clinic, Hyderabad.",
+          "Looking for experienced pain specialists? Meet Dr. Dheeraj and our medical team at Thrive in Raidurgam, Hyderabad. Multidisciplinary care. Book a visit.",
       },
-      { property: "og:title", content: "Our Doctors & Team | Thrive Pain & Wellness Clinic" },
+      { property: "og:title", content: "Our Doctors & Specialists | Thrive Pain Clinic Hyderabad" },
       {
         property: "og:description",
-        content: "Physician-led pain management supported by an integrated in-house care team.",
+        content:
+          "Looking for experienced pain specialists? Meet Dr. Dheeraj and our medical team at Thrive in Raidurgam, Hyderabad. Multidisciplinary care. Book a visit.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/doctors" },
     ],
     links: [{ rel: "canonical", href: "https://www.thrivepainandwellness.com/doctors" }],
-    scripts: doctors.map((doctor) => ({
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Physician",
-        name: doctor.name,
-        medicalSpecialty: doctor.specialty,
-        description: doctor.bio,
-        worksFor: { "@type": "MedicalClinic", name: "Thrive Pain & Wellness Clinic" },
-      }),
-    })),
+    scripts: [
+      ...doctors.map((doctor) => ({
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Physician",
+          name: doctor.name,
+          medicalSpecialty: doctor.specialty,
+          description: doctor.bio,
+          worksFor: {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            name: "Thrive Pain Clinic, Wellness & More",
+            telephone: "+91 86395 09446",
+            url: "https://www.thrivepainandwellness.com/",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam, Shaikpet",
+              addressLocality: "Hyderabad",
+              addressRegion: "Telangana",
+              postalCode: "500081",
+              addressCountry: "IN",
+            },
+          },
+        }),
+      })),
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: doctorsFaqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }),
+      },
+    ],
   }),
   component: Doctors,
 });
@@ -144,6 +176,24 @@ function Doctors() {
         <p className="mt-10 text-xs text-muted-foreground">
           Team photographs and verified credentials will be added as confirmed by the clinic.
         </p>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="bg-sand/60 py-16 sm:py-20">
+        <div className="container-x max-w-4xl">
+          <Reveal>
+            <span className="eyebrow !bg-card">Frequently asked questions</span>
+            <h2 className="display-lg mt-5 text-2xl">Questions about consulting our doctors</h2>
+          </Reveal>
+          <div className="mt-8 space-y-4">
+            {doctorsFaqs.map((faq) => (
+              <Reveal key={faq.question} className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="text-base font-semibold text-foreground">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       <ClosingCta />
