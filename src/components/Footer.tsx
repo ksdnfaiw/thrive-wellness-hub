@@ -87,9 +87,37 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Local Condition Guides for SEO & Patients */}
+        <div className="mt-12 pt-8 border-t border-deep-foreground/15">
+          <p className="font-display text-xs font-bold tracking-[0.15em] uppercase opacity-90 text-sand">
+            Specialized Condition Guides (Hyderabad)
+          </p>
+          <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-xs opacity-75">
+            <Link to="/back-pain-treatment-in-hyderabad" className="hover:opacity-100 hover:underline">
+              Back Pain Treatment in Hyderabad
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link to="/knee-pain-treatment-in-hyderabad" className="hover:opacity-100 hover:underline">
+              Knee Pain Treatment in Hyderabad
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link to="/sciatica-treatment-in-hyderabad" className="hover:opacity-100 hover:underline">
+              Sciatica Treatment in Hyderabad
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link to="/interventions" className="hover:opacity-100 hover:underline">
+              Non-Surgical Interventions
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link to="/services/physiotherapy-and-rehabilitation" className="hover:opacity-100 hover:underline">
+              Physiotherapy &amp; Kinetic Rehab
+            </Link>
+          </div>
+        </div>
+
         <p
           aria-hidden="true"
-          className="wordmark-fade mt-14 w-full text-center text-[clamp(3.5rem,17vw,13rem)] select-none"
+          className="wordmark-fade mt-10 w-full text-center text-[clamp(3.5rem,17vw,13rem)] select-none"
         >
           Thrive
         </p>

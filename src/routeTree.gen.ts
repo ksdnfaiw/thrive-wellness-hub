@@ -20,6 +20,7 @@ import { Route as InterventionsRouteImport } from './routes/interventions'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as BackPainRouteImport } from './routes/back-pain-treatment-in-hyderabad'
 import { Route as KneePainRouteImport } from './routes/knee-pain-treatment-in-hyderabad'
+import { Route as SciaticaRouteImport } from './routes/sciatica-treatment-in-hyderabad'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -80,6 +81,11 @@ const KneePainRoute = KneePainRouteImport.update({
   path: '/knee-pain-treatment-in-hyderabad',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SciaticaRoute = SciaticaRouteImport.update({
+  id: '/sciatica-treatment-in-hyderabad',
+  path: '/sciatica-treatment-in-hyderabad',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -113,6 +119,7 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRouteWithChildren
   '/back-pain-treatment-in-hyderabad': typeof BackPainRoute
   '/knee-pain-treatment-in-hyderabad': typeof KneePainRoute
+  '/sciatica-treatment-in-hyderabad': typeof SciaticaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -128,6 +135,7 @@ export interface FileRoutesByTo {
   '/interventions': typeof InterventionsRoute
   '/back-pain-treatment-in-hyderabad': typeof BackPainRoute
   '/knee-pain-treatment-in-hyderabad': typeof KneePainRoute
+  '/sciatica-treatment-in-hyderabad': typeof SciaticaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -146,6 +154,7 @@ export interface FileRoutesById {
   '/services': typeof ServicesRouteWithChildren
   '/back-pain-treatment-in-hyderabad': typeof BackPainRoute
   '/knee-pain-treatment-in-hyderabad': typeof KneePainRoute
+  '/sciatica-treatment-in-hyderabad': typeof SciaticaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -296,6 +305,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KneePainRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sciatica-treatment-in-hyderabad': {
+      id: '/sciatica-treatment-in-hyderabad'
+      path: '/sciatica-treatment-in-hyderabad'
+      fullPath: '/sciatica-treatment-in-hyderabad'
+      preLoaderRoute: typeof SciaticaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/'
@@ -365,6 +381,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRouteWithChildren,
   BackPainRoute: BackPainRoute,
   KneePainRoute: KneePainRoute,
+  SciaticaRoute: SciaticaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

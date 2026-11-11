@@ -10,3 +10,12 @@
 - [x] Expand physiotherapy and restorative therapy content
 - [x] Fix text wrapping and overflow across responsive layouts
 - [x] Repair deployment build configuration and verify pages
+
+## Month 3: Momentum (Strengthen + Expand)
+- [x] Week 1: Publish Sciatica Treatment in Hyderabad local pillar page (`/sciatica-treatment-in-hyderabad`) with cross-links
+- [x] Week 2: Content Refresh for "Understanding Persistent Back Pain" targeting back pain & sciatica pillars
+- [x] Week 3: Publish "Recovery Timeline After a PRP or RFA Procedure" SEO guide
+- [x] Week 4: Publish "When Should You See a Pain Specialist Instead of a General Physiotherapist?" guide
+- [x] Site-wide Footer & Navigation internal link updates for condition guides
+- [x] XML Sitemap update (`public/sitemap.xml`) including all new routes and articles
+- [x] Compile Month 3 SEO & CRO Strategy and Next Quarter Roadmap (`docs/month-3-seo-cro-strategy.md`)
