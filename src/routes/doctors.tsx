@@ -31,8 +31,30 @@ export const Route = createFileRoute("/doctors")({
           "@context": "https://schema.org",
           "@type": "Physician",
           name: doctor.name,
+          jobTitle: doctor.specialty,
           medicalSpecialty: doctor.specialty,
           description: doctor.bio,
+          ...(doctor.image ? { image: doctor.image } : {}),
+          ...(doctor.expertise && doctor.expertise.length > 0 ? { knowsAbout: doctor.expertise } : {}),
+          ...(doctor.recognition && doctor.recognition.length > 0 ? { award: doctor.recognition } : {}),
+          ...(doctor.name.includes("Dheeraj")
+            ? {
+                alumniOf: {
+                  "@type": "EducationalOrganization",
+                  name: "Bangalore Medical College & Research Institute (BMCRI)",
+                },
+                memberOf: [
+                  {
+                    "@type": "Organization",
+                    name: "Indian Society for Study of Pain (ISSP)",
+                  },
+                  {
+                    "@type": "Organization",
+                    name: "World Institute of Pain (WIP)",
+                  },
+                ],
+              }
+            : {}),
           worksFor: {
             "@type": ["MedicalClinic", "LocalBusiness"],
             name: "Thrive Pain Clinic, Wellness & More",
@@ -46,6 +68,11 @@ export const Route = createFileRoute("/doctors")({
               addressRegion: "Telangana",
               postalCode: "500081",
               addressCountry: "IN",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 17.4326,
+              longitude: 78.3845,
             },
           },
         }),
