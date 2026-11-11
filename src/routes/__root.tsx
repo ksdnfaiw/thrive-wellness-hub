@@ -108,11 +108,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": ["MedicalClinic", "LocalBusiness"],
           name: clinic.name,
+          alternateName: "Thrive Pain & Wellness Clinic Raidurgam",
           slogan: clinic.brandLine,
-          telephone: "+91 86395 09446",
+          telephone: clinic.phone,
+          telephone2: clinic.phone2,
           email: clinic.email,
-          medicalSpecialty: "PainMedicine",
+          medicalSpecialty: ["PainMedicine", "Physiotherapy", "PhysicalTherapy"],
+          priceRange: "₹₹",
           url: "https://www.thrivepainandwellness.com/",
+          hasMap: "https://maps.google.com/?q=Bharathi+Square,+Nandi+Hills,+Raidurgam,+Shaikpet,+Hyderabad,+Telangana+500081",
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 17.4326,
+            longitude: 78.3845,
+          },
           address: {
             "@type": "PostalAddress",
             streetAddress: "4th Floor, Bharathi Square, Plot No. 58, Sy No. 5/3, Nandi Hills, Raidurg, Cyberabad, Raidurgam, Shaikpet",
@@ -121,6 +130,45 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             postalCode: "500081",
             addressCountry: "IN",
           },
+          areaServed: [
+            "Hyderabad",
+            "Raidurgam",
+            "Raidurg",
+            "Cyberabad",
+            "HITEC City",
+            "Gachibowli",
+            "Madhapur",
+            "Kondapur",
+            "Financial District",
+            "Jubilee Hills",
+          ],
+          availableService: [
+            {
+              "@type": "MedicalTherapy",
+              name: "Interventional Pain Management",
+              url: "https://www.thrivepainandwellness.com/services/interventional-procedures",
+            },
+            {
+              "@type": "MedicalTherapy",
+              name: "Physiotherapy & Kinetic Rehabilitation",
+              url: "https://www.thrivepainandwellness.com/services/physiotherapy-and-rehabilitation",
+            },
+            {
+              "@type": "MedicalTherapy",
+              name: "Back Pain Treatment in Hyderabad",
+              url: "https://www.thrivepainandwellness.com/back-pain-treatment-in-hyderabad",
+            },
+            {
+              "@type": "MedicalTherapy",
+              name: "Knee Pain Treatment in Hyderabad",
+              url: "https://www.thrivepainandwellness.com/knee-pain-treatment-in-hyderabad",
+            },
+            {
+              "@type": "MedicalTherapy",
+              name: "Sciatica Treatment in Hyderabad",
+              url: "https://www.thrivepainandwellness.com/sciatica-treatment-in-hyderabad",
+            },
+          ],
           openingHoursSpecification: [
             {
               "@type": "OpeningHoursSpecification",

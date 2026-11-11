@@ -232,13 +232,15 @@ function Home() {
         </Reveal>
         <HumanoidMap />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          <Reveal className="rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-lg">
-            <span className="eyebrow !bg-primary/10 !text-primary">Clinical pillar guide</span>
-            <h3 className="display-md mt-3 text-xl font-semibold">Back Pain Treatment in Hyderabad</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Explore evidence-informed care pathways for chronic lower back pain, disc herniation, sciatica, and facet arthritis at our Raidurgam clinic.
-            </p>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Reveal className="rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-lg flex flex-col justify-between">
+            <div>
+              <span className="eyebrow !bg-primary/10 !text-primary">Clinical pillar guide</span>
+              <h3 className="display-md mt-3 text-xl font-semibold">Back Pain Treatment in Hyderabad</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Explore evidence-informed care pathways for chronic lower back pain, disc herniation, facet arthritis, and spinal stenosis at our Raidurgam clinic.
+              </p>
+            </div>
             <Link
               to="/back-pain-treatment-in-hyderabad"
               className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
@@ -247,17 +249,35 @@ function Home() {
             </Link>
           </Reveal>
 
-          <Reveal delay={80} className="rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-lg">
-            <span className="eyebrow !bg-primary/10 !text-primary">Clinical pillar guide</span>
-            <h3 className="display-md mt-3 text-xl font-semibold">Knee Pain Treatment in Hyderabad</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Learn how autologous PRP, Genicular RFA, and kinetic physiotherapy help preserve natural joint function and manage knee osteoarthritis.
-            </p>
+          <Reveal delay={80} className="rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-lg flex flex-col justify-between">
+            <div>
+              <span className="eyebrow !bg-primary/10 !text-primary">Clinical pillar guide</span>
+              <h3 className="display-md mt-3 text-xl font-semibold">Knee Pain Treatment in Hyderabad</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Learn how autologous PRP, Genicular RFA, and kinetic physiotherapy help preserve natural joint function and manage knee osteoarthritis.
+              </p>
+            </div>
             <Link
               to="/knee-pain-treatment-in-hyderabad"
               className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
             >
               Read full knee pain care guide →
+            </Link>
+          </Reveal>
+
+          <Reveal delay={160} className="rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-lg flex flex-col justify-between">
+            <div>
+              <span className="eyebrow !bg-primary/10 !text-primary">Clinical pillar guide</span>
+              <h3 className="display-md mt-3 text-xl font-semibold">Sciatica Treatment in Hyderabad</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Relieve radiating leg pain, pinched nerve roots, and piriformis syndrome through image-guided nerve blocks and kinetic neural mobilization.
+              </p>
+            </div>
+            <Link
+              to="/sciatica-treatment-in-hyderabad"
+              className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+            >
+              Read full sciatica care guide →
             </Link>
           </Reveal>
         </div>

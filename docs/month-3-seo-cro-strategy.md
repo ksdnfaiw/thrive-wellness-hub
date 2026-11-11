@@ -95,3 +95,4 @@ flowchart LR
 1. **Month 4:** Deploy dedicated landing pages for *Cervical Radiculopathy (Neck & Arm Pain)* and *Frozen Shoulder Hydrodilatation*.
 2. **Month 5:** Activate the Corporate Wellness Partner Program across 5 major corporate tech parks in Raidurgam / Gachibowli.
 3. **Month 6:** Scale targeted Google Search Ads directed strictly to the new high-converting local pillar pages with calibrated GA4 conversion tracking.
+
